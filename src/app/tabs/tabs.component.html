@@ -1,9 +1,9 @@
 <router-outlet></router-outlet>
 <footer>
   <nav>
-    <button [routerLink]="['/']">Info</button>
-    <button [routerLink]="['/events']">Events</button>
-    <button [routerLink]="['/people']">People</button>
-    <button [routerLink]="['/profile']">Profile</button>
+    <button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Info</button>
+    <button routerLink="/events" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Events</button>
+    <button routerLink="/people" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">People</button>
+    <button routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Profile</button>
   </nav>
 </footer>
