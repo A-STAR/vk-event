@@ -5,7 +5,7 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
 const routes: Routes = [
   {
     path: '',
-    loadChildren: 'app/tabs/tabs.module#TabsModule',
+    loadChildren: 'app/tabs/tabs.module#TabsModule'
   },
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
