@@ -18,8 +18,14 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "",
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "../node_modules/bootstrap/scss",
+          "styles/bootstrap/scss"
+        ]
+      },
       "styles": [
-        "styles/bootstrap/scss/bootstrap.scss",
+        "styles/bootstrap/scss/custom-bootstrap.scss",
         "../node_modules/font-awesome/scss/font-awesome.scss",
         "styles.scss"
       ],
