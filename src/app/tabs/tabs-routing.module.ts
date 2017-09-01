@@ -10,6 +10,10 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: 'app/info/info.module#InfoModule'
+      },
+      {
+        path: 'events',
+        loadChildren: 'app/events/events.module#EventsModule'
       }
     ]
   }
