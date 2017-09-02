@@ -7,10 +7,11 @@
   main {
     display: flex;
     flex-flow: wrap;
+    padding-bottom: 5 * $spacer;
 
     figure {
-      margin-left: -15px;
-      margin-right: -15px;
+      margin-left: - ($grid-gutter-width / 2);
+      margin-right: - ($grid-gutter-width / 2);
     }
 
     div.begin-end {
@@ -18,8 +19,9 @@
     }
 
     & > button {
-      position: fixed;
       bottom: 60px;
+      left: 15px;
+      width: calc(100% - #{$grid-gutter-width})
     }
 
   }
