@@ -1,4 +1,6 @@
-@import "custom-variables";
+@import "functions";
+@import "variables";
+@import "mixins/breakpoints";
 
 :host {
   flex: 1;
