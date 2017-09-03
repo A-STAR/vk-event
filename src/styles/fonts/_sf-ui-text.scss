@@ -1,0 +1,36 @@
+$sf-ui-text-font-path: "#{$font-path}/sf-ui-text";
+
+@font-face {
+  font-family: "SF UI Text";
+  font-style: normal;
+  font-weight: 300;
+  src: local("SF UI Text Light"), local("SFText-Light"), url("#{$sf-ui-text-font-path}/sf-ui-text-light.ttf") format("truetype"), url("#{$sf-ui-text-font-path}/sf-ui-text-light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text";
+  font-style: normal;
+  font-weight: 400;
+  src: local("SF UI Text"), local("SFText-Regular"), url("#{$sf-ui-text-font-path}/sf-ui-text-regular.ttf") format("truetype"), url("#{$sf-ui-text-font-path}/sf-ui-text-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text";
+  font-style: normal;
+  font-weight: 500;
+  src: local("SF UI Text Medium"), local("SFText-Medium"), url("#{$sf-ui-text-font-path}/sf-ui-text-medium.ttf") format("truetype"), url("#{$sf-ui-text-font-path}/sf-ui-text-medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text";
+  font-style: normal;
+  font-weight: 700;
+  src: local("SF UI Text Semibold"), local("SFText-Semibold"), url("#{$sf-ui-text-font-path}/sf-ui-text-semibold.ttf") format("truetype"), url("#{$sf-ui-text-font-path}/sf-ui-text-semibold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text";
+  font-style: normal;
+  font-weight: 900;
+  src: local("SF UI Text Bold"), local("SFText-Bold"), url("#{$sf-ui-text-font-path}/sf-ui-text-bold.ttf") format("truetype"), url("#{$sf-ui-text-font-path}/sf-ui-text-bold.woff") format("woff");
+}
