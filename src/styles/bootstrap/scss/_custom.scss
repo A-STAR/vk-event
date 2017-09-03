@@ -12,6 +12,7 @@
 // Color system
 
 $blue: #5181B8;
+$green: #28a745 !default;
 
 // Options
 // Spacing
@@ -25,6 +26,29 @@ $blue: #5181B8;
 $grid-gutter-width: 32px;
 
 // Fonts
+
+$font-path: "../../../assets/fonts";
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "SF UI Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$font-size-base: .9375rem; // 15px
+$font-size-lg: 1.171825rem; // 18.75px
+$font-size-sm: .8203125rem; // 13.125px
+
+$h1-font-size: 2.5rem !default;
+$h2-font-size: 2rem !default;
+$h3-font-size: 1.75rem !default;
+$h4-font-size: 1.5rem !default;
+$h5-font-size: 1.25rem !default;
+$h6-font-size: 1rem !default;
+
+$display1-size: 6rem !default;
+$display2-size: 5.5rem !default;
+$display3-size: 4.5rem !default;
+$display4-size: 3.5rem !default;
+
+$lead-font-size: $font-size-lg;
+
 // Components
 // Tables
 // Buttons
