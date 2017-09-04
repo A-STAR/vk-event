@@ -1,9 +1,22 @@
 <router-outlet></router-outlet>
 <footer>
   <nav>
-    <button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Info</button>
-    <button routerLink="/events" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Events</button>
-    <button routerLink="/people" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">People</button>
-    <button routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Profile</button>
+    <button class="info" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"></button>
+    <button class="events" routerLink="/events" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"></button>
+    <button class="people" routerLink="/people" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"></button>
+    <button class="profile" routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"></button>
+
+    <!-- <button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <i class="fa fa-info-circle" aria-hidden="true"></i>
+    </button>
+    <button routerLink="/events" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <i class="fa fa-calendar-o" aria-hidden="true"></i>
+    </button>
+    <button routerLink="/people" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <i class="fa fa-users" aria-hidden="true"></i>
+    </button>
+    <button routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+    </button> -->
   </nav>
 </footer>
