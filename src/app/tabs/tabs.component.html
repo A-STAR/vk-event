@@ -2,7 +2,7 @@
 <footer>
   <nav>
     <button class="info" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"></button>
-    <button class="events" routerLink="/events" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"></button>
+    <button class="events" [ngClass]="['new']" routerLink="/events" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"></button>
     <button class="people" routerLink="/people" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"></button>
     <button class="profile" routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"></button>
 

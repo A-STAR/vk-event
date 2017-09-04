@@ -15,24 +15,44 @@
 
       button {
         flex: 1;
-        background-color: #a1b8c7;
+        color: #a1b8c7;
         border: none;
         outline: none;
 
         &.info {
-          mask: url("../../assets/icons/info.svg") no-repeat center;
+          background: url("../../assets/icons/info.svg") no-repeat center;
+
+          &.active {
+            background-image: url("../../assets/icons/info-active.svg");
+          }
+
         }
 
         &.events {
-          mask: url("../../assets/icons/calendar.svg") no-repeat center;
+          background: url("../../assets/icons/calendar.svg") no-repeat center;
+
+          &.active {
+            background-image: url("../../assets/icons/calendar-active.svg");
+          }
+
         }
 
         &.people {
-          mask: url("../../assets/icons/people.svg") no-repeat center;
+          background: url("../../assets/icons/people.svg") no-repeat center;
+
+          &.active {
+            background-image: url("../../assets/icons/people-active.svg");
+          }
+
         }
 
         &.profile {
-          mask: url("../../assets/icons/profile.svg") no-repeat center;
+          background: url("../../assets/icons/profile.svg") no-repeat center;
+
+          &.active {
+            background-image: url("../../assets/icons/profile-active.svg");
+          }
+
         }
 
         // i {
@@ -55,10 +75,22 @@
 
         // }
 
-        &.active {
-          background-color: #5c9ce6;
+        // &.active {
+        //   background-color: $bright-blue;
+        // }
+
+        &.new::after {
+          position: relative;
+          top: -15px;
+          left: 13px;
+          color: #e64646;
+          font-family: FontAwesome;
+          font-size: .438rem;
+          content: "\f111";
         }
+
       }
+
     }
 
   }
