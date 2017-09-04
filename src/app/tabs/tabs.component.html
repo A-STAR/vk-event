@@ -1,7 +1,7 @@
 <router-outlet></router-outlet>
 <footer>
   <nav>
-    <button routerLink="/" routerLinkActive="active">Info</button>
+    <button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Info</button>
     <button routerLink="/events" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Events</button>
     <button routerLink="/people" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">People</button>
     <button routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Profile</button>
