@@ -12,6 +12,7 @@
 // Color system
 
 $blue: #5181B8;
+$bright-blue: #5C9CE6;
 $green: #28a745 !default;
 
 // Options
@@ -35,19 +36,35 @@ $font-size-base: .9375rem; // 15px
 $font-size-lg: 1.171825rem; // 18.75px
 $font-size-sm: .8203125rem; // 13.125px
 
-$h1-font-size: 2.5rem !default;
+$font-weight-bold: 900;
+
+$h1-font-size: 1.875rem; // 30px
 $h2-font-size: 2rem !default;
 $h3-font-size: 1.75rem !default;
 $h4-font-size: 1.5rem !default;
 $h5-font-size: 1.25rem !default;
 $h6-font-size: 1rem !default;
 
+$headings-font-weight: 500 !default;
+$headings-color: inherit !default;
+
 $display1-size: 6rem !default;
 $display2-size: 5.5rem !default;
 $display3-size: 4.5rem !default;
 $display4-size: 3.5rem !default;
 
+$display1-weight: 400;
+$display2-weight: 500;
+$display3-weight: 700;
+$display4-weight: 900;
+
 $lead-font-size: $font-size-lg;
+$lead-font-weight: 300 !default;
+
+$text-muted: rgba(44, 44, 44, .4);
+
+// $hr-border-color: rgba($black,.1) !default;
+// $hr-border-width: $border-width !default;
 
 // Components
 // Tables
