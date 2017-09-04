@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'tabs',
@@ -8,10 +8,11 @@ import { Router } from '@angular/router';
 })
 export class TabsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
-    this.router.navigate(['/']);
+    this.location
+      .replaceState('/');
   }
 
 }
