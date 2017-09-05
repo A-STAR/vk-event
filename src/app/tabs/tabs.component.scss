@@ -56,16 +56,16 @@
         }
 
         &.new {
-
           &::after {
             position: relative;
             top: -12px;
+            display: inline-block;
+            width: 0;
             color: $red;
             font-family: FontAwesome;
             font-size: .438rem; // 6px icon width
             content: "\f111";
           }
-
         }
 
       }
