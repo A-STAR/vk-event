@@ -15,45 +15,16 @@
 
       button {
         flex: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: transparent;
-        color: #a1b8c7;
         border: none;
         outline: none;
 
-        &.info {
-          background: url("../../assets/icons/info.svg") no-repeat center;
-
-          &.active {
-            background-image: url("../../assets/icons/info-active.svg");
-          }
-
-        }
-
-        &.events {
-          background: url("../../assets/icons/calendar.svg") no-repeat center;
-
-          &.active {
-            background-image: url("../../assets/icons/calendar-active.svg");
-          }
-
-        }
-
-        &.people {
-          background: url("../../assets/icons/people.svg") no-repeat center;
-
-          &.active {
-            background-image: url("../../assets/icons/people-active.svg");
-          }
-
-        }
-
-        &.profile {
-          background: url("../../assets/icons/profile.svg") no-repeat center;
-
-          &.active {
-            background-image: url("../../assets/icons/profile-active.svg");
-          }
-
+        path {
+          fill: #a1b8c7;
         }
 
         // i {
@@ -76,18 +47,27 @@
 
         // }
 
-        // &.active {
-        //   background-color: $bright-blue;
-        // }
+        &.active {
 
-        &.new::after {
+          path {
+            fill: $bright-blue;
+          }
+
+        }
+
+        &.new {
           position: relative;
-          top: -15px;
-          left: 13px;
-          color: #e64646;
-          font-family: FontAwesome;
-          font-size: .438rem;
-          content: "\f111";
+          left: 3px; // half icon width
+
+          &::after {
+            position: relative;
+            top: -12px;
+            color: $red;
+            font-family: FontAwesome;
+            font-size: .438rem; // 6px icon width
+            content: "\f111";
+          }
+
         }
 
       }
