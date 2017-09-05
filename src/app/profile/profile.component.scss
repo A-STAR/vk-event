@@ -1,0 +1,10 @@
+:host {
+  flex: 1;
+  overflow-y: scroll;
+
+  main {
+    display: flex;
+    flex-flow: wrap;
+  }
+
+}
