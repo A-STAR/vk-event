@@ -33,6 +33,7 @@
 
         &.active {
           color: $bright-blue !important;
+          padding-top: 3px; // compensate border width
           border-bottom: 2px solid $bright-blue;
         }
 
