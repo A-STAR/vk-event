@@ -14,7 +14,8 @@ export class PageNotFoundComponent implements OnInit {
   }
 
   goBack() {
-    this.location.back();
+    this.location
+      .back();
   }
 
 }
