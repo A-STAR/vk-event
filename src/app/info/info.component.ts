@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  constructor() { }
+  go: boolean;
+  showButton: boolean;
+  buttonText: string;
+
+  constructor() {}
 
   ngOnInit() {
+    this.go = false;
+    this.showButton = true;
+    this.buttonText = 'Пойти';
+  }
+
+  onGo(event) {
+    this.go = true;
+    this.buttonText = 'Вы идёте';
+    setTimeout(() => this.showButton = false, 3000);
   }
 
 }

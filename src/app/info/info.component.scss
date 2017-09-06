@@ -8,7 +8,7 @@
   main {
     display: flex;
     flex-flow: wrap;
-    padding-bottom: 4 * $spacer;
+    padding-bottom: 3.5 * $spacer;
 
     figure {
       position: relative;
@@ -28,6 +28,10 @@
       }
     }
 
+    h1 {
+      flex-basis: 100%;
+    }
+
     div.begin-end {
       flex: 50%;
     }
@@ -37,6 +41,14 @@
       left: 15px;
       width: calc(100% - #{$grid-gutter-width});
       box-shadow: 0 1px 2px 0 rgba(12, 51, 96, .5);
+      transition: background-color 3s, box-shadow .5s, opacity 3s;
+
+      &:focus {
+        background-color: $green;
+        box-shadow: none;
+        opacity: 0;
+      }
+
     }
 
   }

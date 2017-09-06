@@ -2,7 +2,7 @@
 
   <figure>
     <img src="assets/images/business-event.jpg" class="img-fluid" alt="Встреча">
-    <span class="badge badge-pill badge-dark">
+    <span class="badge badge-pill badge-dark" *ngIf="go">
       <i class="fa fa-check-circle" aria-hidden="true"></i>
       Вы идёте
     </span>
@@ -32,8 +32,8 @@
     </p>
   </div>
 
-  <button type="button" class="btn btn-primary btn-lg btn-block fixed-bottom">
-    Пойти
+  <button type="button" class="btn btn-primary btn-lg btn-block fixed-bottom" *ngIf="showButton" class.active="go" (click)="onGo($event)">
+    {{ buttonText }}
   </button>
 
 </main>
