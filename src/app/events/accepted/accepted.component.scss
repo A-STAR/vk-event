@@ -1,4 +1,44 @@
+@import "custom-variables";
+
 :host {
   flex: 1;
   overflow-y: scroll;
+
+  main {
+    padding-top: 1.5 * $spacer;
+
+    time {
+      color: $light-blue;
+      font-weight: $display2-weight;
+    }
+
+    hr {
+      position: relative;
+      height: 1.25rem * $line-height-base;
+      border: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        background-color: $light-blue;
+      }
+
+      &::after {
+        content: attr(data-begin) "\00a0\2013\00a0" attr(data-end);
+        position: relative;
+        display: inline-block;
+        padding-right: .5 * $spacer;
+        background-color: $white;
+        color: $black;
+        font-size: 1.25rem; // 20px
+        font-weight: $font-weight-bold;
+      }
+
+    }
+
+  }
+
 }

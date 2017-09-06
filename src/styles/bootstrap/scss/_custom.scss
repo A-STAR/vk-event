@@ -11,8 +11,21 @@
 
 // Color system
 
+$white:  #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:  #000 !default;
+
 $blue: #5181B8;
 $bright-blue: #5C9CE6;
+$light-blue: #A1B8C7;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #e83e8c !default;
@@ -26,6 +39,9 @@ $cyan: #17a2b8 !default;
 // Options
 // Spacing
 // Body
+
+$body-color: $black;
+
 // Links
 // Paragraphs
 // Grid breakpoints
@@ -69,9 +85,9 @@ $display4-weight: 900;
 $lead-font-size: $font-size-lg;
 $lead-font-weight: 300 !default;
 
-$text-muted: rgba(44, 44, 44, .4);
+$text-muted: rgba($gray-900, .4);
 
-// $hr-border-color: rgba($black,.1) !default;
+$hr-border-color: rgba($black, .1) !default;
 // $hr-border-width: $border-width !default;
 
 // Components
