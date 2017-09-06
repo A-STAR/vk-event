@@ -15,7 +15,7 @@ export class InfoComponent implements OnInit {
 
   ngOnInit() {
     this.go = false;
-    this.showButton = true;
+    this.showButton = !this.go;
     this.buttonText = 'Пойти';
   }
 

@@ -1,4 +1,4 @@
-<main class="container-fluid">
+<main class="container-fluid" [class.button-space]="showButton">
 
   <figure>
     <img src="assets/images/business-event.jpg" class="img-fluid" alt="Встреча">
@@ -32,7 +32,7 @@
     </p>
   </div>
 
-  <button type="button" class="btn btn-primary btn-lg btn-block fixed-bottom" *ngIf="showButton" class.active="go" (click)="onGo($event)">
+  <button type="button" class="btn btn-primary btn-lg btn-block fixed-bottom" *ngIf="showButton" (click)="onGo($event)">
     {{ buttonText }}
   </button>
 
