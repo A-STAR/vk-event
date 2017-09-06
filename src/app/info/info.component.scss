@@ -11,8 +11,21 @@
     padding-bottom: 4 * $spacer;
 
     figure {
+      position: relative;
       margin-left: - ($grid-gutter-width / 2);
       margin-right: - ($grid-gutter-width / 2);
+
+      span {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        padding-top: 0.334em;
+        padding-bottom: 0.334em;
+        background-color: rgba(44, 44, 44, .6);
+        font-size: $font-size-base;
+        font-weight: $display1-weight;
+        line-height: inherit;
+      }
     }
 
     div.begin-end {
