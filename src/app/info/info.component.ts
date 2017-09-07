@@ -21,7 +21,7 @@ export class InfoComponent implements OnInit {
     this.buttonClass = 'btn-primary';
   }
 
-  onGo(event) {
+  go(event) {
     this.go = true;
     setTimeout(() => this.showButton = false, 3000);
     this.buttonText = 'Вы идёте';
