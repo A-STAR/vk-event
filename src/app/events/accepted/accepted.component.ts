@@ -12,4 +12,8 @@ export class AcceptedComponent implements OnInit {
   ngOnInit() {
   }
 
+  navigate(event) {
+    console.log('navigate');
+  }
+
 }
