@@ -4,42 +4,75 @@
   flex: 1;
   overflow-y: scroll;
 
+
   main {
+    display: flex;
+    flex-flow: wrap;
     padding-top: 1.5 * $spacer;
 
-    time {
+    & > time {
+      flex-basis: 100%;
+      display: block;
+      margin-bottom: .5 * $spacer;
       color: $light-blue;
       font-weight: $display2-weight;
     }
 
-    hr {
-      position: relative;
-      height: 1.25rem * $line-height-base;
-      border: 0;
-      line-height: $line-height-base;
+    div.time {
+      flex-basis: 100%;
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        height: 1px;
-        background-color: $light-blue;
-      }
+      display: flex;
+      margin-bottom: .5 * $spacer;
 
-      &::after {
-        content: attr(data-begin) "\00a0\2013\00a0" attr(data-end);
-        position: relative;
-        display: inline-block;
-        padding-right: .5 * $spacer;
-        background-color: $white;
+      time,
+      span {
         color: $black;
         font-size: 1.25rem; // 20px
         font-weight: $font-weight-bold;
-        line-height: $line-height-base;
+      }
+
+      hr {
+        flex: 1;
+        margin-left: .5 * $spacer;
+        border-color: $light-blue;
+        box-shadow: inset 0 -.5px 0 0 $light-blue;
       }
 
     }
+
+    div.user {
+      margin-bottom: .5 * $spacer;
+    }
+
+
+    // hr {
+    //   position: relative;
+    //   height: 1.25rem * $line-height-base;
+    //   border: 0;
+    //   line-height: $line-height-base;
+
+    //   &::before {
+    //     content: "";
+    //     position: absolute;
+    //     top: 50%;
+    //     width: 100%;
+    //     height: 1px;
+    //     background-color: $light-blue;
+    //   }
+
+    //   &::after {
+    //     content: attr(data-begin) "\00a0\2013\00a0" attr(data-end);
+    //     position: relative;
+    //     display: inline-block;
+    //     padding-right: .5 * $spacer;
+    //     background-color: $white;
+    //     color: $black;
+    //     font-size: 1.25rem; // 20px
+    //     font-weight: $font-weight-bold;
+    //     line-height: $line-height-base;
+    //   }
+
+    // }
 
   }
 

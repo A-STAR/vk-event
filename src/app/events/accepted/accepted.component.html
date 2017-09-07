@@ -2,20 +2,39 @@
 
   <time>27 октября</time>
 
-  <hr [attr.data-begin]="1414400400000 | date: 'H:mm'" [attr.data-end]="1414402200000 | date: 'H:mm'">
+  <div class="time">
+    <time>{{ 1414400400000 | date: 'H:mm' }}</time>
+    <span>&ndash;</span>
+    <time>{{ 1414402200000 | date: 'H:mm' }}</time>
+    <hr>
+  </div>
 
-  <a href>Буркин Виктор</a>
+  <div class="user">
+    <a href>Буркин Виктор</a>
+    <span>Менеджер в Газпром</span>
+  </div>
 
-  <span>Менеджер в Газпром</span>
+  <div class="time">
+    <time>{{ 1414409400000 | date: 'H:mm' }}</time>
+    <span>&ndash;</span>
+    <time>{{ 1414411200000 | date: 'H:mm' }}</time>
+    <hr>
+  </div>
 
-  <hr [attr.data-begin]="1414409400000 | date: 'H:mm'" [attr.data-end]="1414411200000 | date: 'H:mm'">
-
-  <a href>Александров Александр</a>
-
-  <span>Менеджер по продажам в Ауди Варшавка</span>
-
-  <hr [attr.data-begin]="1414479600000 | date: 'H:mm'" [attr.data-end]="1414481400000 | date: 'H:mm'">
+  <div class="user">
+    <a href>Александров Александр</a>
+    <span>Менеджер по продажам в Ауди Варшавка</span>
+  </div>
 
   <time>28 октября</time>
+
+  <div class="time">
+    <time>{{ 1414479600000 | date: 'H:mm' }}</time>
+    <span>&ndash;</span>
+    <time>{{ 1414481400000 | date: 'H:mm' }}</time>
+    <hr>
+  </div>
+
+  <!-- <hr [attr.data-begin]="1414400400000 | date: 'H:mm'" [attr.data-end]="1414402200000 | date: 'H:mm'"> -->
 
 </main>
