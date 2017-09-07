@@ -36,7 +36,7 @@
 
     h1 {
       flex-basis: 100%;
-      margin-bottom: 1.5 * $spacer;
+      margin-bottom: $spacer * 1.5;
       font-size: 1.375rem; // 22px
       font-weight: $font-weight-bold;
     }
@@ -81,7 +81,7 @@
     }
 
     &.button-space {
-      padding-bottom: 3.5 * $spacer;
+      padding-bottom: $spacer * 3.5;
     }
 
   }
