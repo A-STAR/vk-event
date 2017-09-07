@@ -2,7 +2,7 @@
 
   <figure>
     <img src="assets/images/business-event.jpg" class="img-fluid" alt="Встреча">
-    <span class="badge badge-pill badge-dark" *ngIf="go">
+    <span class="badge badge-pill badge-dark" [class.go]="go">
       <i class="fa fa-check-circle" aria-hidden="true"></i>
       Вы идёте
     </span>

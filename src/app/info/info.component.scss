@@ -23,7 +23,13 @@
         background-color: rgba($gray-900, .6);
         font-size: $font-size-base;
         font-weight: $display1-weight;
-        line-height: inherit;
+        line-height: $line-height-base;
+        opacity: 0;
+        transition: opacity .15s ease-in-out;
+
+        &.go {
+          opacity: 1;
+        }
       }
     }
 
