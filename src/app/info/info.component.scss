@@ -49,12 +49,24 @@
       bottom: 60px;
       left: 15px;
       width: calc(100% - #{$grid-gutter-width});
-      box-shadow: 0 1px 2px 0 rgba(12, 51, 96, .5);
-      transition: background-color 3s, box-shadow .5s, opacity 3s;
+      transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, opacity 3s ease-in-out;
+
+      &.btn-primary {
+        box-shadow: 0 1px 2px 0 rgba(theme-color("primary"), .5);
+      }
+
+      &.btn-success {
+        background-color: theme-color("success");
+        box-shadow: 0 1px 2px 0 rgba(theme-color("success"), .5);
+
+        &:active,
+        &:hover {
+          border-color: theme-color("success");
+        }
+
+      }
 
       &:focus {
-        background-color: $green;
-        box-shadow: none;
         opacity: 0;
       }
 

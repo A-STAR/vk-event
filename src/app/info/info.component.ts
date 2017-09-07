@@ -10,6 +10,7 @@ export class InfoComponent implements OnInit {
   go: boolean;
   showButton: boolean;
   buttonText: string;
+  buttonClass: string;
 
   constructor() {}
 
@@ -17,12 +18,14 @@ export class InfoComponent implements OnInit {
     this.go = false;
     this.showButton = !this.go;
     this.buttonText = 'Пойти';
+    this.buttonClass = 'btn-primary';
   }
 
   onGo(event) {
     this.go = true;
-    this.buttonText = 'Вы идёте';
     setTimeout(() => this.showButton = false, 3000);
+    this.buttonText = 'Вы идёте';
+    this.buttonClass = 'btn-success';
   }
 
 }
