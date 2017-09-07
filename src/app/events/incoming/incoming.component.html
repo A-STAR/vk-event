@@ -1,3 +1,21 @@
-<p>
-  incoming works!
-</p>
+<main class="container-fluid">
+
+  <div class="user" (click)="navigate($event)">
+    <img [src]="'../../../assets/images/dennis.jpg'" [alt]="'Бережков Денис'">
+    <div>
+      <h2>{{ 'Бережков Денис' }}</h2>
+      <span>{{ 'Владелец ресторанной сети Golden Cafe' }}</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="user" (click)="navigate($event)">
+    <img [src]="'../../../assets/images/max.jpg'" [alt]="'Синицин Максим'">
+    <div>
+      <h2>{{ 'Синицин Максим' }}</h2>
+      <span>{{ 'Главный экономист МТС' }}</span>
+    </div>
+  </div>
+
+</main>

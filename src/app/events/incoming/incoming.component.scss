@@ -1,0 +1,58 @@
+@import "custom-variables";
+
+:host {
+  flex: 1;
+  overflow-y: scroll;
+
+  main {
+    display: flex;
+    flex-flow: wrap;
+    padding-top: $spacer * 1.5;
+
+    div.user {
+      flex-basis: 100%;
+
+      display: flex;
+      align-items: center;
+      margin-bottom: $spacer * 1.5;
+      overflow: hidden;
+
+      img {
+        width: 60px;
+        height: 60px;
+        margin-right: $spacer;
+        border-radius: 50%;
+      }
+
+      & > div {
+        flex: 1;
+
+        overflow: hidden;
+
+        h2 {
+          margin-bottom: $spacer * .25;
+          color: $blue;
+          font-size: 1.0625rem; // 17px
+          font-weight: $display3-weight;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        span {
+          color: $text-muted;
+        }
+
+      }
+
+    }
+
+    hr {
+      flex-basis: 100%;
+
+      margin-bottom: $spacer * 1.5;
+    }
+
+  }
+
+}
