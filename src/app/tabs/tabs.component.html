@@ -3,73 +3,33 @@
   <nav>
 
     <button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-      <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <title>Info</title>
-        <desc>Info icon.</desc>
-        <defs></defs>
-        <g id="mobile-v8" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g id="info" transform="translate(-35.000000, -536.000000)">
-            <g id="tabbar" transform="translate(0.000000, 524.000000)">
-              <g id="icon" transform="translate(33.000000, 10.000000)">
-                <rect id="rectangle" x="0" y="0" width="24" height="24"></rect>
-                <path id="shape" d="M12,22 C6.4771525,22 2,17.5228475 2,12 C2,6.4771525 6.4771525,2 12,2 C17.5228475,2 22,6.4771525 22,12 C22,17.5228475 17.5228475,22 12,22 Z M12,9 C12.5522847,9 13,8.55228475 13,8 C13,7.44771525 12.5522847,7 12,7 C11.4477153,7 11,7.44771525 11,8 C11,8.55228475 11.4477153,9 12,9 Z M11,10 L11,17 L13,17 L13,10 L11,10 Z" fill="#000000"></path>
-              </g>
-            </g>
-          </g>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+        <g fill="none" fill-rule="evenodd">
+          <path fill="#000" d="M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zm0-13c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zM9 8v7h2V8H9z"/>
         </g>
       </svg>
     </button>
 
-    <button [ngClass]="['new']" routerLink="/events" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-      <svg width="18px" height="20px" viewBox="0 0 18 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <title>Calendar</title>
-        <desc>Calendar icon.</desc>
-        <defs></defs>
-        <g id="mobile-v8" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g id="calendar" transform="translate(-112.000000, -536.000000)">
-            <g id="tabbar" transform="translate(0.000000, 524.000000)">
-              <g id="icon" transform="translate(109.000000, 10.000000)">
-                <rect id="rectangle" x="0" y="0" width="24" height="24"></rect>
-                <path id="shape" d="M17,13 L12,13 L12,18 L17,18 L17,13 L17,13 Z M16,2 L16,4 L8,4 L8,2 L6,2 L6,4 L5,4 C3.9,4 3,4.9 3,6 L3,20 C3,21.1 3.9,22 5,22 L19,22 C20.1,22 21,21.1 21,20 L21,6 C21,4.9 20.1,4 19,4 L18,4 L18,2 L16,2 L16,2 Z M19,20 L5,20 L5,9 L19,9 L19,20 L19,20 Z" fill="#000000"></path>
-              </g>
-            </g>
-          </g>
+    <button [ngClass]="['new']" routerLink="/events" routerLinkActive="active">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20">
+        <g fill="none" fill-rule="evenodd">
+          <path fill="#000" d="M14 11H9v5h5v-5zM13 0v2H5V0H3v2H2C.9 2 0 2.9 0 4v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2h-1V0h-2zm3 18H2V7h14v11z"/>
         </g>
       </svg>
     </button>
 
     <button routerLink="/people" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-      <svg width="22px" height="14px" viewBox="0 0 22 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <title>People</title>
-        <desc>People icon.</desc>
-        <defs></defs>
-        <g id="mobile-v8" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g id="info" transform="translate(-187.000000, -539.000000)">
-            <g id="tabbar" transform="translate(0.000000, 524.000000)">
-              <g id="icon" transform="translate(186.000000, 10.000000)">
-                <rect id="rectangle" x="0" y="0" width="24" height="24"></rect>
-                <path id="shape" d="M16,11 C17.7,11 19,9.7 19,8 C19,6.3 17.7,5 16,5 C14.3,5 13,6.3 13,8 C13,9.7 14.3,11 16,11 L16,11 Z M8,11 C9.7,11 11,9.7 11,8 C11,6.3 9.7,5 8,5 C6.3,5 5,6.3 5,8 C5,9.7 6.3,11 8,11 L8,11 Z M8,13 C5.7,13 1,14.2 1,16.5 L1,19 L15,19 L15,16.5 C15,14.2 10.3,13 8,13 L8,13 Z M16,13 C15.7,13 15.4,13 15,13.1 C16.2,13.9 17,15.1 17,16.5 L17,19 L23,19 L23,16.5 C23,14.2 18.3,13 16,13 L16,13 Z" fill="#000000"></path>
-              </g>
-            </g>
-          </g>
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="14">
+        <g fill="none" fill-rule="evenodd">
+          <path fill="#000" d="M15 6c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zM7 6c1.7 0 3-1.3 3-3S8.7 0 7 0 4 1.3 4 3s1.3 3 3 3zm0 2c-2.3 0-7 1.2-7 3.5V14h14v-2.5C14 9.2 9.3 8 7 8zm8 0c-.3 0-.6 0-1 .1 1.2.8 2 2 2 3.4V14h6v-2.5C22 9.2 17.3 8 15 8z"/>
         </g>
       </svg>
     </button>
 
     <button routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-      <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <title>Profile</title>
-        <desc>Profile icon.</desc>
-        <defs></defs>
-        <g id="mobile-v8" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g id="info" transform="translate(-266.000000, -536.000000)">
-            <g id="tabbar" transform="translate(0.000000, 524.000000)">
-              <g id="icon" transform="translate(264.000000, 10.000000)">
-                <rect id="rectangle" x="0" y="0" width="24" height="24"></rect>
-                <path id="shape" d="M12,2 C6.5,2 2,6.5 2,12 C2,17.5 6.5,22 12,22 C17.5,22 22,17.5 22,12 C22,6.5 17.5,2 12,2 L12,2 Z M12,5 C13.7,5 15,6.3 15,8 C15,9.7 13.7,11 12,11 C10.3,11 9,9.7 9,8 C9,6.3 10.3,5 12,5 L12,5 Z M12,19.2 C9.5,19.2 7.3,17.9 6,16 C6,14 10,12.9 12,12.9 C14,12.9 18,14 18,16 C16.7,17.9 14.5,19.2 12,19.2 L12,19.2 Z" fill="#000000"></path>
-              </g>
-            </g>
-          </g>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+        <g fill="none" fill-rule="evenodd">
+          <path fill="#000" d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zm0 3c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3zm0 14.2c-2.5 0-4.7-1.3-6-3.2 0-2 4-3.1 6-3.1s6 1.1 6 3.1c-1.3 1.9-3.5 3.2-6 3.2z"/>
         </g>
       </svg>
     </button>
