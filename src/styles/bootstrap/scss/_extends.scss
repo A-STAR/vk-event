@@ -14,9 +14,8 @@
 }
 
 .escape-flex-container {
+  @extend .escape-container;
   flex-basis: calc(100% + #{$grid-gutter-width} * 2);
-
-  @extend .escape-flex-container;
 }
 
 .flex-50 {
@@ -37,7 +36,8 @@
 }
 
 .user-item {
-  flex-basis: 100%;
+  @extend .escape-flex-container;
+  @include pad-container();
 
   display: flex;
   align-items: center;

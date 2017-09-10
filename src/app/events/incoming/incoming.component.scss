@@ -44,9 +44,8 @@
     }
 
     hr {
-      flex-basis: 100%;
-
       @extend .hr;
+      flex-basis: 100%;
     }
 
   }

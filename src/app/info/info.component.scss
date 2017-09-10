@@ -9,8 +9,8 @@
     @extend .flex-row;
 
     figure {
-      position: relative;
       @extend .escape-container;
+      position: relative;
 
       span {
         position: absolute;

@@ -10,19 +10,15 @@
     padding-bottom: $spacer;
 
     h2 {
+      @extend .light-heading;
       margin-bottom: 0;
       font-size: $font-size-base;
-      @extend .light-heading;
     }
 
     div.user {
       @extend .user-item;
-
-      @extend .escape-flex-container;
-
       margin-bottom: 0;
       padding-bottom: $spacer * .5;
-      @include pad-container(1);
 
       h2 + span {
         display: inline-block;
@@ -33,9 +29,8 @@
     }
 
     hr {
-      flex-basis: 100%;
-
       @extend .hr;
+      flex-basis: 100%;
 
       &.separator {
         @extend .escape-flex-container;

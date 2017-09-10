@@ -28,21 +28,16 @@
       }
 
       hr {
+        @extend .hr;
         flex: 1;
 
         margin-left: $spacer * .5;
-        @extend .hr;
       }
 
     }
 
     div.user {
       @extend .user-item;
-
-      // flex-basis: 100%;
-      @extend .escape-flex-container;
-
-      @include pad-container(1);
     }
 
     // hr {
