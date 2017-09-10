@@ -25,6 +25,12 @@
     </p>
   </div>
 
+  <div class="warning" *ngIf="false">
+    <p>
+      {{ 'На данное время назначена встреча' }}
+    </p>
+  </div>
+
   <button class="btn btn-primary" (click)="accept($event)">Принять</button>
 
   <button class="btn btn-primary" [disabled]="true" (click)="more($event)">Ещё</button>
@@ -36,6 +42,43 @@
     <div>
       <h2>{{ 'Синицин Максим' }}</h2>
       <span>{{ 'Главный экономист МТС' }}</span>
+    </div>
+  </div>
+
+  <div class="time-place">
+    <h2>Время</h2>
+    <span>26 ноя в {{ '21:00' }}</span>
+  </div>
+
+  <div class="time-place">
+    <h2>Место</h2>
+    <span>{{ 'Красный зал' }}</span>
+  </div>
+
+  <div>
+    <h2>Комментарий</h2>
+    <p>
+      {{ 'Хочу обсудить с вами вопросы по продажам.' }}
+    </p>
+  </div>
+
+  <div class="warning" *ngIf="true">
+    <p>
+      {{ 'На данное время назначена встреча' }}
+    </p>
+  </div>
+
+  <button class="btn btn-primary" [disabled]="true" (click)="accept($event)">Принять</button>
+
+  <button class="btn btn-primary" [disabled]="true" (click)="more($event)">Ещё</button>
+
+  <hr>
+
+  <div class="user" (click)="navigate($event)">
+    <img [src]="'../../../assets/images/roman.jpg'" [alt]="'Березуцкий Роман'">
+    <div>
+      <h2>{{ 'Березуцкий Роман' }}</h2>
+      <span>{{ 'Руководитель холдинга 5 Элемент' }}</span>
     </div>
   </div>
 
@@ -56,7 +99,13 @@
     </p>
   </div>
 
-  <button class="btn btn-primary" (click)="accept($event)">Принять</button>
+  <div class="warning" *ngIf="true">
+    <p>
+      {{ 'Перенёс встречу: 27 ноя 17:00, Зелёный зал' }}
+    </p>
+  </div>
+
+  <button class="btn btn-primary"(click)="accept($event)">Принять</button>
 
   <button class="btn btn-primary" [disabled]="true" (click)="more($event)">Ещё</button>
 

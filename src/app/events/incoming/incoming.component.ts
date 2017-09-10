@@ -21,8 +21,6 @@ export class IncomingComponent implements OnInit {
 
   accept(event) {
     console.log('accept');
-    this.router
-      .navigate(['events/incoming']);
   }
 
   more(event) {
