@@ -46,6 +46,9 @@
 
     hr {
       flex-basis: 100%;
+
+      border-color: $light-blue;
+      box-shadow: inset 0 -.5px 0 0 $light-blue;
     }
 
   }
