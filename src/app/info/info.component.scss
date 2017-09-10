@@ -11,8 +11,7 @@
 
     figure {
       position: relative;
-      margin-left: - ($grid-gutter-width / 2);
-      margin-right: - ($grid-gutter-width / 2);
+      @extend .escape-container;
 
       span {
         position: absolute;
@@ -42,8 +41,7 @@
     }
 
     div.begin-end {
-      flex: 50%;
-      margin-bottom: $spacer;
+      @extend .flex-50;
     }
 
     h2 {
