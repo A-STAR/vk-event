@@ -6,8 +6,7 @@
   overflow-y: scroll;
 
   main {
-    display: flex;
-    flex-flow: wrap;
+    @extend .flex-row;
 
     figure {
       position: relative;

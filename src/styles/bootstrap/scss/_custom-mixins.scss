@@ -1,5 +1,4 @@
 @mixin pad-container($multiplier) {
-  $divider: 2 * $multiplier;
-  padding-left: $grid-gutter-width / $divider;
-  padding-right: $grid-gutter-width / $divider;
+  padding-left: $grid-gutter-width / 2 * $multiplier;
+  padding-right: $grid-gutter-width / 2 * $multiplier;
 }

@@ -1,8 +1,7 @@
 @import "custom-variables";
 
 :host {
-  display: flex;
-  flex-flow: column;
+  @extend .flex-column;
   height: 100vh;
 
   footer {
