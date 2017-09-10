@@ -7,50 +7,35 @@
   main {
     display: flex;
     flex-flow: wrap;
-    padding-top: $spacer * 1.5;
+    padding-top: $spacer;
+    padding-bottom: $spacer * .5;
 
     div.user {
-      flex-basis: 100%;
+      @extend .events-user;
+    }
 
-      display: flex;
-      align-items: center;
-      margin-bottom: $spacer * 1.5;
-      overflow: hidden;
+    div.time-place {
+      @extend .flex-50;
+    }
 
-      img {
-        width: 60px;
-        height: 60px;
-        margin-right: $spacer;
-        border-radius: 50%;
-      }
+    h2 {
+      @extend .muted-heading;
+    }
 
-      & > div {
-        flex: 1;
+    button {
+      flex-basis: calc(50% - #{$spacer} * .25);
 
-        overflow: hidden;
+      margin-bottom: $spacer * .5;
+      margin-right: $spacer * .5;
 
-        h2 {
-          margin-bottom: $spacer * .25;
-          color: $blue;
-          font-size: 1.0625rem; // 17px
-          font-weight: $display3-weight;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-
-        span {
-          color: $text-muted;
-        }
-
+      & + button {
+        margin-right: 0;
       }
 
     }
 
     hr {
       flex-basis: 100%;
-
-      margin-bottom: $spacer * 1.5;
     }
 
   }

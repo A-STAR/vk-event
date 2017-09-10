@@ -14,9 +14,21 @@ export class IncomingComponent implements OnInit {
   }
 
   navigate(event) {
+    console.log('accept');
     this.router
-      .navigate(['/events']);
-    console.log('navigate');
+      .navigate(['events/incoming']);
+  }
+
+  accept(event) {
+    console.log('accept');
+    this.router
+      .navigate(['events/incoming']);
+  }
+
+  more(event) {
+    console.log('more');
+    this.router
+      .navigate(['/events/incoming']);
   }
 
 }

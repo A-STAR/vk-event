@@ -8,6 +8,27 @@
     </div>
   </div>
 
+  <div class="time-place">
+    <h2>Время</h2>
+    <span>21 ноя в {{ '13:00' }}</span>
+  </div>
+
+  <div class="time-place">
+    <h2>Место</h2>
+    <span>{{ 'Зелёный зал' }}</span>
+  </div>
+
+  <div>
+    <h2>Комментарий</h2>
+    <p>
+      {{ 'У меня есть предложение, от которого вы не сможете отказаться. Мне нужно буквально 10 минут.' }}
+    </p>
+  </div>
+
+  <button class="btn btn-primary" (click)="accept($event)">Принять</button>
+
+  <button class="btn btn-primary" [disabled]="true" (click)="more($event)">Ещё</button>
+
   <hr>
 
   <div class="user" (click)="navigate($event)">
@@ -17,5 +38,26 @@
       <span>{{ 'Главный экономист МТС' }}</span>
     </div>
   </div>
+
+  <div class="time-place">
+    <h2>Время</h2>
+    <span>23 ноя в {{ '17:00' }}</span>
+  </div>
+
+  <div class="time-place">
+    <h2>Место</h2>
+    <span>{{ 'Красный зал' }}</span>
+  </div>
+
+  <div>
+    <h2>Комментарий</h2>
+    <p>
+      {{ 'Предлагаю сотрудничество на выгодных условиях.' }}
+    </p>
+  </div>
+
+  <button class="btn btn-primary" (click)="accept($event)">Принять</button>
+
+  <button class="btn btn-primary" [disabled]="true" (click)="more($event)">Ещё</button>
 
 </main>
