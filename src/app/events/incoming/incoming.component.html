@@ -63,9 +63,7 @@
   </div>
 
   <div class="warning" *ngIf="true">
-    <p>
-      {{ 'На данное время назначена встреча' }}
-    </p>
+    <span>{{ 'На данное время назначена встреча' }}</span>
   </div>
 
   <button class="btn btn-primary" [disabled]="true" (click)="accept($event)">Принять</button>
@@ -100,9 +98,7 @@
   </div>
 
   <div class="warning" *ngIf="true">
-    <p>
-      {{ 'Перенёс встречу: 27 ноя 17:00, Зелёный зал' }}
-    </p>
+    <span>{{ 'Перенёс встречу: 27 ноя 17:00, Зелёный зал' }}</span>
   </div>
 
   <button class="btn btn-primary"(click)="accept($event)">Принять</button>

@@ -23,10 +23,13 @@
     }
 
     div.warning {
-      p {
+      margin-bottom: $spacer;
+
+      span {
         color: $red;
         font-weight: $display2-weight;
       }
+
     }
 
     button {
