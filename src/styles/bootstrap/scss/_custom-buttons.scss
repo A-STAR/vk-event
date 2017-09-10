@@ -1,0 +1,7 @@
+//
+// Button Sizes
+//
+
+.btn-lg {
+  @include button-size($input-btn-padding-y-lg, $input-btn-padding-x-lg, $font-size-base, $line-height-lg, $btn-border-radius-lg);
+}
