@@ -8,7 +8,7 @@
     display: flex;
     flex-flow: wrap;
     padding-top: $spacer;
-    padding-bottom: $spacer * .5;
+    padding-bottom: $spacer;
 
     div.user {
       @extend .events-user;
