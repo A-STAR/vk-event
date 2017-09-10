@@ -13,6 +13,12 @@
   margin-right: - ($grid-gutter-width / 2);
 }
 
+.escape-flex-container {
+  flex-basis: calc(100% + #{$grid-gutter-width} * 2);
+
+  @extend .escape-flex-container;
+}
+
 .flex-50 {
   flex: 50%;
   margin-bottom: $spacer;

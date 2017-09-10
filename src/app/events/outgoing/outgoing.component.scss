@@ -18,11 +18,10 @@
     div.user {
       @extend .user-item;
 
-      flex-basis: calc(100% + #{$grid-gutter-width} * 2);
+      @extend .escape-flex-container;
 
       margin-bottom: 0;
       padding-bottom: $spacer * .5;
-      @extend .escape-container;
       @include pad-container(1);
 
       h2 + span {
@@ -39,9 +38,7 @@
       @extend .hr;
 
       &.separator {
-        flex-basis: calc(100% + #{$grid-gutter-width} * 2);
-
-        @extend .escape-container;
+        @extend .escape-flex-container;
       }
 
     }
