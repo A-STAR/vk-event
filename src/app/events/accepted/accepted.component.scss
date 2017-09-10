@@ -42,7 +42,7 @@
     }
 
     div.user {
-      @extend .events-user;
+      @extend .user-item;
       // flex-basis: 100%;
       flex-basis: calc(100% + #{$grid-gutter-width} * 2);
       @extend .escape-container;

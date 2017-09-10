@@ -11,7 +11,7 @@
     padding-bottom: $spacer;
 
     div.user {
-      @extend .events-user;
+      @extend .user-item;
     }
 
     div.time-place {
