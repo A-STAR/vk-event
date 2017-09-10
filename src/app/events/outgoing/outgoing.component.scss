@@ -1,0 +1,51 @@
+@import "custom-variables";
+
+:host {
+  flex: 1;
+  overflow-y: scroll;
+
+  main {
+    @extend .flex-row;
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+
+    h2 {
+      margin-bottom: 0;
+      font-size: $font-size-base;
+      @extend .light-heading;
+    }
+
+    div.user {
+      @extend .user-item;
+
+      flex-basis: calc(100% + #{$grid-gutter-width} * 2);
+
+      margin-bottom: 0;
+      padding-bottom: $spacer * .5;
+      @extend .escape-container;
+      @include pad-container(1);
+
+      h2 + span {
+        display: inline-block;
+        width: 100%;
+        color: $black;
+      }
+
+    }
+
+    hr {
+      flex-basis: 100%;
+
+      @extend .hr;
+
+      &.separator {
+        flex-basis: calc(100% + #{$grid-gutter-width} * 2);
+
+        @extend .escape-container;
+      }
+
+    }
+
+  }
+
+}

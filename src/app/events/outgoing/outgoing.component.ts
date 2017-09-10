@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'outgoing',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OutgoingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  navigate(event) {
+    console.log('accept');
+    this.router
+      .navigate(['events/outgoing']);
   }
 
 }
