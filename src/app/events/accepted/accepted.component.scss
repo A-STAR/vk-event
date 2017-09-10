@@ -7,12 +7,13 @@
   main {
     display: flex;
     flex-flow: wrap;
-    padding-top: $spacer * 1.5;
+    padding-top: $spacer;
+    padding-bottom: $spacer * .5;
 
     & > time {
       flex-basis: 100%;
       display: block;
-      margin-bottom: $spacer * .5;
+      margin-top: $spacer * .5;
       color: $light-blue;
       font-weight: $display2-weight;
     }
@@ -21,7 +22,8 @@
       flex-basis: 100%;
 
       display: flex;
-      margin-bottom: $spacer;
+      margin-top: $spacer * .5;
+      margin-bottom: $spacer * .5;
 
       time,
       span {
@@ -40,44 +42,11 @@
     }
 
     div.user {
+      @extend .events-user;
       // flex-basis: 100%;
       flex-basis: calc(100% + #{$grid-gutter-width} * 2);
-
-      display: flex;
-      align-items: center;
       @extend .escape-container;
-      margin-bottom: $spacer * 1.5;
       @include pad-container(1);
-      overflow: hidden;
-
-      img {
-        width: 60px;
-        height: 60px;
-        margin-right: $spacer;
-        border-radius: 50%;
-      }
-
-      & > div {
-        flex: 1;
-
-        overflow: hidden;
-
-        h2 {
-          margin-bottom: $spacer * .25;
-          color: $blue;
-          font-size: 1.0625rem; // 17px
-          font-weight: $display3-weight;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-
-        span {
-          color: $text-muted;
-        }
-
-      }
-
     }
 
     // hr {

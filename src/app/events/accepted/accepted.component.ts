@@ -14,9 +14,9 @@ export class AcceptedComponent implements OnInit {
   }
 
   navigate(event) {
+    console.log('navigate');
     this.router
       .navigate(['/events']);
-    console.log('navigate');
   }
 
 }
