@@ -45,9 +45,7 @@
     }
 
     h2 {
-      color: $text-muted;
-      font-size: .8125rem; // 13px
-      font-weight: $display2-weight;
+      @extend .muted-heading;
     }
 
     & > button {
