@@ -14,7 +14,7 @@ export class OutgoingComponent implements OnInit {
   }
 
   navigate(event) {
-    console.log('accept');
+    console.log('navigate');
     this.router
       .navigate(['events/outgoing']);
   }

@@ -25,15 +25,16 @@ $black: #000 !default;
 
 // $blue: #5181B8;
 $blue: #528BCC;
-$bright-blue: #5C9CE6;
-$light-blue: #A1B8C7;
+$bright-blue: #5c9ce6;
+$light-blue: #a1b8c7;
+$white-blue: #ecf2f6;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #e83e8c !default;
 $red: #e64646;
 $orange: #fd7e14 !default;
 $yellow: #ffc107 !default;
-$green: #4BB34B;
+$green: #4bb34b;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
 
@@ -68,7 +69,8 @@ $theme-colors: (
 // Spacing
 // Body
 
-$body-color: $black;
+$body-bg: $white !default;
+$body-color: $gray-900 !default;
 
 // Links
 // Paragraphs
@@ -82,7 +84,7 @@ $grid-gutter-width: 32px;
 
 $font-path: "../../../assets/fonts";
 
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "SF UI Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "SF UI Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, FontAwesome, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 $font-size-base: .9375rem; // 15px
 $font-size-lg: 1.171825rem; // 18.75px

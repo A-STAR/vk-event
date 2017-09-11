@@ -22,7 +22,7 @@
 
       time,
       span {
-        color: $black;
+        color: $body-color;
         font-size: 1.25rem; // 20px
         font-weight: $font-weight-bold;
       }
@@ -61,7 +61,7 @@
     //     display: inline-block;
     //     padding-right: $spacer * .5;
     //     background-color: $white;
-    //     color: $black;
+    //     color: $body-color;
     //     font-size: 1.25rem; // 20px
     //     font-weight: $font-weight-bold;
     //     line-height: $line-height-base;
