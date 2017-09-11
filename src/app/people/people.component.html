@@ -1,5 +1,77 @@
-<main>
-  <p>
-    people works!
-  </p>
+<main class="container-fluid">
+
+  <form>
+    <div class="form-group">
+      <input type="search" class="form-control" aria-describedby="search" placeholder="&#xF002; Поиск">
+      <div class="input-group-addon">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+      <div class="input-group-addon">
+        <i class="fa fa-times-circle" aria-hidden="true"></i>
+      </div>
+    </div>
+  </form>
+
+  <hr>
+
+  <div class="user" *ngIf="true; else notfound" (click)="navigate($event)">
+    <img [src]="'../../../assets/images/vlad.jpg'" [alt]="'Резников Владислав'">
+    <div>
+      <h2>{{ 'Резников Владислав' }}</h2>
+      <span>{{ 'Директор гипермаркета Ашан' }}</span>
+    </div>
+  </div>
+
+  <div class="user" (click)="navigate($event)">
+    <img [src]="'../../../assets/images/max.jpg'" [alt]="'Синицин Максим'">
+    <div>
+      <h2>{{ 'Синицин Максим' }}</h2>
+      <span>{{ 'Главный экономист МТС' }}</span>
+    </div>
+  </div>
+
+  <div class="user" (click)="navigate($event)">
+    <img [src]="'../../../assets/images/alex.jpg'" [alt]="'Александров Александр'">
+    <div>
+      <h2>{{ 'Александров Александр' }}</h2>
+      <span>{{ 'Менеджер по продажам в Ауди Варшавка' }}</span>
+    </div>
+  </div>
+
+  <div class="user" (click)="navigate($event)">
+    <img [src]="'../../../assets/images/roman.jpg'" [alt]="'Березуцкий Роман'">
+    <div>
+      <h2>{{ 'Березуцкий Роман' }}</h2>
+      <span>{{ 'Руководитель холдинга 5 Элемент' }}</span>
+    </div>
+  </div>
+
+  <div class="user" (click)="navigate($event)">
+    <img [src]="'../../../assets/images/arthur.jpg'" [alt]="'Колесников Артур'">
+    <div>
+      <h2>{{ 'Колесников Артур' }}</h2>
+      <span>{{ 'Международный представитель Альфа-Банка' }}</span>
+    </div>
+  </div>
+
+  <div class="user" (click)="navigate($event)">
+    <img [src]="'../../../assets/images/victor.jpg'" [alt]="'Буркин Виктор'">
+    <div>
+      <h2>{{ 'Буркин Виктор' }}</h2>
+      <span>{{ 'Менеджер в Газпром' }}</span>
+    </div>
+  </div>
+
+  <div class="user" (click)="navigate($event)">
+    <img [src]="'../../../assets/images/dennis.jpg'" [alt]="'Бережков Денис'">
+    <div>
+      <h2>{{ 'Бережков Денис' }}</h2>
+      <span>{{ 'Владелец ресторанной сети Golden Cafe' }}</span>
+    </div>
+  </div>
+
+  <ng-template #notfound>
+    <span>Не найдено</span>
+  </ng-template>
+
 </main>

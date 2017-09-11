@@ -1,10 +1,88 @@
+@import "custom-variables";
+
 :host {
   flex: 1;
   overflow-y: scroll;
 
   main {
-    display: flex;
-    flex-flow: wrap;
+    @extend .flex-column;
+    padding-top: $spacer;
+    padding-bottom: $spacer * .5;
+
+    form {
+      div.form-group {
+        display: flex;
+        margin-bottom: 0;
+
+        input {
+          background: $white-blue;
+          border: none;
+          font-size: 1rem;
+
+          &::placeholder {
+            color: $light-blue;
+            text-align: center;
+          }
+
+          // &[value=""] ~ div.input-group-addon {
+          //   display: none;
+          // }
+
+          // &:not([value]) ~ div.input-group-addon {
+          //   display: none;
+          // }
+
+          &:focus {
+            border-radius: 0;
+
+            &:placeholder-shown {
+              &::placeholder {
+                color: $white-blue;
+              }
+            }
+
+            & ~ div.input-group-addon {
+              display: block;
+            }
+
+          }
+
+        }
+
+        div.input-group-addon {
+          display: none;
+          background: $white-blue;
+          color: $light-blue;
+          border: none;
+          font-size: 1rem;
+
+          &:first-of-type {
+            order: -1;
+
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+          }
+
+        }
+
+      }
+    }
+
+    & > span {
+      align-self: center;
+
+      margin-top: $spacer * .5;
+    }
+
+    div.user {
+      @extend .user-item;
+    }
+
+    hr {
+      @extend .hr;
+      width: 100%;
+    }
+
   }
 
 }
