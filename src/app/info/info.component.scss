@@ -64,15 +64,15 @@
         background-color: theme-color("success");
         box-shadow: 0 1px 2px 0 rgba(theme-color("success"), .5);
 
-        &:active,
-        &:hover {
+        &:hover,
+        &:active {
           border-color: theme-color("success");
         }
 
-      }
+        &:focus {
+          opacity: 0;
+        }
 
-      &:focus {
-        opacity: 0;
       }
 
     }
