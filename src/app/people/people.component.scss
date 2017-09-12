@@ -15,8 +15,8 @@
         margin-bottom: 0;
 
         input {
-          padding-left: .5rem;
-          padding-right: .5rem;
+          padding-left: .25rem;
+          padding-right: .25rem;
           background: $white-blue;
           border: none;
           font-size: 1rem;
@@ -65,13 +65,13 @@
         div.input-group-addon {
           order: -1;
 
-          padding-right: 0;
+          padding-right: .25rem;
           border-top-left-radius: $border-radius;
           border-bottom-left-radius: $border-radius;
         }
 
         button[type="reset"] {
-          padding-left: 0;
+          padding-left: .25rem;
         }
 
       }
