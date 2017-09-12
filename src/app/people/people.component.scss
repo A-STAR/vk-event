@@ -60,12 +60,6 @@
           color: $light-blue;
           border: none;
           font-size: 1rem;
-
-          i {
-            pointer-events: auto;
-            cursor: pointer;
-          }
-
         }
 
         div.input-group-addon {
@@ -78,6 +72,12 @@
 
         button[type="reset"] {
           padding-left: .25rem;
+
+          i {
+            pointer-events: auto;
+            cursor: pointer;
+          }
+
         }
 
       }
