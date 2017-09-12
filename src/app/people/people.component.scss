@@ -60,6 +60,8 @@
           color: $light-blue;
           border: none;
           font-size: 1rem;
+          pointer-events: auto;
+          cursor: pointer;
         }
 
         div.input-group-addon {
