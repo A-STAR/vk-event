@@ -2,13 +2,16 @@
 
   <form>
     <div class="form-group">
-      <input type="search" class="form-control" aria-describedby="search" placeholder="&#xF002; Поиск">
+      <input type="search" class="form-control" aria-describedby="search" placeholder="&#xF002; Поиск" #search>
       <div class="input-group-addon">
         <i class="fa fa-search" aria-hidden="true"></i>
       </div>
-      <div class="input-group-addon">
+      <button type="reset" class="input-group-addon" (click)="focus($event)">
         <i class="fa fa-times-circle" aria-hidden="true"></i>
-      </div>
+      </button>
+      <!-- <div class="input-group-addon">
+        <i class="fa fa-times-circle" aria-hidden="true"></i>
+      </div> -->
     </div>
   </form>
 
