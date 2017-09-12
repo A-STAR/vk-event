@@ -35,7 +35,7 @@
               visibility: hidden;
             }
 
-            & + div.input-group-addon {
+            & + span.input-group-addon {
               display: block;
             }
 
@@ -44,8 +44,7 @@
           &:not(:placeholder-shown) {
             border-radius: 0;
 
-            & + div.input-group-addon,
-            & ~ button[type="reset"] {
+            & ~ span.input-group-addon {
               display: block;
             }
 
@@ -53,29 +52,38 @@
 
         }
 
-        div.input-group-addon,
-        button[type="reset"] {
+        span.input-group-addon {
           display: none;
           background: $white-blue;
           color: $light-blue;
           border: none;
           font-size: 1rem;
-        }
 
-        div.input-group-addon {
-          order: -1;
+          &:first-of-type {
+            order: -1;
 
-          padding-right: .25rem;
-          border-top-left-radius: $border-radius;
-          border-bottom-left-radius: $border-radius;
-        }
+            padding-right: .25rem;
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+          }
 
-        button[type="reset"] {
-          padding-left: .25rem;
+          &:last-of-type {
+            padding-left: .25rem;
 
-          i {
-            pointer-events: auto;
-            cursor: pointer;
+            button[type="reset"] {
+              padding: 0;
+              background: $white-blue;
+              color: $light-blue;
+              border: none;
+              line-height: inherit;
+
+              i {
+                pointer-events: auto;
+                cursor: pointer;
+              }
+
+            }
+
           }
 
         }
