@@ -15,6 +15,10 @@ export class PeopleComponent implements OnInit {
   ngOnInit() {
   }
 
+  enter(event) {
+    event.preventDefault();
+  }
+
   focus(event) {
     this.search
       .nativeElement
