@@ -75,7 +75,8 @@
               background: $white-blue;
               color: $light-blue;
               border: none;
-              line-height: inherit;
+              outline: none;
+              line-height: 1rem;
 
               i {
                 pointer-events: auto;
