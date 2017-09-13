@@ -50,31 +50,7 @@
     }
 
     & > button {
-      bottom: 1rem + 2.75rem;
-      left: $grid-gutter-width / 2;
-      width: calc(100% - #{$grid-gutter-width});
-      -webkit-transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, opacity 3s ease-in-out;
-      transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, opacity 3s ease-in-out;
-
-      &.btn-primary {
-        box-shadow: 0 1px 2px 0 rgba(theme-color("primary"), .5);
-      }
-
-      &.btn-success {
-        background-color: theme-color("success");
-        box-shadow: 0 1px 2px 0 rgba(theme-color("success"), .5);
-
-        &:hover,
-        &:active {
-          border-color: theme-color("success");
-        }
-
-        &:focus {
-          opacity: 0;
-        }
-
-      }
-
+      @extend .button;
     }
 
     &.button-space {
