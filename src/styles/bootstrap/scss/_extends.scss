@@ -16,6 +16,7 @@
 .escape-flex-container {
   @extend .escape-container;
   flex-basis: calc(100% + #{$grid-gutter-width} * 2);
+  width: auto;
 }
 
 .flex-50 {
@@ -79,6 +80,8 @@
 }
 
 .hr {
+  flex-basis: 100%;
+  width: 100%;
   border-color: $light-blue;
   box-shadow: inset 0 -.5px 0 0 $light-blue;
 }

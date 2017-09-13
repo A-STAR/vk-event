@@ -5,7 +5,7 @@
   overflow-y: scroll;
 
   main {
-    @extend .flex-row;
+    @extend .flex-column;
     padding-top: $spacer;
     padding-bottom: $spacer;
 
@@ -30,7 +30,6 @@
 
     hr {
       @extend .hr;
-      flex-basis: 100%;
 
       &.separator {
         @extend .escape-flex-container;

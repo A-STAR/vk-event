@@ -5,7 +5,7 @@
   overflow-y: scroll;
 
   main {
-    @extend .flex-row;
+    @extend .flex-column;
     padding-top: $spacer;
     padding-bottom: $spacer * .5;
 
@@ -14,8 +14,6 @@
     }
 
     div.time {
-      flex-basis: 100%;
-
       display: flex;
       margin-top: $spacer * .5;
       margin-bottom: $spacer * .5;
