@@ -12,7 +12,7 @@ export class InfoComponent implements OnInit {
   ngOnInit() {
   }
 
-  enter(event) {
+  submit(event) {
     event.preventDefault();
   }
 

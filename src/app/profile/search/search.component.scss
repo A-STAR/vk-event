@@ -6,8 +6,29 @@
 
   main {
     @extend .flex-column;
-    padding-top: $spacer;
-    padding-bottom: $spacer * .5;
+    padding-top: $spacer * 1.5;
+    padding-bottom: $spacer;
+
+    form {
+      div.form-group {
+
+        label {
+          color: #909499;
+          font-size: $font-size-sm;
+        }
+
+        textarea {
+          border-color: $light-blue;
+          font-size: 1rem;
+        }
+
+        &:last-of-type {
+          margin-bottom: $spacer * 1.5;
+        }
+
+      }
+    }
+
   }
 
 }
