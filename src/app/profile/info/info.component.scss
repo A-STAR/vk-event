@@ -1,0 +1,57 @@
+@import "custom-variables";
+
+:host {
+  flex: 1;
+  overflow-y: scroll;
+
+  main {
+    @extend .flex-column;
+    padding-top: $spacer * 1.5;
+    padding-bottom: $spacer;
+
+    img {
+      align-self: center;
+      width: 100px;
+      height: 100px;
+      margin-bottom: $spacer;
+      border-radius: 50%;
+    }
+
+    form {
+      div.form-group {
+
+        label {
+          color: #909499;
+          font-size: $font-size-sm;
+        }
+
+        input {
+          border-color: $light-blue;
+          font-size: 1rem;
+        }
+
+        &:first-child {
+          text-align: center;
+
+          label[for="photo"] {
+            color: $blue;
+            font-size: $font-size-base;
+            font-weight: $display3-weight;
+          }
+
+          input[type="file"] {
+            display: none;
+          }
+
+        }
+
+        &:last-of-type {
+          margin-bottom: $spacer * 1.5;
+        }
+
+      }
+    }
+
+  }
+
+}

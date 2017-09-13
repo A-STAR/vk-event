@@ -1,0 +1,13 @@
+@import "custom-variables";
+
+:host {
+  flex: 1;
+  overflow-y: scroll;
+
+  main {
+    @extend .flex-column;
+    padding-top: $spacer;
+    padding-bottom: $spacer * .5;
+  }
+
+}

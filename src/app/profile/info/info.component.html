@@ -1,3 +1,37 @@
-<p>
-  info works!
-</p>
+<main class="container-fluid">
+
+  <img [src]="'../../../assets/images/vlad.jpg'" [alt]="'Резников Владислав'">
+
+  <form (submit)="enter($event)">
+
+    <div class="form-group">
+      <label for="photo">Изменить фото</label>
+      <input type="file" class="form-control-file" id="photo">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Имя</label>
+      <input type="text" class="form-control form-control-lg" id="name" value="{{ 'Владислав' }}">
+    </div>
+    <div class="form-group">
+      <label for="surname">Фамилия</label>
+      <input type="text" class="form-control form-control-lg" id="surname" value="{{ 'Резников' }}">
+    </div>
+    <div class="form-group">
+      <label for="job">Место работы</label>
+      <input type="text" class="form-control form-control-lg" id="job" value="{{ 'гипермаркет Ашан' }}">
+    </div>
+    <div class="form-group">
+      <label for="position">Должность</label>
+      <input type="text" class="form-control form-control-lg" id="position" value="{{ 'директор' }}">
+    </div>
+    <div class="form-group">
+      <label for="email">Электронная почта</label>
+      <input type="email" class="form-control form-control-lg" id="email">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Сохранить</button>
+
+  </form>
+
+</main>
