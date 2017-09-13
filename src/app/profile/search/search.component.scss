@@ -17,6 +17,11 @@
           font-size: $font-size-sm;
         }
 
+        label,
+        small {
+          font-size: $font-size-sm;
+        }
+
         textarea {
           border-color: $light-blue;
           font-size: 1rem;
