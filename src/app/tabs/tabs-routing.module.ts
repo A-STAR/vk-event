@@ -9,7 +9,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: 'app/info/info.module#InfoModule'
+        loadChildren: 'app/about/about.module#AboutModule'
       },
       {
         path: 'events',
