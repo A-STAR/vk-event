@@ -5,9 +5,69 @@
   overflow-y: scroll;
 
   main {
-    padding-top: $spacer;
-    padding-bottom: $spacer * .5;
+    padding-top: $spacer * 1.5;
+    padding-bottom: $spacer * 3.5;
     @extend .flex-column;
+
+    form {
+
+      div.form-check {
+
+        label {
+          color: #909499;
+          font-size: $font-size-sm;
+        }
+
+      }
+
+      div.form-row {
+
+        div.form-group {
+
+          &.time {
+            flex: 1;
+
+            select {
+              width: 100%;
+              font-size: 1rem;
+              font-weight: $display2-weight;
+
+              &.form-control:not(:focus) {
+                border-color: $light-blue;
+              }
+
+            }
+
+          }
+
+          &.dash {
+            flex: 0 0 auto;
+
+            margin-left: .25rem;
+            margin-right: .25rem;
+
+            span {
+              font-size: 1rem;
+              font-weight: $display2-weight;
+              line-height: calc(2.7577375rem + 2px);
+            }
+
+          }
+
+        }
+
+        &:last-of-type {
+          margin-bottom: $spacer * 1.5;
+        }
+
+      }
+
+      & > button[type="submit"] {
+        @extend .button;
+      }
+
+    }
+
   }
 
 }
