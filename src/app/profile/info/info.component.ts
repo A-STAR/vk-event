@@ -9,7 +9,7 @@ export class InfoComponent implements OnInit {
 
   buttonText: string;
   buttonClass: string;
-  showButton: boolean;
+  disabledButton: boolean;
   buttonTimeout: any;
 
   constructor() {}
@@ -21,14 +21,14 @@ export class InfoComponent implements OnInit {
   show() {
     this.buttonText = 'Сохранить';
     this.buttonClass = 'btn-primary';
-    this.showButton = true;
+    this.disabledButton = false;
   }
 
   input(event) {
-    if (this.buttonClass === 'btn-primary') {
+    if (this.buttonClass === 'btn-primary' && !this.disabledButton) {
       return;
     }
-    if (this.showButton) {
+    if (this.buttonClass === 'btn-success') {
       clearTimeout(this.buttonTimeout);
     }
     this.show();
@@ -42,7 +42,11 @@ export class InfoComponent implements OnInit {
   save() {
     this.buttonText = 'Сохранено';
     this.buttonClass = 'btn-success';
-    this.buttonTimeout = setTimeout(() => this.showButton = false, 3000);
+    this.buttonTimeout = setTimeout(() => {
+      this.buttonText = 'Сохранить';
+      this.buttonClass = 'btn-primary';
+      this.disabledButton = true;
+    }, 3000);
   }
 
 }

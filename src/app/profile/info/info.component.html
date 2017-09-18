@@ -1,4 +1,4 @@
-<main class="container-fluid" [class.button-space]="showButton">
+<main class="container-fluid">
 
   <img [src]="'../../../assets/images/vlad.jpg'" [alt]="'Резников Владислав'">
 
@@ -30,7 +30,7 @@
       <input type="email" class="form-control form-control-lg" id="email">
     </div>
 
-    <button type="submit" class="btn btn-lg btn-block fixed-bottom" [hidden]="!showButton" [ngClass]="buttonClass">
+    <button type="submit" class="btn btn-lg btn-block fixed-bottom" [disabled]="disabledButton" [ngClass]="buttonClass">
       {{ buttonText }}
     </button>
 

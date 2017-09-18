@@ -7,7 +7,7 @@
   main {
     @extend .flex-column;
     padding-top: $spacer * 1.5;
-    padding-bottom: $spacer;
+    padding-bottom: $spacer * 3.5;
 
     form {
 
@@ -38,10 +38,6 @@
         @extend .button;
       }
 
-    }
-
-    &.button-space {
-      padding-bottom: $spacer * 3.5;
     }
 
   }
