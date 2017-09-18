@@ -7,6 +7,7 @@
   footer {
 
     nav {
+      @extend .ios-box-shadow;
       display: flex;
       height: 2.75rem;
       background-color: $gray-100;
