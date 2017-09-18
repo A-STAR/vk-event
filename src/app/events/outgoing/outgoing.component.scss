@@ -5,20 +5,20 @@
   overflow-y: scroll;
 
   main {
-    @extend .flex-column;
     padding-top: $spacer;
     padding-bottom: $spacer;
+    @extend .flex-column;
 
     h2 {
-      @extend .light-heading;
       margin-bottom: 0;
       font-size: $font-size-base;
+      @extend .light-heading;
     }
 
     div.user {
-      @extend .user-item;
       margin-bottom: 0;
       padding-bottom: $spacer * .5;
+      @extend .user-item;
 
       h2 + span {
         display: inline-block;

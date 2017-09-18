@@ -5,9 +5,9 @@
   overflow-y: scroll;
 
   main {
-    @extend .flex-column;
     padding-top: $spacer * 1.5;
     padding-bottom: $spacer * 3.5;
+    @extend .flex-column;
 
     img {
       align-self: center;

@@ -5,9 +5,9 @@
   overflow-y: scroll;
 
   main {
-    @extend .flex-row;
     padding-top: $spacer;
     padding-bottom: $spacer;
+    @extend .flex-row;
 
     div.user {
       @extend .user-item;

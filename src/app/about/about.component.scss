@@ -9,8 +9,8 @@
     @extend .flex-row;
 
     figure {
-      @extend .escape-container;
       position: relative;
+      @extend .escape-container;
 
       span {
         position: absolute;
@@ -50,9 +50,9 @@
     }
 
     & > button {
-      @extend .button;
       -webkit-transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, opacity 3s ease-in-out;
       transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, opacity 3s ease-in-out;
+      @extend .button;
 
       &:focus {
         opacity: 0;
