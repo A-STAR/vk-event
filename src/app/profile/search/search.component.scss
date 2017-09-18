@@ -24,8 +24,12 @@
         }
 
         textarea {
-          border-color: $light-blue;
           font-size: 1rem;
+
+          &.form-control:not(:focus) {
+            border-color: $light-blue;
+          }
+
         }
 
         &:last-of-type {
