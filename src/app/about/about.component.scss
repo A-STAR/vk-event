@@ -50,8 +50,8 @@
     }
 
     & > button {
-      -webkit-transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, opacity 3s ease-in-out;
-      transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, opacity 3s ease-in-out;
+      -webkit-transition: $btn-transition, opacity 3s ease-in-out;
+      transition: $btn-transition, opacity 3s ease-in-out;
       @extend .button;
 
       &:focus {
