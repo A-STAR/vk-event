@@ -1,10 +1,10 @@
 <main class="container-fluid">
 
-    <form (submit)="submit($event)" (input)="input($event)">
+    <form (submit)="submit($event)" (change)="change($event)">
 
       <div class="form-check">
         <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-          <input type="checkbox" class="custom-control-input">
+          <input type="checkbox" class="custom-control-input" [checked]="true">
           <span class="custom-control-indicator"></span>
           <span class="custom-control-description">{{ '20 ноября' }}</span>
         </label>
@@ -15,7 +15,7 @@
         <div class="form-group time">
           <select class="custom-select form-control-lg" [disabled]="false">
             <option>Начало</option>
-            <option *ngFor="let option of start" [value]="option.value" [attr.selected]="option['selected'] ? true : null">{{ option.time }}</option>
+            <option *ngFor="let option of start" [value]="option.value" [selected]="option['selected']">{{ option.time }}</option>
           </select>
         </div>
 
@@ -26,12 +26,131 @@
         <div class="form-group time">
           <select class="custom-select form-control-lg" [disabled]="false">
             <option>Конец</option>
-            <option *ngFor="let option of end" [value]="option.value" [attr.selected]="option['selected'] ? true : null">{{ option.time }}</option>
+            <option *ngFor="let option of end" [value]="option.value" [selected]="option['selected']">{{ option.time }}</option>
           </select>
         </div>
 
       </div>
 
+      <div class="form-check">
+        <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
+          <input type="checkbox" class="custom-control-input" [checked]="false">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">{{ '21 ноября' }}</span>
+        </label>
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group time">
+          <select class="custom-select form-control-lg" [disabled]="false">
+            <option>Начало</option>
+            <option *ngFor="let option of start" [value]="option.value" [selected]="option['selected']">{{ option.time }}</option>
+          </select>
+        </div>
+
+        <div class="form-group dash">
+          <span>&ndash;</span>
+        </div>
+
+        <div class="form-group time">
+          <select class="custom-select form-control-lg" [disabled]="false">
+            <option>Конец</option>
+            <option *ngFor="let option of end" [value]="option.value" [selected]="option['selected']">{{ option.time }}</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="form-check">
+        <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
+          <input type="checkbox" class="custom-control-input" [checked]="false">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">{{ '22 ноября' }}</span>
+        </label>
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group time">
+          <select class="custom-select form-control-lg" [disabled]="false">
+            <option>Начало</option>
+            <option *ngFor="let option of start" [value]="option.value" [selected]="option['selected']">{{ option.time }}</option>
+          </select>
+        </div>
+
+        <div class="form-group dash">
+          <span>&ndash;</span>
+        </div>
+
+        <div class="form-group time">
+          <select class="custom-select form-control-lg" [disabled]="false">
+            <option>Конец</option>
+            <option *ngFor="let option of end" [value]="option.value" [selected]="option['selected']">{{ option.time }}</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="form-check">
+        <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
+          <input type="checkbox" class="custom-control-input" [checked]="false">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">{{ '23 ноября' }}</span>
+        </label>
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group time">
+          <select class="custom-select form-control-lg" [disabled]="false">
+            <option>Начало</option>
+            <option *ngFor="let option of start" [value]="option.value" [selected]="option['selected']">{{ option.time }}</option>
+          </select>
+        </div>
+
+        <div class="form-group dash">
+          <span>&ndash;</span>
+        </div>
+
+        <div class="form-group time">
+          <select class="custom-select form-control-lg" [disabled]="false">
+            <option>Конец</option>
+            <option *ngFor="let option of end" [value]="option.value" [selected]="option['selected']">{{ option.time }}</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="form-check">
+        <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
+          <input type="checkbox" class="custom-control-input" [checked]="false">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">{{ '24 ноября' }}</span>
+        </label>
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group time">
+          <select class="custom-select form-control-lg" [disabled]="false">
+            <option>Начало</option>
+            <option *ngFor="let option of start" [value]="option.value" [selected]="option['selected']">{{ option.time }}</option>
+          </select>
+        </div>
+
+        <div class="form-group dash">
+          <span>&ndash;</span>
+        </div>
+
+        <div class="form-group time">
+          <select class="custom-select form-control-lg" [disabled]="false">
+            <option>Конец</option>
+            <option *ngFor="let option of end" [value]="option.value" [selected]="option['selected']">{{ option.time }}</option>
+          </select>
+        </div>
+
+      </div>
 
       <button type="submit" class="btn btn-lg btn-block fixed-bottom" [disabled]="disabledButton" [ngClass]="buttonClass">
         {{ buttonText }}

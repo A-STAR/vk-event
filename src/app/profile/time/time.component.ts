@@ -88,7 +88,7 @@ export class TimeComponent implements OnInit {
     this.disabledButton = false;
   }
 
-  input(event) {
+  change(event) {
     if (this.buttonClass === 'btn-primary' && !this.disabledButton) {
       return;
     }

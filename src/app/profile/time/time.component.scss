@@ -14,13 +14,31 @@
       div.form-check {
 
         label {
-          color: #909499;
-          font-size: $font-size-sm;
+          margin-right: 0;
+          padding-left: 2.875rem;
+
+          & span.custom-control-indicator {
+            top: 0;
+            border: 1px solid $light-blue;
+          }
+
+          input:checked ~ span.custom-control-indicator {
+            border-color: $blue;
+          }
+
+          & span.custom-control-description {
+            font-size: 1.25rem;
+            font-weight: $font-weight-bold;
+          }
+
         }
 
       }
 
       div.form-row {
+        margin-bottom: $spacer * 2;
+        margin-left: 0;
+        margin-right: 0;
 
         div.form-group {
 
@@ -31,11 +49,6 @@
               width: 100%;
               font-size: 1rem;
               font-weight: $display2-weight;
-
-              &.form-control:not(:focus) {
-                border-color: $light-blue;
-              }
-
             }
 
           }
@@ -57,7 +70,7 @@
         }
 
         &:last-of-type {
-          margin-bottom: $spacer * 1.5;
+          margin-bottom: $spacer * .5;
         }
 
       }
