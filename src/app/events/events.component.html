@@ -1,9 +1,9 @@
 <header class="container-fluid">
   <h1>Встречи</h1>
   <nav>
-    <button routerLink="/tabs/events" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Принятые</button>
-    <button [ngClass]="['new']" routerLink="incoming" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Входящие</button>
-    <button [ngClass]="['new']" routerLink="outgoing" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Исходящие</button>
+    <button routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Принятые</button>
+    <button routerLink="incoming" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [ngClass]="['new']">Входящие</button>
+    <button routerLink="outgoing" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [ngClass]="['new']">Исходящие</button>
   </nav>
 </header>
 <router-outlet></router-outlet>

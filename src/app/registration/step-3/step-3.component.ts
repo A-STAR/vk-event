@@ -84,7 +84,7 @@ export class Step3Component implements OnInit {
 
   next() {
     this.router
-      .navigate(['tabs/about']);
+      .navigate(['/tabs']);
   }
 
 }

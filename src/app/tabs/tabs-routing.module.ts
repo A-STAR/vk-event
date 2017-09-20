@@ -8,7 +8,7 @@ const routes: Routes = [
     component: TabsComponent,
     children: [
       {
-        path: 'about',
+        path: '',
         loadChildren: 'app/about/about.module#AboutModule'
       },
       {

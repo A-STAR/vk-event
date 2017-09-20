@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'step1',
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class Step1Component implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -20,7 +20,7 @@ export class Step1Component implements OnInit {
 
   next() {
     this.router
-      .navigate(['registration/step-2']);
+      .navigate(['step-2'], {relativeTo: this.route});
   }
 
 }
