@@ -1,3 +1,28 @@
-<p>
-  step-2 works!
-</p>
+<main class="container-fluid">
+
+  <span>Шаг 2 из 3</span>
+
+  <h1>Регистрация</h1>
+
+  <hr>
+
+  <h2>Расскажите, что вы ищите и предлагаете на меропрятии</h2>
+
+  <form (submit)="submit($event)">
+
+    <div class="form-group">
+      <label for="search">Что ищу</label>
+      <textarea class="form-control form-control-lg" id="search" rows="5" value="{{ 'Ищу разработчика для своего личного проекта' }}"></textarea>
+      <small class="form-text text-muted">Например: Ищу ведущего кулинарной рубрики</small>
+    </div>
+    <div class="form-group">
+      <label for="offer">Что предлагаю</label>
+      <textarea class="form-control form-control-lg" id="offer" rows="5" value="{{ 'Профессиональные услуги в сфере дизайна мобильных приложений' }}"></textarea>
+      <small class="form-text text-muted">Например: Могу преложить медийный охват</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Далее</button>
+
+  </form>
+
+</main>
