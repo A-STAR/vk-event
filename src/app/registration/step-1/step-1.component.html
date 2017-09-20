@@ -1,3 +1,49 @@
-<p>
-  step-1 works!
-</p>
+<main class="container-fluid">
+
+  <span>Шаг 1 из 3</span>
+
+  <h1>Регистрация</h1>
+
+  <hr>
+
+  <h2>Личная информация</h2>
+
+  <img [src]="'../../../assets/images/vlad.jpg'" [alt]="'Резников Владислав'">
+
+  <form (submit)="submit($event)">
+
+    <div class="form-group">
+      <label for="photo">Изменить фото</label>
+      <input type="file" class="form-control-file" id="photo">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Имя</label>
+      <input type="text" class="form-control form-control-lg" id="name" value="{{ 'Владислав' }}">
+    </div>
+    <div class="form-group">
+      <label for="surname">Фамилия</label>
+      <input type="text" class="form-control form-control-lg" id="surname" value="{{ 'Резников' }}">
+    </div>
+    <div class="form-group">
+      <label for="job">Место работы</label>
+      <input type="text" class="form-control form-control-lg" id="job" value="{{ 'гипермаркет Ашан' }}">
+    </div>
+    <div class="form-group">
+      <label for="position">Должность</label>
+      <input type="text" class="form-control form-control-lg" id="position" value="{{ 'директор' }}">
+    </div>
+    <div class="form-group">
+      <label for="link">Cсылка на профиль VK</label>
+      <input type="text" class="form-control form-control-lg" id="link">
+    </div>
+    <div class="form-group">
+      <label for="email">Электронная почта</label>
+      <input type="email" class="form-control form-control-lg" id="email">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Далее</button>
+
+  </form>
+
+</main>
