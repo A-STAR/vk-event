@@ -78,13 +78,11 @@
 
   &.btn-primary {
     box-shadow: 0 1px 2px 0 rgba(theme-color("primary"), .5);
-    @extend .ios-box-shadow;
   }
 
   &.btn-success {
     background-color: theme-color("success");
     box-shadow: 0 1px 2px 0 rgba(theme-color("success"), .5);
-    @extend .ios-box-shadow;
 
     &:hover,
     &:active {
