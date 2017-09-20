@@ -7,6 +7,10 @@ const routes: Routes = [
     path: '',
     loadChildren: 'app/tabs/tabs.module#TabsModule'
   },
+  {
+    path: 'registration',
+    loadChildren: 'app/registration/registration.module#RegistrationModule'
+  },
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
