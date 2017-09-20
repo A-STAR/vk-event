@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'registration',
@@ -7,14 +7,9 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(private renderer: Renderer2) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  deactivate() {
-    this.renderer
-      .setProperty(document.body, 'scrollTop', 0);
   }
 
 }
