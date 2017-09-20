@@ -1,12 +1,12 @@
 $sf-ui-text-font-path: "#{$font-path}/sf-ui-text";
 
-// @font-face {
-//   font-family: "SF UI Text";
-//   font-style: normal;
-//   font-weight: 300;
-//   font-display: auto;
-//   src: local("SF UI Text Light"), local("SF-UI-Text-Light"), url("#{$sf-ui-text-font-path}/sf-ui-text-light.woff2") format("woff2");
-// }
+@font-face {
+  font-family: "SF UI Text";
+  font-style: normal;
+  font-weight: 300;
+  font-display: auto;
+  src: local("SF UI Text Light"), local("SF-UI-Text-Light"), url("#{$sf-ui-text-font-path}/sf-ui-text-light.woff2") format("woff2");
+}
 
 // @font-face {
 //   font-family: "SF UI Text";
@@ -64,13 +64,13 @@ $sf-ui-text-font-path: "#{$font-path}/sf-ui-text";
 //   src: local("SF UI Text Semibold Italic"), local("SF-UI-Text-SemiboldItalic"), url("#{$sf-ui-text-font-path}/sf-ui-text-semibolditalic.woff2") format("woff2");
 // }
 
-@font-face {
-  font-family: "SF UI Text";
-  font-style: normal;
-  font-weight: 900;
-  font-display: auto;
-  src: local("SF UI Text Bold"), local("SF-UI-Text-Bold"), url("#{$sf-ui-text-font-path}/sf-ui-text-bold.woff2") format("woff2");
-}
+// @font-face {
+//   font-family: "SF UI Text";
+//   font-style: normal;
+//   font-weight: 900;
+//   font-display: auto;
+//   src: local("SF UI Text Bold"), local("SF-UI-Text-Bold"), url("#{$sf-ui-text-font-path}/sf-ui-text-bold.woff2") format("woff2");
+// }
 
 // @font-face {
 //   font-family: "SF UI Text";

@@ -60,8 +60,9 @@
             margin-right: .25rem;
 
             span {
+              color: $light-blue;
               font-size: 1rem;
-              font-weight: $display2-weight;
+              font-weight: $font-weight-light;
               line-height: calc(2.7577375rem + 2px);
             }
 
