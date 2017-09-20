@@ -4,14 +4,14 @@ import { PageNotFoundComponent } from './core/not-found/not-found.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'tabs',
     loadChildren: 'app/tabs/tabs.module#TabsModule'
   },
   {
     path: 'registration',
     loadChildren: 'app/registration/registration.module#RegistrationModule'
   },
-  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '', redirectTo: 'registration', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 
