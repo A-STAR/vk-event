@@ -22,13 +22,13 @@
 .tabs {
   @include pad-container(.5);
   display: flex;
-  height: calc(2.75rem - 2px);
-  box-shadow: inset 0 -.5px 1px 0 rgba($black, .15);
-  @extend .ios-box-shadow;
+  height: calc(2.75rem - 1px);
+  border-bottom: .5px solid rgba($black, 0.15);
   @extend .escape-container;
 
   button {
     flex: 1;
+
     background-color: transparent;
     color: $text-muted;
     border: none;
@@ -143,16 +143,5 @@
 .hr {
   flex-basis: 100%;
   width: 100%;
-  box-shadow: inset 0 -.5px 1px 0 $light-blue;
-  @extend .ios-box-shadow;
-}
-
-.ios-box-shadow {
-
-  // @media screen and (-webkit-min-device-pixel-ratio: 1.5) {
-  //   border-radius: 1px; // iOS fix
-  // }
-
-  border-radius: 1px; // iOS fix
-
+  box-shadow: inset 0 -.5px 0 0 $light-blue;
 }
