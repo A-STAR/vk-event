@@ -15,13 +15,10 @@
 
       button {
         flex: 1;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
         background-color: transparent;
         border: none;
         outline: none;
+        line-height: 1;
 
         path {
           fill: #a1b8c7;
@@ -58,7 +55,8 @@
         &.new {
           &::after {
             position: relative;
-            top: -12px;
+            top: -20px;
+            left: -4px;
             display: inline-block;
             width: 0;
             color: $red;

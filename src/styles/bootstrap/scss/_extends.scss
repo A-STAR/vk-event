@@ -29,17 +29,16 @@
 
   button {
     flex: 1;
-
     background-color: transparent;
     color: $text-muted;
     border: none;
     font-size: .875rem;
     font-weight: $font-weight-bold;
     outline: none;
+    line-height: 2.75rem;
 
     &.active {
       color: $bright-blue;
-      padding-top: 2px; // compensate border width
       border-bottom: 2px solid $bright-blue;
     }
 
