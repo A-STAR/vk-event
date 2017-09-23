@@ -1,35 +1,33 @@
 <main class="container-fluid" [class.button-space]="showButton">
 
     <figure>
-      <img src="assets/images/business-event.jpg" class="img-fluid" [alt]="'РИФ+КИБ'">
+      <img [src]="image" class="img-fluid" [alt]="title">
       <span class="badge badge-pill badge-dark" [class.go]="go">
         <i class="fa fa-check-circle" aria-hidden="true"></i>
         Вы идёте
       </span>
     </figure>
 
-    <h1>{{ 'РИФ+КИБ' }}</h1>
+    <h1>{{ title }}</h1>
 
     <div class="begin-end">
       <h2>Начало</h2>
-      <span>Сегодня в {{ '15:00' }}</span>
+      <span>{{ start }}</span>
     </div>
 
     <div class="begin-end">
       <h2>Конец</h2>
-      <span>21 авг в {{ '22:00' }}</span>
+      <span>{{ end }}</span>
     </div>
 
     <div>
       <h2>Место</h2>
-      <p>{{ 'Территория пансионата «Лесные дали»' }}</p>
+      <p>{{ place }}</p>
     </div>
 
     <div>
       <h2>Описание</h2>
-      <p>
-        {{ 'C 19 по 21 апреля 2017 года в Подмосковье проходит 21-й Российский Интернет Форум (РИФ+КИБ 2017) — главное весеннее мероприятие Рунета, самое массовое и интересное ежегодное событие отрасли. РИФ+КИБ 2017 собирает ежегодно до 10 тыс. профессиональных участников из интернет-отрасли и смежных отраслей, представителей государства, СМИ, научного сообщества, студентов профильных ВУЗов. РИФ+КИБ 2017 проходит в формате трехдневного выездного мероприятия, состоящего из многопотоковой Конференции (Форма), «народной» Программы 2.0, масштабной Выставки и внепрограммных мероприятий от оргкомитета и партнеров РИФа.' }}
-      </p>
+      <div [innerHTML]="description"></div>
     </div>
 
     <button type="button" class="btn btn-lg btn-block fixed-bottom" *ngIf="showButton" [ngClass]="buttonClass" (click)="goTo($event)">
