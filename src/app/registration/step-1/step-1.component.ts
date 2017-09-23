@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'step1',
+  selector: 'step-1',
   templateUrl: './step-1.component.html',
   styleUrls: ['./step-1.component.scss']
 })

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'step3',
+  selector: 'step-3',
   templateUrl: './step-3.component.html',
   styleUrls: ['./step-3.component.scss']
 })
