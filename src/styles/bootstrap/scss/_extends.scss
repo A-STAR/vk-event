@@ -22,7 +22,8 @@
 .tabs {
   @include pad-container(.5);
   display: flex;
-  height: calc(2.75rem - 1px);
+  box-sizing: border-box;
+  height: 2.75rem;
   border-bottom: .5px solid rgba($black, 0.15);
   @extend .escape-container;
 

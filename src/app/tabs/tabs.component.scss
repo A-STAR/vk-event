@@ -8,7 +8,8 @@
 
     nav {
       display: flex;
-      height: calc(2.75rem - 1px);
+      box-sizing: border-box;
+      height: 2.75rem;
       background-color: $gray-100;
       border-top: .5px solid rgba(161, 184, 199, .35);
 
