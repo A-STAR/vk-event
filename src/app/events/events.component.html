@@ -2,8 +2,8 @@
   <h1>Встречи</h1>
   <nav>
     <button routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Принятые</button>
-    <button routerLink="incoming" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [ngClass]="['new']">Входящие</button>
-    <button routerLink="outgoing" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [ngClass]="['new']">Исходящие</button>
+    <button [ngClass]="['new']" routerLink="incoming" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Входящие</button>
+    <button [ngClass]="['new']" routerLink="outgoing" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Исходящие</button>
   </nav>
 </header>
 <router-outlet></router-outlet>
