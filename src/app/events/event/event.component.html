@@ -4,4 +4,43 @@
     Назад
   </a>
 </header>
-<main class="container-fluid"></main>
+<main class="container-fluid">
+
+  <div class="user" role="button" (click)="navigate($event)">
+    <img [src]="'../../../assets/images/victor.jpg'" [alt]="'Буркин Виктор'">
+    <div>
+      <h2>{{ 'Буркин Виктор' }}</h2>
+      <span>{{ 'Менеджер в Газпром' }}</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="time-place">
+    <h2>Время</h2>
+    <span>27 ноя в {{ '12:00' }}</span>
+  </div>
+
+  <div class="time-place">
+    <h2>Место</h2>
+    <span>{{ 'Зелёный зал' }}</span>
+  </div>
+
+  <div>
+    <h2>Комментарий</h2>
+    <p>
+      {{ 'У меня есть предложение, от которого вы не сможете отказаться. Мне нужно буквально 10 минут.' }}
+    </p>
+  </div>
+
+  <!-- <div class="warning" *ngIf="true">
+    <p>
+      {{ 'На данное время назначена встреча' }}
+    </p>
+  </div> -->
+
+  <button class="btn btn-primary" [disabled]="true" (click)="reschedule($event)">Перенести</button>
+
+  <button class="btn btn-primary" [disabled]="true" (click)="cancel($event)">Отклонить</button>
+
+</main>

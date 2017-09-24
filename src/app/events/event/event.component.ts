@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 // import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/operator/switchMap';
@@ -13,7 +13,7 @@ export class EventComponent implements OnInit {
 
   // event$: Observable<any>;
 
-  constructor(private route: ActivatedRoute, private location: Location) { }
+  constructor(private route: ActivatedRoute, private router: Router, private location: Location) { }
 
   ngOnInit() {
     const id = this.route
@@ -37,6 +37,16 @@ export class EventComponent implements OnInit {
     event.preventDefault();
     this.location
       .back();
+  }
+
+  reschedule(event) {
+    console.log('reschedule');
+  }
+
+  cancel(event) {
+    console.log('cancel');
+    // this.router
+    //   .navigate(['/events/incoming']);
   }
 
 }

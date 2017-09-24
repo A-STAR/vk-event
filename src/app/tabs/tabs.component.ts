@@ -12,7 +12,7 @@ export class TabsComponent implements OnInit {
 
   ngOnInit() {
     this.router
-      .navigate(['./events'], {relativeTo: this.route});
+      .navigate(['./events/event/77'], {relativeTo: this.route});
   }
 
 }
