@@ -54,4 +54,8 @@ export class EventEditComponent implements OnInit {
     this.modal = false;
   }
 
+  navigate(event) {
+    console.log('navigate');
+  }
+
 }
