@@ -13,7 +13,8 @@ export class PageNotFoundComponent implements OnInit {
   ngOnInit() {
   }
 
-  back() {
+  back(event) {
+    event.preventDefault();
     this.location
       .back();
   }

@@ -1,0 +1,12 @@
+@import "custom-variables";
+
+:host {
+  flex: 1;
+
+  @extend .flex-column;
+
+  header {
+    padding-top: $spacer;
+  }
+
+}

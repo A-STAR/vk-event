@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, ParamMap } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/switchMap';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Location } from '@angular/common';
+// import { Observable } from 'rxjs/Observable';
+// import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'event',
@@ -10,9 +11,9 @@ import 'rxjs/add/operator/switchMap';
 })
 export class EventComponent implements OnInit {
 
-  event$: Observable<any>;
+  // event$: Observable<any>;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
     const id = this.route
@@ -30,6 +31,12 @@ export class EventComponent implements OnInit {
     //       this.service
     //         .getEvent(params.get('id'))
     //     );
+  }
+
+  back(event) {
+    event.preventDefault();
+    this.location
+      .back();
   }
 
 }
