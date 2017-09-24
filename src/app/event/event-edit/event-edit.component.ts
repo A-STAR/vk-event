@@ -13,6 +13,7 @@ export class EventEditComponent implements OnInit {
   // event$: Observable<any>;
 
   modal: boolean;
+  type: string;
 
   constructor(private route: ActivatedRoute, private router: Router) {
     this.modal = false;
@@ -38,10 +39,13 @@ export class EventEditComponent implements OnInit {
 
   reschedule(event) {
     console.log('reschedule');
+    this.type = 'reschedule';
+    this.modal = true;
   }
 
   cancel(event) {
     console.log('cancel');
+    this.type = 'cancel';
     this.modal = true;
   }
 

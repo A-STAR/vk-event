@@ -33,10 +33,10 @@
     </p>
   </div> -->
 
-  <button class="btn btn-primary" [disabled]="true" (click)="reschedule($event)">Перенести</button>
+  <button class="btn btn-primary" [disabled]="false" (click)="reschedule($event)">Перенести</button>
 
   <button class="btn btn-primary" [disabled]="false" (click)="cancel($event)">Отклонить</button>
 
-  <event-modal [hidden]="!modal" (dismiss)="dismiss($event)"></event-modal>
+  <event-modal [hidden]="!modal" [type]="type" (dismiss)="dismiss($event)"></event-modal>
 
 </main>
