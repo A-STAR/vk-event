@@ -4,7 +4,6 @@ import { EventsComponent } from './events.component';
 import { AcceptedComponent } from './accepted/accepted.component';
 import { IncomingComponent } from './incoming/incoming.component';
 import { OutgoingComponent } from './outgoing/outgoing.component';
-import { EventComponent } from './event/event.component';
 
 const routes: Routes = [
   {
@@ -24,10 +23,6 @@ const routes: Routes = [
         component: OutgoingComponent
       }
     ]
-  },
-  {
-    path: 'event/:id',
-    component: EventComponent
   }
 ];
 

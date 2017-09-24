@@ -11,8 +11,8 @@ export class TabsComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.router
-      .navigate(['./events/event/77'], {relativeTo: this.route});
+    // this.router
+    //   .navigate(['./'], {relativeTo: this.route});
   }
 
 }

@@ -6,13 +6,12 @@ import { EventsComponent } from './events.component';
 import { AcceptedComponent } from './accepted/accepted.component';
 import { IncomingComponent } from './incoming/incoming.component';
 import { OutgoingComponent } from './outgoing/outgoing.component';
-import { EventComponent } from './event/event.component';
 
 @NgModule({
   imports: [
     CommonModule,
     EventsRoutingModule
   ],
-  declarations: [EventsComponent, AcceptedComponent, IncomingComponent, OutgoingComponent, EventComponent]
+  declarations: [EventsComponent, AcceptedComponent, IncomingComponent, OutgoingComponent]
 })
 export class EventsModule { }

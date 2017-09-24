@@ -3,22 +3,9 @@
 :host {
   flex: 1;
 
-  @extend .flex-column;
-
-  header {
-    padding-top: $spacer;
-    padding-bottom: $spacer;
-
-    a {
-      font-size: 1.0625rem;
-      font-weight: $display2-weight;
-      text-decoration: none;
-    }
-
-  }
+  overflow-y: scroll;
 
   main {
-    overflow-y: scroll;
     padding-bottom: $spacer;
     @extend .flex-row;
 

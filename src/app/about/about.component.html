@@ -1,37 +1,37 @@
 <main class="container-fluid" [class.button-space]="showButton">
 
-    <figure>
-      <img [src]="image" class="img-fluid" [alt]="title">
-      <span class="badge badge-pill badge-dark" [class.go]="go">
-        <i class="fa fa-check-circle" aria-hidden="true"></i>
-        Вы идёте
-      </span>
-    </figure>
+  <figure>
+    <img [src]="image" class="img-fluid" [alt]="title">
+    <span class="badge badge-pill badge-dark" [class.go]="go">
+      <i class="fa fa-check-circle" aria-hidden="true"></i>
+      Вы идёте
+    </span>
+  </figure>
 
-    <h1>{{ title }}</h1>
+  <h1>{{ title }}</h1>
 
-    <div class="begin-end">
-      <h2>Начало</h2>
-      <span>{{ start }}</span>
-    </div>
+  <div class="begin-end">
+    <h2>Начало</h2>
+    <span>{{ start }}</span>
+  </div>
 
-    <div class="begin-end">
-      <h2>Конец</h2>
-      <span>{{ end }}</span>
-    </div>
+  <div class="begin-end">
+    <h2>Конец</h2>
+    <span>{{ end }}</span>
+  </div>
 
-    <div>
-      <h2>Место</h2>
-      <p>{{ place }}</p>
-    </div>
+  <div>
+    <h2>Место</h2>
+    <p>{{ place }}</p>
+  </div>
 
-    <div>
-      <h2>Описание</h2>
-      <div [innerHTML]="description"></div>
-    </div>
+  <div>
+    <h2>Описание</h2>
+    <div [innerHTML]="description"></div>
+  </div>
 
-    <button type="button" class="btn btn-lg btn-block fixed-bottom" *ngIf="showButton" [ngClass]="buttonClass" (click)="goTo($event)">
-      {{ buttonText }}
-    </button>
+  <button type="button" class="btn btn-lg btn-block fixed-bottom" *ngIf="showButton" [ngClass]="buttonClass" (click)="goTo($event)">
+    {{ buttonText }}
+  </button>
 
-  </main>
+</main>
