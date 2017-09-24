@@ -10,9 +10,13 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 })
 export class EventEditComponent implements OnInit {
 
-// event$: Observable<any>;
+  // event$: Observable<any>;
 
-constructor(private route: ActivatedRoute, private router: Router) { }
+  modal: boolean;
+
+  constructor(private route: ActivatedRoute, private router: Router) {
+    this.modal = false;
+  }
 
   ngOnInit() {
     const id = this.route
@@ -38,8 +42,12 @@ constructor(private route: ActivatedRoute, private router: Router) { }
 
   cancel(event) {
     console.log('cancel');
-    // this.router
-    //   .navigate(['/events/incoming']);
+    this.modal = true;
+  }
+
+  dismiss(event) {
+    console.log('dismiss', event);
+    this.modal = false;
   }
 
 }
