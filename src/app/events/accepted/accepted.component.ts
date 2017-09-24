@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'accepted',
@@ -8,15 +8,18 @@ import { Router } from '@angular/router';
 })
 export class AcceptedComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
   }
 
   navigate(event) {
-    console.log('navigate');
+    console.log('navigate', event);
+
+    event = { id: 77 };
+
     this.router
-      .navigate(['/events']);
+      .navigate(['event', event.id], {relativeTo: this.route});
   }
 
 }
