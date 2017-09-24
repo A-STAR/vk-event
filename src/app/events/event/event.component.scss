@@ -3,10 +3,16 @@
 :host {
   flex: 1;
 
+  overflow-y: scroll;
+
   @extend .flex-column;
 
   header {
     padding-top: $spacer;
+  }
+
+  main {
+    @extend .flex-column;
   }
 
 }
