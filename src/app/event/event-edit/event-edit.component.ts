@@ -4,15 +4,15 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 // import 'rxjs/add/operator/switchMap';
 
 @Component({
-  selector: 'edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss']
+  selector: 'event-edit',
+  templateUrl: './event-edit.component.html',
+  styleUrls: ['./event-edit.component.scss']
 })
-export class EditComponent implements OnInit {
+export class EventEditComponent implements OnInit {
 
-  // event$: Observable<any>;
+// event$: Observable<any>;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     const id = this.route

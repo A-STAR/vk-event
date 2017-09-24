@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EventComponent } from './event.component';
-import { EditComponent } from './edit/edit.component';
+import { EventEditComponent } from './event-edit/event-edit.component';
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: ':id',
-        component: EditComponent
+        component: EventEditComponent
       }
     ]
   }
