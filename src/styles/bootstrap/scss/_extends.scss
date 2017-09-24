@@ -100,7 +100,7 @@
 }
 
 .user-item {
-  @include pad-container();
+  // @include pad-container();
   display: flex;
   align-items: center;
   margin-bottom: $spacer * .5;
@@ -108,7 +108,7 @@
   padding-bottom: $spacer * .5;
   overflow: hidden;
   cursor: pointer;
-  @extend .escape-flex-container;
+  // @extend .escape-flex-container;
 
   img {
     width: 60px;
