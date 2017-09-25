@@ -20,7 +20,6 @@ export class AboutComponent implements OnInit {
   showButton: boolean;
 
   constructor() {
-    this.image = 'assets/images/vk-high-score.jpg';
     this.title = 'VK High Score';
     this.start = '12 окт в 11:00';
     this.end = '12 окт в 20:00';
@@ -39,6 +38,7 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.image = 'assets/images/vk-high-score.jpg';
     this.show();
   }
 
