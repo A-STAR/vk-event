@@ -60,6 +60,10 @@
 
 }
 
+.flex-100 {
+  flex: 100%;
+}
+
 .flex-50 {
   flex: 50%;
   margin-bottom: $spacer;
@@ -68,7 +72,6 @@
 .muted-heading {
   color: $text-muted;
   font-size: .8125rem; // 13px
-  font-weight: $display2-weight;
 }
 
 .button {
@@ -96,7 +99,6 @@
 .light-heading {
   margin-top: $spacer * .5;
   color: $light-blue;
-  font-weight: $display2-weight;
 }
 
 .user-item {

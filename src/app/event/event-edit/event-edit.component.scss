@@ -10,34 +10,41 @@
     @extend .flex-row;
 
     div.user {
-      flex-basis: 100%;
       margin-bottom: 0;
+      @extend .flex-100;
       @extend .user-item;
     }
 
     hr {
-      flex-basis: 100%;
+      @extend .flex-100;
       @extend .hr;
     }
 
     div.time-place {
-      margin-top: $spacer * .5;
       @extend .flex-50;
     }
 
-    h2 {
-      @extend .muted-heading;
-    }
-
-    div.warning {
-      margin-bottom: $spacer;
-
-      span {
-        color: $red;
-        font-weight: $display2-weight;
+    div.time-place,
+    div.comment {
+      & h2 {
+        @extend .muted-heading;
       }
-
     }
+
+    div.comment,
+    div.warning {
+      @extend .flex-100;
+    }
+
+    // div.warning {
+    //   margin-bottom: $spacer;
+
+    //   span {
+    //     color: $red;
+    //     font-weight: $display2-weight;
+    //   }
+
+    // }
 
     button {
       flex-basis: calc(50% - #{$spacer} * .25);

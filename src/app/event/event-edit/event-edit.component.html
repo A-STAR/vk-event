@@ -20,7 +20,7 @@
     <span>{{ 'Зелёный зал' }}</span>
   </div>
 
-  <div>
+  <div class="comment">
     <h2>Комментарий</h2>
     <p>
       {{ 'У меня есть предложение, от которого вы не сможете отказаться. Мне нужно буквально 10 минут.' }}
@@ -37,6 +37,6 @@
 
   <button class="btn btn-primary" [disabled]="false" (click)="cancel($event)">Отклонить</button>
 
-  <event-modal [hidden]="!modal" [type]="type" (dismiss)="dismiss($event)"></event-modal>
+  <event-modal role="button" [hidden]="!modal" [type]="type" (dismiss)="dismiss($event)"></event-modal>
 
 </main>

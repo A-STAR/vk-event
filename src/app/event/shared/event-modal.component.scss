@@ -21,14 +21,14 @@
     @extend .flex-row;
 
     h1 {
-      flex-basis: 100%;
+      @extend .flex-100;
       margin-bottom: $spacer;
       font-size: 1.0625rem;
       text-align: center;
     }
 
     p {
-      flex-basis: 100%;
+      @extend .flex-100;
       margin-bottom: $spacer * 1.5;
       text-align: center;
     }
@@ -41,7 +41,7 @@
       font-size: 1.0625rem;
       border: none;
       border-top: .5px solid $light-blue;
-      font-weight: $font-weight-bold;
+      font-weight: $display2-weight;
 
       &:last-child {
         flex-basis: calc(50% + .5px);
