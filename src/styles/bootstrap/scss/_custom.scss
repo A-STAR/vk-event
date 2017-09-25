@@ -26,6 +26,7 @@ $black: #000 !default;
 $blue: #528bcc;
 $bright-blue: #5c9ce6;
 $light-blue: #a1b8c7;
+$dark-blue: #5181b8;
 $white-blue: #ecf2f6;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
@@ -54,15 +55,15 @@ $colors: (
 ) !default;
 
 $theme-colors: (
-  primary: $blue,
-  secondary: $gray-600,
+  primary: $dark-blue,
+  secondary: $light-blue,
   success: $green,
   info: $cyan,
   warning: $yellow,
   danger: $red,
   light: $gray-100,
   dark: $gray-800
-) !default;
+);
 
 // Options
 // Spacing

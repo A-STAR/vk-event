@@ -1,6 +1,6 @@
 <main class="container-fluid">
 
-  <div class="user" role="button" (click)="navigate($event)">
+  <div role="button" class="user" (click)="navigate($event)">
     <img [src]="'../../../assets/images/dennis.jpg'" [alt]="'Бережков Денис'">
     <div>
       <h2>{{ 'Бережков Денис' }}</h2>
@@ -33,11 +33,11 @@
 
   <button class="btn btn-primary" (click)="accept($event)">Принять</button>
 
-  <button class="btn btn-primary" [disabled]="true" (click)="more($event)">Ещё</button>
+  <button class="btn btn-secondary" (click)="more($event)">Ещё</button>
 
   <hr>
 
-  <div class="user" role="button" (click)="navigate($event)">
+  <div role="button" class="user" (click)="navigate($event)">
     <img [src]="'../../../assets/images/max.jpg'" [alt]="'Синицин Максим'">
     <div>
       <h2>{{ 'Синицин Максим' }}</h2>
@@ -55,7 +55,7 @@
     <span>{{ 'Красный зал' }}</span>
   </div>
 
-  <div>
+  <div class="comment">
     <h2>Комментарий</h2>
     <p>
       {{ 'Хочу обсудить с вами вопросы по продажам.' }}
@@ -66,13 +66,13 @@
     <span>{{ 'На данное время назначена встреча' }}</span>
   </div>
 
-  <button class="btn btn-primary" [disabled]="true" (click)="accept($event)">Принять</button>
+  <button class="btn btn-secondary" (click)="accept($event)">Перенести</button>
 
-  <button class="btn btn-primary" [disabled]="true" (click)="more($event)">Ещё</button>
+  <button class="btn btn-secondary" (click)="more($event)">Отклонить</button>
 
   <hr>
 
-  <div class="user" role="button" (click)="navigate($event)">
+  <div role="button" class="user" (click)="navigate($event)">
     <img [src]="'../../../assets/images/roman.jpg'" [alt]="'Березуцкий Роман'">
     <div>
       <h2>{{ 'Березуцкий Роман' }}</h2>
@@ -90,7 +90,7 @@
     <span>{{ 'Красный зал' }}</span>
   </div>
 
-  <div>
+  <div class="comment">
     <h2>Комментарий</h2>
     <p>
       {{ 'Предлагаю сотрудничество на выгодных условиях.' }}
@@ -103,6 +103,6 @@
 
   <button class="btn btn-primary"(click)="accept($event)">Принять</button>
 
-  <button class="btn btn-primary" [disabled]="true" (click)="more($event)">Ещё</button>
+  <button class="btn btn-secondary" (click)="more($event)">Ещё</button>
 
 </main>

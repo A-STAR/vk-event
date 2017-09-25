@@ -1,3 +1,21 @@
+@import "custom-variables";
+
+.btn-primary {
+  &.disabled,
+  &:disabled {
+    background-color: $white-blue;
+    color: #cddbe3;
+    border-color: $white-blue;
+  }
+}
+
+.btn-secondary, {
+  &,
+  &:hover {
+    color: $white;
+  }
+}
+
 //
 // Button Sizes
 //
