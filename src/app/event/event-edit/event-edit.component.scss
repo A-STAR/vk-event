@@ -10,11 +10,13 @@
     @extend .flex-row;
 
     div.user {
+      flex-basis: 100%;
       margin-bottom: 0;
       @extend .user-item;
     }
 
     hr {
+      flex-basis: 100%;
       @extend .hr;
     }
 

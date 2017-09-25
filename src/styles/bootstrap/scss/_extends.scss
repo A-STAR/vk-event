@@ -102,7 +102,6 @@
 .user-item {
   // @include pad-container();
   display: flex;
-  // flex-basis: 100%;
   align-items: center;
   margin-bottom: $spacer * .5;
   padding-top: $spacer * .5;
@@ -142,7 +141,5 @@
 }
 
 .hr {
-  flex-basis: 100%;
   width: 100%;
-  box-shadow: inset 0 -.5px 0 0 $light-blue;
 }
