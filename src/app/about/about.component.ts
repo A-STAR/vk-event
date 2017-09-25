@@ -38,8 +38,12 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.image = 'assets/images/vk-high-score.jpg';
+    this.content();
     this.show();
+  }
+
+  content() {
+    this.image = 'assets/images/vk-high-score.jpg';
   }
 
   show() {
