@@ -85,6 +85,7 @@
     &.disabled,
     &:disabled {
       box-shadow: 0 1px 2px 0 rgba($white-blue, .5);
+      opacity: 1;
     }
 
   }

@@ -11,9 +11,12 @@
 
     figure {
       position: relative;
-      width: 100vw;
-      min-height: 66vw;
       @extend .escape-container;
+
+      img {
+        width: 100vw;
+        min-height: 66vw;
+      }
 
       span {
         position: absolute;
