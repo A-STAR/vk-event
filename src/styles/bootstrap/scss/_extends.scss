@@ -33,7 +33,7 @@
     color: $text-muted;
     border: none;
     font-size: .875rem;
-    font-weight: $font-weight-bold;
+    font-weight: $display2-weight;
     outline: none;
     line-height: 2.75rem;
 
@@ -84,7 +84,7 @@
 
     &.disabled,
     &:disabled {
-      box-shadow: 0 1px 2px 0 rgba($white-blue, .5);
+      box-shadow: 0 1px 2px 0 rgba($light-blue, .5);
       opacity: 1;
     }
 
