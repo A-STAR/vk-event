@@ -25,10 +25,7 @@
     <p>{{ place }}</p>
   </div>
 
-  <div>
-    <h2>Описание</h2>
-    <div [innerHTML]="description"></div>
-  </div>
+  <div class="description" [innerHTML]="'<h2>Описание</h2>' + description"></div>
 
   <button type="button" class="btn btn-lg btn-block fixed-bottom" *ngIf="showButton" [ngClass]="buttonClass" (click)="goTo($event)">
     {{ buttonText }}
