@@ -19,7 +19,15 @@ export class AboutComponent implements OnInit {
   buttonClass: string;
   showButton: boolean;
 
-  constructor() {
+  constructor() { }
+
+  ngOnInit() {
+    this.content();
+    this.show();
+  }
+
+  content() {
+    this.image = 'assets/images/vk-high-score.jpg';
     this.title = 'VK High Score';
     this.start = '12 окт в 11:00';
     this.end = '12 окт в 20:00';
@@ -35,15 +43,6 @@ export class AboutComponent implements OnInit {
 
       <p>Оставляйте заявки на участие в приложении <a href="https://vk.cc/78iNlq">vk.cc/78iNlq</a>, если хотите узнать всё об игровой экосистеме ВКонтакте — html5-играх, будущем мобильных игр и последних тенденциях индустрии.</p>
     `;
-  }
-
-  ngOnInit() {
-    this.content();
-    this.show();
-  }
-
-  content() {
-    this.image = 'assets/images/vk-high-score.jpg';
   }
 
   show() {
