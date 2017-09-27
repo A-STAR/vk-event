@@ -82,6 +82,10 @@ $grid-gutter-width: 32px;
 
 $border-width: 1px !default;
 
+$border-radius: .375rem;
+$border-radius-lg: $border-radius;
+$border-radius-sm: $border-radius;
+
 // Fonts
 
 $font-path: "../../../assets/fonts";
