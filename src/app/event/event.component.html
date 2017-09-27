@@ -1,11 +1,56 @@
 <header class="container-fluid">
   <a href (click)="back($event)">
+
     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14">
       <g fill="none">
         <path fill="#000" d="M6.497 0L0 7l6.497 7L8 12.81 2.61 7 8 1.192"/>
       </g>
     </svg>
+
     Назад
+
   </a>
 </header>
-<router-outlet></router-outlet>
+
+<main class="container-fluid">
+
+  <div role="button" class="user" role="button" (click)="navigate($event)">
+    <img [src]="'../../../assets/images/victor.jpg'" [alt]="'Буркин Виктор'">
+    <div>
+      <h2>{{ 'Буркин Виктор' }}</h2>
+      <span>{{ 'Менеджер в Газпром' }}</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="time-place">
+    <h2>Время</h2>
+    <span>27 ноя в {{ '12:00' }}</span>
+  </div>
+
+  <div class="time-place">
+    <h2>Место</h2>
+    <span>{{ 'Зелёный зал' }}</span>
+  </div>
+
+  <div class="comment">
+    <h2>Комментарий</h2>
+    <p>
+      {{ 'У меня есть предложение, от которого вы не сможете отказаться. Мне нужно буквально 10 минут.' }}
+    </p>
+  </div>
+
+  <!-- <div class="warning" *ngIf="true">
+    <p>
+      {{ 'На данное время назначена встреча' }}
+    </p>
+  </div> -->
+
+  <button class="btn btn-secondary" (click)="reschedule($event)">Перенести</button>
+
+  <button class="btn btn-secondary" (click)="cancel($event)">Отклонить</button>
+
+  <event-modal role="button" [hidden]="!modal" [type]="type" (dismiss)="dismiss($event)"></event-modal>
+
+</main>

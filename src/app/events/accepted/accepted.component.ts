@@ -18,8 +18,10 @@ export class AcceptedComponent implements OnInit {
 
     event = { id: 77 };
 
+    const id = event.id;
+
     this.router
-      .navigate(['/event', event.id]);
+      .navigate(['/event', id]);
   }
 
 }

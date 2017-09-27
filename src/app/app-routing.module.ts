@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'event',
     loadChildren: 'app/event/event.module#EventModule'
   },
+  {
+    path: 'user',
+    loadChildren: 'app/user/user.module#UserModule'
+  },
   { path: '', redirectTo: 'registration', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
