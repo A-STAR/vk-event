@@ -32,27 +32,27 @@
     overflow-y: scroll;
     padding-top: $spacer * .5;
     padding-bottom: $spacer;
-    @extend .flex-row;
+    @extend .flex-column;
 
     img {
+      align-self: center;
       width: 100px;
       height: 100px;
       margin-bottom: $spacer;
-      margin-left: auto;
-      margin-right: auto;
       border-radius: 50%;
     }
 
     h1 {
       font-size: 1.0625rem;
+    }
+
+    h1,
+    span {
       text-align: center;
-      @extend .flex-100;
     }
 
     span {
       color: $text-muted;
-      text-align: center;
-      @extend .flex-100;
     }
 
     div.appointment {
@@ -64,11 +64,9 @@
       font-weight: $display2-weight;
       border-radius: $border-radius;
       text-align: center;
-      @extend .flex-100;
     }
 
     hr {
-      @extend .flex-100;
       @extend .hr;
 
       &:last-of-type {
