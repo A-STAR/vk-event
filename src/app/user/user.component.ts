@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 // import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/operator/switchMap';
@@ -10,9 +11,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
-
   // event$: Observable<any>;
+
+  modal: boolean;
+  type: string;
+
+  constructor(private location: Location, private route: ActivatedRoute) { }
 
   ngOnInit() {
     const { id, appointment } = this.route
@@ -29,6 +33,29 @@ export class UserComponent implements OnInit {
     //       this.service
     //         .getEvent(params.get('id'))
     //     );
+  }
+
+  reschedule(event) {
+    console.log('reschedule');
+    this.type = 'reschedule';
+    this.modal = true;
+  }
+
+  cancel(event) {
+    console.log('cancel');
+    this.type = 'cancel';
+    this.modal = true;
+  }
+
+  dismiss(event) {
+    console.log('dismiss', event);
+    this.modal = false;
+  }
+
+  back(event) {
+    event.preventDefault();
+    this.location
+      .back();
   }
 
 }

@@ -20,7 +20,7 @@ export class Step2Component implements OnInit {
 
   next() {
     this.router
-      .navigate(['../step-3'], {relativeTo: this.route});
+      .navigate(['../step-3'], { relativeTo: this.route });
   }
 
 }

@@ -1,0 +1,44 @@
+@import "custom-variables";
+
+:host {
+  height: 100vh;
+  @extend .flex-column;
+
+  header {
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+
+    a {
+      color: $blue;
+      font-size: 1.0625rem;
+      font-weight: $display2-weight;
+      text-decoration: none;
+
+      svg {
+        position: relative;
+        top: 1px;
+
+        path {
+          font-weight: normal;
+          fill: $blue;
+        }
+
+      }
+
+    }
+
+  }
+
+  main {
+    overflow-y: scroll;
+    padding-bottom: $spacer;
+    @extend .flex-row;
+
+    hr {
+      @extend .flex-100;
+      @extend .hr;
+    }
+
+  }
+
+}

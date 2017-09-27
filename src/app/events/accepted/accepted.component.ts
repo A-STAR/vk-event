@@ -21,7 +21,7 @@ export class AcceptedComponent implements OnInit {
     const id = event.id;
 
     this.router
-      .navigate(['/event', id]);
+      .navigate([ '/event', id ]);
   }
 
 }
