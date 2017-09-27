@@ -44,7 +44,6 @@ export class EventComponent implements OnInit {
     event = { id: 14 };
 
     const id = event.id;
-    const button = true;
 
     this.router
       .navigate(['/user', id, {appointment: true}]);
