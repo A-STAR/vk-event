@@ -70,28 +70,43 @@
     hr {
       @extend .flex-100;
       @extend .hr;
-    }
-
-    svg {
-      position: relative;
-      margin-right: $spacer;
-
-      path {
-        fill: $blue;
-      }
-
-      &:first-of-type {
-        top: .0625rem; // 1px
-      }
 
       &:last-of-type {
-        top: .1875rem; // 3px
+        margin-bottom: $spacer * 1.5;
       }
 
     }
 
-    a {
-      font-weight: $font-weight-bold;
+    div {
+
+      svg {
+        position: relative;
+        margin-right: $spacer;
+
+        path {
+          fill: $blue;
+        }
+
+        &:first-of-type {
+          top: .0625rem; // 1px
+        }
+
+        &:last-of-type {
+          top: .1875rem; // 3px
+        }
+
+      }
+
+      a {
+        font-weight: $font-weight-bold;
+      }
+
+    }
+
+    div {
+      h2 {
+        @extend .muted-heading;
+      }
     }
 
   }
