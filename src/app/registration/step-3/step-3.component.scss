@@ -5,8 +5,28 @@
 
   overflow-y: scroll;
 
-  main {
+  header {
     padding-top: $spacer;
+
+    span {
+      color: $light-blue;
+      text-transform: uppercase;
+      font-size: $font-size-sm;
+      font-weight: $display2-weight;
+    }
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    hr {
+      @extend .hr;
+    }
+
+  }
+
+  main {
+    padding-top: $spacer * .5;
     padding-bottom: $spacer;
     @extend .flex-column;
 

@@ -5,10 +5,8 @@
 
   overflow-y: scroll;
 
-  main {
+  header {
     padding-top: $spacer;
-    padding-bottom: $spacer;
-    @extend .flex-column;
 
     span {
       color: $light-blue;
@@ -22,9 +20,15 @@
     }
 
     hr {
-      margin-bottom: $spacer * 1.5;
       @extend .hr;
     }
+
+  }
+
+  main {
+    padding-top: $spacer * .5;
+    padding-bottom: $spacer;
+    @extend .flex-column;
 
     h2 {
       margin-bottom: $spacer * 1.5;
