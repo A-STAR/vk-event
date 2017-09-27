@@ -46,7 +46,7 @@ export class EventComponent implements OnInit {
     const id = event.id;
 
     this.router
-      .navigate([ '/user', id, { queryParams: { appointment: true } } ]);
+      .navigate([ '/user', id ], { queryParams: { appointment: true } });
   }
 
   reschedule(event) {

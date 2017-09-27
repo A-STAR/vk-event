@@ -11,6 +11,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserComponent implements OnInit {
 
+  appointment: boolean;
+  status: string;
+
   // event$: Observable<any>;
 
   modal: boolean;
@@ -19,11 +22,17 @@ export class UserComponent implements OnInit {
   constructor(private location: Location, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    const { id, appointment } = this.route
+    const id = this.route
       .snapshot
-      .params;
+      .paramMap
+      .get('id');
 
-    console.log(id, appointment);
+    this.appointment = 'true' === this.route
+      .snapshot
+      .queryParamMap
+      .get('appointment');
+
+    console.log(id, this.appointment);
 
     // this.event$ = this.service.getHero(id);
 
@@ -33,6 +42,13 @@ export class UserComponent implements OnInit {
     //       this.service
     //         .getEvent(params.get('id'))
     //     );
+
+    this.content();
+  }
+
+  content() {
+    this.status = 'Назначена встреча';
+    // this.status = 'Предложение уже отправлено';
   }
 
   reschedule(event) {

@@ -73,7 +73,13 @@ $body-bg: $white !default;
 $body-color: $gray-900 !default;
 
 // Links
+
+$link-color: $blue;
+
 // Paragraphs
+
+$paragraph-margin-bottom: 1rem;
+
 // Grid breakpoints
 // Grid containers
 // Grid columns
@@ -119,7 +125,7 @@ $lead-font-weight: 300 !default;
 $text-muted: rgba($gray-900, .4);
 
 $hr-border-color: $light-blue;
-$hr-border-width: $border-width * .5;
+$hr-border-width: $border-width !default;
 
 // Components
 // Tables
