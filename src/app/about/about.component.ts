@@ -15,11 +15,20 @@ export class AboutComponent implements OnInit {
   description: string;
 
   go: boolean;
-  buttonText: string;
-  buttonClass: string;
-  showButton: boolean;
 
-  constructor() { }
+  button: {
+    show: boolean;
+    class: string;
+    text: string;
+  };
+
+  constructor() {
+    this.button = {
+      show: null,
+      class: null,
+      text: null
+    };
+  }
 
   ngOnInit() {
     this.content();
@@ -47,16 +56,16 @@ export class AboutComponent implements OnInit {
 
   show() {
     this.go = false;
-    this.buttonText = 'Пойти';
-    this.buttonClass = 'btn-primary';
-    this.showButton = !this.go;
+    this.button.text = 'Пойти';
+    this.button.class = 'btn-primary';
+    this.button.show = !this.go;
   }
 
   goTo(event) {
     this.go = true;
-    this.buttonText = 'Вы идёте';
-    this.buttonClass = 'btn-success';
-    setTimeout(() => this.showButton = false, 3000);
+    this.button.text = 'Вы идёте';
+    this.button.class = 'btn-success';
+    setTimeout(() => this.button.show = false, 3000);
   }
 
 }

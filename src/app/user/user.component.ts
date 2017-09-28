@@ -27,9 +27,9 @@ export class UserComponent implements OnInit {
 
   constructor(private location: Location, private route: ActivatedRoute) {
     this.button = {
-      show: false,
-      class: '',
-      text: ''
+      show: null,
+      class: null,
+      text: null
     };
   }
 

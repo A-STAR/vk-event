@@ -7,29 +7,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  buttonText: string;
-  buttonClass: string;
-  disabledButton: boolean;
-  buttonTimeout: any;
+  button: {
+    class: string;
+    disabled: boolean;
+    text: string;
+    timeout: number;
+  };
 
-  constructor() {}
+  constructor() {
+    this.button = {
+      class: null,
+      disabled: null,
+      text: null,
+      timeout: null
+    };
+  }
 
   ngOnInit() {
     this.show();
   }
 
   show() {
-    this.buttonText = 'Сохранить';
-    this.buttonClass = 'btn-primary';
-    this.disabledButton = false;
+    this.button.text = 'Сохранить';
+    this.button.class = 'btn-primary';
+    this.button.disabled = false;
   }
 
   input(event) {
-    if (this.buttonClass === 'btn-primary' && !this.disabledButton) {
+    if (this.button.class === 'btn-primary' && !this.button.disabled) {
       return;
     }
-    if (this.buttonClass === 'btn-success') {
-      clearTimeout(this.buttonTimeout);
+    if (this.button.class === 'btn-success') {
+      clearTimeout(this.button.timeout);
     }
     this.show();
   }
@@ -40,12 +49,12 @@ export class SearchComponent implements OnInit {
   }
 
   save() {
-    this.buttonText = 'Сохранено';
-    this.buttonClass = 'btn-success';
-    this.buttonTimeout = setTimeout(() => {
-      this.buttonText = 'Сохранить';
-      this.buttonClass = 'btn-primary';
-      this.disabledButton = true;
+    this.button.text = 'Сохранено';
+    this.button.class = 'btn-success';
+    this.button.timeout = setTimeout(() => {
+      this.button.text = 'Сохранить';
+      this.button.class = 'btn-primary';
+      this.button.disabled = true;
     }, 3000);
   }
 
