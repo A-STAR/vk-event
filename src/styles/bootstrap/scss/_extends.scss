@@ -103,6 +103,17 @@
 
 }
 
+.opaque-button {
+  -webkit-transition: $btn-transition, opacity 3s ease-in-out;
+  transition: $btn-transition, opacity 3s ease-in-out;
+  @extend .button;
+
+  &:focus {
+    opacity: 0;
+  }
+
+}
+
 .light-heading {
   margin-top: $spacer * .5;
   color: $light-blue;
@@ -147,6 +158,15 @@
 
   }
 
+}
+
+.profile-image {
+  align-self: center;
+  width: $spacer * 6.25;
+  height: $spacer * 6.25;
+  min-height: $spacer * 6.25;
+  margin-bottom: $spacer;
+  border-radius: 50%;
 }
 
 .hr {

@@ -29,17 +29,15 @@
   }
 
   main {
+    flex: 1;
+
     overflow-y: scroll;
     padding-top: $spacer * .5;
     padding-bottom: $spacer;
     @extend .flex-column;
 
     img {
-      align-self: center;
-      width: 100px;
-      height: 100px;
-      margin-bottom: $spacer;
-      border-radius: 50%;
+      @extend .profile-image;
     }
 
     h1 {
@@ -105,6 +103,15 @@
       h2 {
         @extend .muted-heading;
       }
+    }
+
+    & > button {
+      bottom: 1rem;
+      @extend .opaque-button;
+    }
+
+    &.button-space {
+      padding-bottom: $spacer * 4;
     }
 
   }

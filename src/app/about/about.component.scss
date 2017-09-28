@@ -61,14 +61,7 @@
     }
 
     & > button {
-      -webkit-transition: $btn-transition, opacity 3s ease-in-out;
-      transition: $btn-transition, opacity 3s ease-in-out;
-      @extend .button;
-
-      &:focus {
-        opacity: 0;
-      }
-
+      @extend .opaque-button;
     }
 
     &.button-space {

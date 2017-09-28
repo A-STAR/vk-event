@@ -11,11 +11,7 @@
     @extend .flex-column;
 
     img {
-      align-self: center;
-      width: 100px;
-      height: 100px;
-      margin-bottom: $spacer;
-      border-radius: 50%;
+      @extend .profile-image;
     }
 
     form {

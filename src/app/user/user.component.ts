@@ -16,10 +16,22 @@ export class UserComponent implements OnInit {
 
   // event$: Observable<any>;
 
+  button: {
+    show: boolean;
+    class: string;
+    text: string;
+  };
+
   modal: boolean;
   type: string;
 
-  constructor(private location: Location, private route: ActivatedRoute) { }
+  constructor(private location: Location, private route: ActivatedRoute) {
+    this.button = {
+      show: false,
+      class: '',
+      text: ''
+    };
+  }
 
   ngOnInit() {
     const id = this.route
@@ -44,11 +56,27 @@ export class UserComponent implements OnInit {
     //     );
 
     this.content();
+    this.show();
   }
 
   content() {
     this.status = 'Назначена встреча';
     // this.status = 'Предложение уже отправлено';
+  }
+
+  show() {
+    this.button.text = 'Предложить встречу';
+    this.button.class = 'btn-primary';
+    this.button.show = !this.appointment;
+  }
+
+  appoint(event) {
+    this.button.text = 'Предложение отправлено';
+    this.button.class = 'btn-success';
+    setTimeout(() => {
+      this.appointment = true;
+      this.button.show = !this.appointment;
+    }, 3000);
   }
 
   reschedule(event) {
