@@ -8,9 +8,18 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class Step1Component implements OnInit {
 
+  image: string;
+  name: string;
+
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.content();
+  }
+
+  content() {
+    this.image = '../../../assets/images/vlad.jpg';
+    this.name = 'Резников Владислав';
   }
 
   submit(event) {

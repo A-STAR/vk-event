@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 // import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/operator/switchMap';
 
@@ -13,6 +13,9 @@ export class UserComponent implements OnInit {
 
   appointment: boolean;
   status: string;
+
+  image: string;
+  name: string;
 
   // event$: Observable<any>;
 
@@ -60,6 +63,8 @@ export class UserComponent implements OnInit {
   }
 
   content() {
+    this.image = '../../../assets/images/victor.jpg';
+    this.name = 'Буркин Виктор';
     this.status = 'Назначена встреча';
     // this.status = 'Предложение уже отправлено';
   }

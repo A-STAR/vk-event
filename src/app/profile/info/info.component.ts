@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
+  image: string;
+  name: string;
+
   button: {
     class: string;
     disabled: boolean;
@@ -24,7 +27,13 @@ export class InfoComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.content();
     this.show();
+  }
+
+  content() {
+    this.image = '../../../assets/images/vlad.jpg';
+    this.name = 'Резников Владислав';
   }
 
   show() {
