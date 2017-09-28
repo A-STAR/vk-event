@@ -8,9 +8,13 @@ import { Router } from '@angular/router';
 })
 export class IncomingComponent implements OnInit {
 
+  modal: boolean;
+  type: string;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.modal = false;
   }
 
   navigate(event) {
@@ -25,8 +29,13 @@ export class IncomingComponent implements OnInit {
 
   more(event) {
     console.log('more');
-    this.router
-      .navigate(['/events/incoming']);
+    this.type = 'more';
+    this.modal = true;
+  }
+
+  dismiss(event) {
+    console.log('dismiss', event);
+    this.modal = false;
   }
 
 }

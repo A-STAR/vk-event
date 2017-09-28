@@ -21,7 +21,7 @@ export class EventModalComponent implements OnInit, OnChanges {
     if (event.target === this.confirmation.nativeElement) {
       this.dismiss.emit(true);
     } else if (event.target === this.cancellation.nativeElement || event.target === this.elementRef.nativeElement) {
-      this.dismiss.emit(false);
+      this.dismiss.emit(null);
     }
   }
 

@@ -9,6 +9,7 @@
   left: 0;
   right: 0;
   background-color: rgba($black, .2);
+  z-index: $zindex-modal-backdrop;
   @extend .flex-row;
 
   div {
@@ -18,29 +19,31 @@
     padding-top: $spacer * 1.5;
     background-color: $white;
     border-radius: $border-radius;
+    z-index: $zindex-modal;
     @extend .flex-row;
 
     h1 {
-      @extend .flex-100;
       margin-bottom: $spacer;
       font-size: 1.0625rem;
       text-align: center;
+      @extend .flex-100;
     }
 
     p {
-      @extend .flex-100;
       margin-bottom: $spacer * 1.5;
       text-align: center;
+      @extend .flex-100;
     }
 
     button {
       flex-basis: calc(50% - .5px);
-      height: $spacer * 3;
+      padding-top: $spacer * .75 + $border-width * .5;
+      padding-bottom: $spacer * .75;
       background-color: transparent;
       color: $blue;
       font-size: 1.0625rem;
       border: none;
-      border-top: .5px solid $light-blue;
+      border-top: $border-width * .5 solid $light-blue;
       font-weight: $display2-weight;
 
       &:last-child {

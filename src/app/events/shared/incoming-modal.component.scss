@@ -1,0 +1,44 @@
+@import "custom-variables";
+
+:host {
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: $spacer * .5;
+  background-color: rgba($black, .2);
+  z-index: $zindex-modal-backdrop;
+  @extend .flex-column;
+
+  button {
+    margin-left: $spacer * .5;
+    margin-right: $spacer * .5;
+    padding-top: $spacer * .75;
+    padding-bottom: $spacer * .75;
+    background-color: $white;
+    color: $blue;
+    font-size: 1.0625rem;
+    border: none;
+    border-radius: $border-radius;
+    font-weight: $display2-weight;
+    z-index: $zindex-modal;
+
+    &:first-child {
+      padding-bottom: $spacer * .75 + $border-width * .5;
+      border-bottom: $border-width * .5 solid $light-blue;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:nth-of-type(even) {
+      margin-bottom: $spacer * .5;
+      color: $red;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+  }
+
+}
