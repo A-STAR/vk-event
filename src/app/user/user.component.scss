@@ -66,35 +66,36 @@
 
     hr {
       @extend .hr;
-
-      &:last-of-type {
-        margin-bottom: $spacer * 1.5;
-      }
-
     }
 
-    div {
+    div.link {
+      margin-bottom: $spacer;
+      padding-bottom: $spacer;
+      border-bottom: $border-width * .5 solid $light-blue;
 
       svg {
         position: relative;
+        top: .0625rem; // 1px
         margin-right: $spacer;
 
         path {
           fill: $blue;
         }
 
-        &:first-of-type {
-          top: .0625rem; // 1px
-        }
-
-        &:last-of-type {
-          top: .1875rem; // 3px
-        }
-
       }
 
       a {
         font-weight: $font-weight-bold;
+        vertical-align: top;
+      }
+
+      & + div.link {
+        margin-bottom: $spacer * 1.5;
+
+        svg {
+          top: .125rem; // 2px
+        }
+
       }
 
     }
