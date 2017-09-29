@@ -47,9 +47,13 @@
     </p>
   </div> -->
 
-  <button class="btn btn-secondary" (click)="reschedule($event)">Перенести</button>
+  <button class="btn btn-secondary" *ngIf="!appointment" (click)="reschedule($event)">Перенести</button>
 
-  <button class="btn btn-secondary" (click)="cancel($event)">Отклонить</button>
+  <button class="btn btn-secondary" *ngIf="!appointment" (click)="cancel($event)">Отклонить</button>
+
+  <div class="appointment" *ngIf="appointment">
+      {{ status }}
+  </div>
 
   <event-modal role="button" [hidden]="!modal" [type]="type" (dismiss)="dismiss($event)"></event-modal>
 

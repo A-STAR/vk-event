@@ -169,6 +169,15 @@
   border-radius: 50%;
 }
 
+.appointment-pane {
+  padding: $spacer * .75 $spacer * 1;
+  background-color: $white-blue;
+  font-size: 1rem;
+  font-weight: $display2-weight;
+  border-radius: $border-radius;
+  text-align: center;
+}
+
 .hr {
   width: 100%;
 }

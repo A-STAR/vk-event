@@ -11,6 +11,9 @@ import { Location } from '@angular/common';
 })
 export class EventComponent implements OnInit {
 
+  appointment: boolean;
+  status: string;
+
   // event$: Observable<any>;
 
   modal: boolean;
@@ -26,7 +29,12 @@ export class EventComponent implements OnInit {
       .paramMap
       .get('id');
 
-    console.log(id);
+    this.appointment = 'true' === this.route
+      .snapshot
+      .queryParamMap
+      .get('appointment');
+
+    console.log(id, this.appointment);
 
     // this.event$ = this.service.getHero(id);
 
@@ -36,17 +44,26 @@ export class EventComponent implements OnInit {
     //       this.service
     //         .getEvent(params.get('id'))
     //     );
+
+    this.content();
+  }
+
+  content() {
+    this.status = 'Предложение о встрече на рассмотрении у пользователя';
   }
 
   navigate(event) {
     console.log('navigate', event);
 
-    event = { id: 14 };
+    event = {
+      id: 14,
+      appointment: true
+    };
 
-    const id = event.id;
+    const { id, appointment } = event;
 
     this.router
-      .navigate([ '/user', id ], { queryParams: { appointment: true } });
+      .navigate([ '/user', id ], { queryParams: { appointment } });
   }
 
   reschedule(event) {

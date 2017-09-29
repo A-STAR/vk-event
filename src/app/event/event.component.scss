@@ -82,6 +82,10 @@
 
     }
 
+    div.appointment {
+      @extend .appointment-pane;
+    }
+
   }
 
 }

@@ -13,10 +13,33 @@ export class OutgoingComponent implements OnInit {
   ngOnInit() {
   }
 
-  navigate(event) {
-    console.log('navigate');
+  user(event) {
+    console.log('user', event);
+
+    event = {
+      id: 37,
+      appointment: false
+    };
+
+    const { id, appointment } = event;
+
     this.router
-      .navigate(['events/outgoing']);
+      .navigate([ '/user', id ], { queryParams: { appointment } });
+  }
+
+  event(event, appointment: boolean = false) {
+    console.log('event', event);
+
+    event = {
+      id: 139,
+      appointment
+    };
+
+    const { id } = event;
+    // const { id, appointment } = event;
+
+    this.router
+      .navigate([ '/event', id ], { queryParams: { appointment } });
   }
 
 }

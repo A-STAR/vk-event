@@ -56,15 +56,11 @@
     div.appointment {
       margin-top: $spacer * 1.5;
       margin-bottom: $spacer * .5;
-      padding: $spacer * .75 $spacer * 1;
-      background-color: $white-blue;
-      font-size: 1rem;
-      font-weight: $display2-weight;
-      border-radius: $border-radius;
-      text-align: center;
+      @extend .appointment-pane;
     }
 
     hr {
+      border-width: $border-width * .5;
       @extend .hr;
     }
 
