@@ -1,37 +1,33 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
-  selector: 'time',
-  templateUrl: './time.component.html',
-  styleUrls: ['./time.component.scss']
+  selector: 'appointment',
+  templateUrl: './appointment.component.html',
+  styleUrls: ['./appointment.component.scss']
 })
-export class TimeComponent implements OnInit {
+export class AppointmentComponent implements OnInit {
+
+  heading: string;
+
+  image: string;
+  name: string;
 
   start: { value: number; time: string; selected?: boolean }[];
   end: { value: number; time: string; selected?: boolean }[];
 
-  button: {
-    class: string;
-    disabled: boolean;
-    text: string;
-    timeout: any;
-  };
+  places: { value: number; place: string; selected?: boolean }[];
 
-  constructor() {
-    this.button = {
-      class: null,
-      disabled: null,
-      text: null,
-      timeout: null
-    };
-  }
+  constructor(private location: Location) { }
 
   ngOnInit() {
     this.content();
-    this.show();
   }
 
   content() {
+    this.heading = 'Встреча';
+    this.image = '../../../assets/images/victor.jpg';
+    this.name = 'Буркин Виктор';
     this.start = [
       { value: 1, time: '10:00' },
       { value: 2, time: '10:30' },
@@ -92,37 +88,21 @@ export class TimeComponent implements OnInit {
       { value: 27, time: '23:00' },
       { value: 28, time: '23:30' }
     ];
+    this.places = [
+      { value: 1, place: 'Красный зал' },
+      { value: 2, place: 'Оранжевый зал' },
+      { value: 3, place: 'Жёлтый зал' },
+      { value: 4, place: 'Зелёный зал', selected: true },
+      { value: 5, place: 'Голубой зал' },
+      { value: 6, place: 'Синий зал' },
+      { value: 7, place: 'Фиолетовый зал' }
+    ];
   }
 
-  show() {
-    this.button.text = 'Сохранить';
-    this.button.class = 'btn-primary';
-    this.button.disabled = false;
-  }
-
-  change(event) {
-    if (this.button.class === 'btn-primary' && !this.button.disabled) {
-      return;
-    }
-    if (this.button.class === 'btn-success') {
-      clearTimeout(this.button.timeout);
-    }
-    this.show();
-  }
-
-  submit(event) {
+  back(event) {
     event.preventDefault();
-    this.save();
-  }
-
-  save() {
-    this.button.text = 'Сохранено';
-    this.button.class = 'btn-success';
-    this.button.timeout = setTimeout(() => {
-      this.button.text = 'Сохранить';
-      this.button.class = 'btn-primary';
-      this.button.disabled = true;
-    }, 3000);
+    this.location
+      .back();
   }
 
 }

@@ -14,7 +14,7 @@
 
 <main class="container-fluid">
 
-  <div role="button" class="user" role="button" (click)="navigate($event)">
+  <div role="button" class="user" role="button" (click)="user($event)">
     <img [src]="'../../../assets/images/victor.jpg'" [alt]="'Буркин Виктор'">
     <div>
       <h2>{{ 'Буркин Виктор' }}</h2>
@@ -47,11 +47,11 @@
     </p>
   </div> -->
 
-  <button class="btn btn-secondary" *ngIf="!appointment" (click)="reschedule($event)">Перенести</button>
+  <button class="btn btn-secondary" *ngIf="appointment" (click)="reschedule($event)">Перенести</button>
 
-  <button class="btn btn-secondary" *ngIf="!appointment" (click)="cancel($event)">Отклонить</button>
+  <button class="btn btn-secondary" *ngIf="appointment" (click)="cancel($event)">Отклонить</button>
 
-  <div class="appointment" *ngIf="appointment">
+  <div class="appointment" *ngIf="!appointment">
       {{ status }}
   </div>
 

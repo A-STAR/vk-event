@@ -25,10 +25,18 @@ export class PeopleComponent implements OnInit {
       .focus();
   }
 
-  navigate(event) {
-    console.log('navigate');
+  user(event) {
+    console.log('navigate', event);
+
+    event = {
+      id: 14,
+      appointment: false
+    };
+
+    const { id, appointment } = event;
+
     this.router
-      .navigate(['people']);
+      .navigate([ '/user', id ], { queryParams: { appointment } });
   }
 
 }

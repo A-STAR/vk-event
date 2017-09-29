@@ -11,7 +11,7 @@ export class SearchComponent implements OnInit {
     class: string;
     disabled: boolean;
     text: string;
-    timeout: number;
+    timeout: any;
   };
 
   constructor() {

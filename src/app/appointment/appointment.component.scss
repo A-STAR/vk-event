@@ -1,0 +1,142 @@
+@import "custom-variables";
+
+:host {
+  height: 100vh;
+  @extend .flex-column;
+
+  header {
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+
+    a {
+      font-size: 1.0625rem;
+      font-weight: $display2-weight;
+      text-decoration: none;
+
+      svg {
+        position: relative;
+        top: 1px;
+
+        path {
+          font-weight: normal;
+          fill: $blue;
+        }
+
+      }
+
+    }
+
+
+  }
+
+  main {
+    flex: 1;
+
+    overflow-y: scroll;
+    padding-top: $spacer * .5;
+    padding-bottom: $spacer * 3.5;
+    @extend .flex-column;
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    hr {
+      @extend .hr;
+    }
+
+    div.user {
+      align-items: center;
+      margin-bottom: $spacer * 1.5;
+      @extend .flex-row;
+
+      img {
+        @extend .avatar;
+      }
+
+      h2 {
+        font-size: 1.0625rem;
+        font-weight: normal;
+      }
+
+    }
+
+    form {
+
+      div.form-row {
+        // margin-bottom: $spacer * 2;
+        margin-left: 0;
+        margin-right: 0;
+
+        div.form-group {
+          margin-bottom: 0;
+
+          &.time {
+            flex: 1;
+
+            select {
+              width: 100%;
+              font-size: 1rem;
+              font-weight: $display2-weight;
+            }
+
+          }
+
+          &.dash {
+            flex: 0 0 auto;
+
+            margin-left: .25rem;
+            margin-right: .25rem;
+
+            span {
+              color: $light-blue;
+              font-size: 1rem;
+              font-weight: $font-weight-light;
+              line-height: calc(2.7577375rem + 2px);
+            }
+
+          }
+
+        }
+
+      }
+
+      div.form-group {
+
+        label {
+          color: #909499;
+          font-size: $font-size-sm;
+        }
+
+        label,
+        small {
+          font-size: $font-size-sm;
+        }
+
+        select {
+          display: block;
+          width: 100%;
+          font-size: 1rem;
+          font-weight: $display2-weight;
+        }
+
+        textarea {
+          font-size: 1rem;
+        }
+
+        &:last-of-type {
+          margin-bottom: $spacer * 1.5;
+        }
+
+      }
+
+      & > button[type="submit"] {
+        bottom: 1rem;
+        @extend .button;
+      }
+
+    }
+
+  }
+
+}

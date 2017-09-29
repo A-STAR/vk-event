@@ -52,8 +52,8 @@ export class EventComponent implements OnInit {
     this.status = 'Предложение о встрече на рассмотрении у пользователя';
   }
 
-  navigate(event) {
-    console.log('navigate', event);
+  user(event) {
+    console.log('user', event);
 
     event = {
       id: 14,

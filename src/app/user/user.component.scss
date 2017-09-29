@@ -104,7 +104,7 @@
 
     & > button {
       bottom: 1rem;
-      @extend .opaque-button;
+      @extend .button;
     }
 
     &.button-space {

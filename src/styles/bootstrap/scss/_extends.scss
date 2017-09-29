@@ -131,10 +131,7 @@
   // @extend .escape-flex-container;
 
   img {
-    width: 60px;
-    height: 60px;
-    margin-right: $spacer;
-    border-radius: 50%;
+    @extend .avatar;
   }
 
   & > div {
@@ -158,6 +155,13 @@
 
   }
 
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  margin-right: $spacer;
+  border-radius: 50%;
 }
 
 .profile-image {

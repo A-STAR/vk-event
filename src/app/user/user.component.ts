@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 // import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/operator/switchMap';
@@ -21,18 +21,14 @@ export class UserComponent implements OnInit {
 
   button: {
     show: boolean;
-    class: string;
-    text: string;
   };
 
   modal: boolean;
   type: string;
 
-  constructor(private location: Location, private route: ActivatedRoute) {
+  constructor(private location: Location, private route: ActivatedRoute, private router: Router) {
     this.button = {
-      show: null,
-      class: null,
-      text: null
+      show: null
     };
   }
 
@@ -70,18 +66,18 @@ export class UserComponent implements OnInit {
   }
 
   show() {
-    this.button.text = 'Предложить встречу';
-    this.button.class = 'btn-primary';
     this.button.show = !this.appointment;
   }
 
   appoint(event) {
-    this.button.text = 'Предложение отправлено';
-    this.button.class = 'btn-success';
-    setTimeout(() => {
-      this.appointment = true;
-      this.button.show = !this.appointment;
-    }, 3000);
+    console.log('appointment', event);
+
+    event = { id: 47 };
+
+    const { id } = event;
+
+    this.router
+      .navigate([ '/appointment' ], { queryParams: { id } });
   }
 
   reschedule(event) {

@@ -16,7 +16,7 @@
 
   <img [src]="image" [alt]="name">
 
-  <h1>{{ 'Буркин Виктор' }}</h1>
+  <h1>{{ name }}</h1>
 
   <span>{{ 'Менеджер в Газпром' }}</span>
 
@@ -56,8 +56,8 @@
     <p>{{ 'Аренда и страхование яхт' }}</p>
   </div>
 
-  <button type="button" class="btn btn-lg btn-block fixed-bottom" *ngIf="button.show" [ngClass]="button.class" (click)="appoint($event)">
-    {{ button.text }}
+  <button type="button" class="btn btn-primary btn-lg btn-block fixed-bottom" *ngIf="button.show" (click)="appoint($event)">
+    Предложить встречу
   </button>
 
 </main>

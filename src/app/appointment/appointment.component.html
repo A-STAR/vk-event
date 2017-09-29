@@ -1,0 +1,80 @@
+<header class="container-fluid">
+  <a href (click)="back($event)">
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14">
+      <g fill="none">
+        <path fill="#000" d="M6.497 0L0 7l6.497 7L8 12.81 2.61 7 8 1.192"/>
+      </g>
+    </svg>
+
+    Назад
+
+  </a>
+
+</header>
+
+<main class="container-fluid">
+
+  <h1>{{ heading }}</h1>
+
+  <hr>
+
+  <div class="user">
+    <img [src]="image" [alt]="name">
+
+    <h2>{{ name }}</h2>
+  </div>
+
+  <form (submit)="submit($event)" (input)="input($event)">
+
+    <!-- <div class="form-group">
+      <label for="date">Дата</label>
+      <input type="date" class="form-control form-control-lg" id="date">
+    </div> -->
+
+    <div class="form-group">
+      <label for="time">Время</label>
+      <div class="form-row">
+
+        <div class="form-group time">
+          <select class="custom-select form-control-lg" id="time">
+            <option disabled selected>Начало</option>
+            <option *ngFor="let option of start" [value]="option.value" [selected]="option['selected']">{{ option.time }}</option>
+          </select>
+        </div>
+
+        <div class="form-group dash">
+          <span>&ndash;</span>
+        </div>
+
+        <div class="form-group time">
+          <select class="custom-select form-control-lg">
+            <option disabled selected>Конец</option>
+            <option *ngFor="let option of end" [value]="option.value" [selected]="option['selected']">{{ option.time }}</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="place">Место</label>
+      <select class="custom-select form-control-lg" id="place">
+        <option disabled selected>Место</option>
+        <option *ngFor="let option of places" [value]="option.value" [selected]="option['selected']">{{ option.place }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Комментарий</label>
+      <textarea class="form-control form-control-lg" id="comment" rows="5" value="{{ 'Виктор, у меня есть эксклюзивное приложение для вас!' }}"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block fixed-bottom">
+      Отправить предложение
+    </button>
+
+  </form>
+
+
+</main>

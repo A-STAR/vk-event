@@ -13,15 +13,18 @@ export class AcceptedComponent implements OnInit {
   ngOnInit() {
   }
 
-  navigate(event) {
+  event(event) {
     console.log('navigate', event);
 
-    event = { id: 77 };
+    event = {
+      id: 77,
+      appointment: true
+    };
 
-    const { id } = event;
+    const { id, appointment } = event;
 
     this.router
-      .navigate([ '/event', id ]);
+      .navigate([ '/event', id ], { queryParams: { appointment } });
   }
 
 }

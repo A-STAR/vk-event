@@ -12,12 +12,16 @@ const routes: Routes = [
     loadChildren: 'app/tabs/tabs.module#TabsModule'
   },
   {
-    path: 'event',
-    loadChildren: 'app/event/event.module#EventModule'
-  },
-  {
     path: 'user',
     loadChildren: 'app/user/user.module#UserModule'
+  },
+  {
+    path: 'appointment',
+    loadChildren: 'app/appointment/appointment.module#AppointmentModule'
+  },
+  {
+    path: 'event',
+    loadChildren: 'app/event/event.module#EventModule'
   },
   { path: '', redirectTo: 'registration', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
