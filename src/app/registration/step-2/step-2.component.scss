@@ -36,29 +36,7 @@
     }
 
     form {
-
-      div.form-group {
-
-        label {
-          color: #909499;
-          font-size: $font-size-sm;
-        }
-
-        label,
-        small {
-          font-size: $font-size-sm;
-        }
-
-        textarea {
-          font-size: 1rem;
-        }
-
-        &:last-of-type {
-          margin-bottom: $spacer * 1.5;
-        }
-
-      }
-
+      @extend .form;
     }
 
   }

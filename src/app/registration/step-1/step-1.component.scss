@@ -41,18 +41,9 @@
     }
 
     form {
+      @extend .form;
 
       div.form-group {
-
-        label {
-          color: #909499;
-          font-size: $font-size-sm;
-        }
-
-        input {
-          font-size: 1rem;
-        }
-
         &:first-child {
           text-align: center;
 
@@ -67,11 +58,6 @@
           }
 
         }
-
-        &:last-of-type {
-          margin-bottom: $spacer * 1.5;
-        }
-
       }
 
     }
