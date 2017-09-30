@@ -1,8 +1,8 @@
 @import "custom-variables";
 
 :host {
-  height: 100vh;
   @extend .flex-column;
+  height: 100vh;
 
   header {
     padding-top: $spacer;
@@ -29,12 +29,11 @@
   }
 
   main {
+    @extend .flex-column;
     flex: 1;
-
     overflow-y: scroll;
     padding-top: $spacer * .5;
     padding-bottom: $spacer;
-    @extend .flex-column;
 
     img {
       @extend .profile-image;
@@ -54,14 +53,14 @@
     }
 
     div.appointment {
+      @extend .appointment-pane;
       margin-top: $spacer * 1.5;
       margin-bottom: $spacer * .5;
-      @extend .appointment-pane;
     }
 
     hr {
-      border-width: $border-width * .5;
       @extend .hr;
+      border-width: $border-width * .5;
     }
 
     div.link {
@@ -103,8 +102,8 @@
     }
 
     & > button {
-      bottom: 1rem;
       @extend .button;
+      bottom: 1rem;
     }
 
     &.button-space {

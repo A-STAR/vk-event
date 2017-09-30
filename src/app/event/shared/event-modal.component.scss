@@ -1,6 +1,7 @@
 @import "custom-variables";
 
 :host {
+  @extend .flex-row;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -10,9 +11,9 @@
   right: 0;
   background-color: rgba($black, .2);
   z-index: $zindex-modal-backdrop;
-  @extend .flex-row;
 
   div {
+    @extend .flex-row;
     justify-content: center;
     margin-left: $spacer * .5;
     margin-right: $spacer * .5;
@@ -20,23 +21,22 @@
     background-color: $white;
     border-radius: $border-radius;
     z-index: $zindex-modal;
-    @extend .flex-row;
 
     h1 {
+      @extend .flex-100;
       margin-bottom: $spacer;
       font-size: 1.0625rem;
       text-align: center;
-      @extend .flex-100;
     }
 
     p {
+      @extend .flex-100;
       margin-bottom: $spacer * 1.5;
       text-align: center;
-      @extend .flex-100;
     }
 
     button {
-      flex-basis: calc(50% - .5px);
+      flex: calc(50% - .5px);
       padding-top: $spacer * .75 + $border-width * .5;
       padding-bottom: $spacer * .75;
       background-color: transparent;
@@ -47,7 +47,7 @@
       font-weight: $display2-weight;
 
       &:last-child {
-        flex-basis: calc(50% + .5px);
+        flex: calc(50% + .5px);
         color: $red;
         border-left: .5px solid $light-blue;
       }

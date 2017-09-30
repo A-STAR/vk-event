@@ -2,13 +2,12 @@
 
 :host {
   flex: 1;
-
   overflow-y: scroll;
 
   main {
+    @extend .flex-column;
     padding-top: $spacer;
     padding-bottom: $spacer * .5;
-    @extend .flex-column;
 
     & > time {
       @extend .light-heading;
@@ -27,10 +26,9 @@
       }
 
       hr {
-        flex: 1;
-
-        margin-left: $spacer * .5;
         @extend .hr;
+        flex: 1;
+        margin-left: $spacer * .5;
       }
 
     }

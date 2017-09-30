@@ -2,7 +2,6 @@
 
 :host {
   flex: 1;
-
   overflow-y: scroll;
 
   main {
@@ -42,8 +41,7 @@
     }
 
     button {
-      flex-basis: calc(50% - #{$spacer} * .25);
-
+      flex: calc(50% - #{$spacer} * .25);
       margin-bottom: $spacer * .5;
       margin-right: $spacer * .5;
 

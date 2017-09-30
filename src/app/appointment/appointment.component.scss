@@ -1,8 +1,8 @@
 @import "custom-variables";
 
 :host {
-  height: 100vh;
   @extend .flex-column;
+  height: 100vh;
 
   header {
     padding-top: $spacer;
@@ -30,12 +30,11 @@
   }
 
   main {
+    @extend .flex-column;
     flex: 1;
-
     overflow-y: scroll;
     padding-top: $spacer * .5;
     padding-bottom: $spacer;
-    @extend .flex-column;
 
     h1 {
       margin-bottom: 0;
@@ -46,11 +45,10 @@
     }
 
     div.user {
+      @extend .flex-row;
       flex: 0 0 auto;
-
       align-items: center;
       margin-bottom: $spacer * 1.5;
-      @extend .flex-row;
 
       img {
         @extend .avatar;

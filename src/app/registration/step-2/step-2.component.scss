@@ -2,7 +2,6 @@
 
 :host {
   flex: 1;
-
   overflow-y: scroll;
 
   header {
@@ -26,9 +25,9 @@
   }
 
   main {
+    @extend .flex-column;
     padding-top: $spacer * .5;
     padding-bottom: $spacer;
-    @extend .flex-column;
 
     h2 {
       margin-bottom: $spacer * 1.5;

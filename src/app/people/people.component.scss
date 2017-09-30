@@ -2,13 +2,12 @@
 
 :host {
   flex: 1;
-
   overflow-y: scroll;
 
   main {
+    @extend .flex-column;
     padding-top: $spacer;
     padding-bottom: $spacer * .5;
-    @extend .flex-column;
 
     form {
       div.form-group {

@@ -1,6 +1,7 @@
 @import "custom-variables";
 
 :host {
+  @extend .flex-column;
   justify-content: flex-end;
   position: absolute;
   top: 0;
@@ -10,7 +11,6 @@
   padding-bottom: $spacer * .5;
   background-color: rgba($black, .2);
   z-index: $zindex-modal-backdrop;
-  @extend .flex-column;
 
   button {
     margin-left: $spacer * .5;

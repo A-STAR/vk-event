@@ -42,7 +42,6 @@
 
   button {
     flex: 1;
-
     background-color: transparent;
     color: $text-muted;
     border: none;
@@ -108,7 +107,6 @@
 
   & > div {
     flex: 1;
-
     overflow: hidden;
 
     h2 {
@@ -231,7 +229,6 @@
 
       &.dash {
         flex: 0 0 auto;
-
         margin-left: .25rem;
         margin-right: .25rem;
 

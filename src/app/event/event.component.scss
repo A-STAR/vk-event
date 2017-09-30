@@ -1,8 +1,8 @@
 @import "custom-variables";
 
 :host {
-  height: 100vh;
   @extend .flex-column;
+  height: 100vh;
 
   header {
     padding-top: $spacer;
@@ -29,14 +29,14 @@
   }
 
   main {
+    @extend .flex-row;
     overflow-y: scroll;
     padding-bottom: $spacer;
-    @extend .flex-row;
 
     div.user {
-      margin-bottom: 0;
       @extend .flex-100;
       @extend .user-item;
+      margin-bottom: 0;
     }
 
     hr {
@@ -71,8 +71,7 @@
     // }
 
     button {
-      flex-basis: calc(50% - #{$spacer} * .25);
-
+      flex: calc(50% - #{$spacer} * .25);
       margin-bottom: $spacer * .5;
       margin-right: $spacer * .5;
 
