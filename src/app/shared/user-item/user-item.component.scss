@@ -26,9 +26,14 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+
+      & + span {
+        display: block;
+      }
+
     }
 
-    span,
+    span:last-child,
     time {
       color: $text-muted;
     }
