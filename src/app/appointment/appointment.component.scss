@@ -46,6 +46,8 @@
     }
 
     div.user {
+      flex-shrink: 0;
+
       align-items: center;
       margin-bottom: $spacer * 1.5;
       @extend .flex-row;
@@ -62,6 +64,36 @@
     }
 
     form {
+
+
+      div.form-group {
+
+        label {
+          color: #909499;
+          font-size: $font-size-sm;
+        }
+
+        label,
+        small {
+          font-size: $font-size-sm;
+        }
+
+        select {
+          display: block;
+          width: 100%;
+          font-size: 1rem;
+          font-weight: $display2-weight;
+        }
+
+        textarea {
+          font-size: 1rem;
+        }
+
+        &:last-of-type {
+          margin-bottom: $spacer * 1.5;
+        }
+
+      }
 
       div.form-row {
         // margin-bottom: $spacer * 2;
@@ -97,35 +129,6 @@
 
           }
 
-        }
-
-      }
-
-      div.form-group {
-
-        label {
-          color: #909499;
-          font-size: $font-size-sm;
-        }
-
-        label,
-        small {
-          font-size: $font-size-sm;
-        }
-
-        select {
-          display: block;
-          width: 100%;
-          font-size: 1rem;
-          font-weight: $display2-weight;
-        }
-
-        textarea {
-          font-size: 1rem;
-        }
-
-        &:last-of-type {
-          margin-bottom: $spacer * 1.5;
         }
 
       }

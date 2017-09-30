@@ -13,10 +13,29 @@ export class AppointmentComponent implements OnInit {
   image: string;
   name: string;
 
-  start: { value: number; time: string; selected?: boolean }[];
-  end: { value: number; time: string; selected?: boolean }[];
+  date: {
+    value: number;
+    date: string;
+    selected?: boolean;
+  }[];
 
-  places: { value: number; place: string; selected?: boolean }[];
+  start: {
+    value: number;
+    time: string;
+    selected?: boolean;
+  }[];
+
+  end: {
+    value: number;
+    time: string;
+    selected?: boolean;
+  }[];
+
+  places: {
+    value: number;
+    place: string;
+    selected?: boolean;
+  }[];
 
   constructor(private location: Location) { }
 
@@ -28,6 +47,17 @@ export class AppointmentComponent implements OnInit {
     this.heading = 'Встреча';
     this.image = '../../../assets/images/victor.jpg';
     this.name = 'Буркин Виктор';
+
+    this.date = [
+      { value: 4, date: '21 ноября', selected: true },
+      { value: 5, date: '22 ноября' },
+      { value: 6, date: '23 ноября' },
+      { value: 7, date: '24 ноября' },
+      { value: 1, date: '25 ноября' },
+      { value: 2, date: '26 ноября' },
+      { value: 3, date: '27 ноября' }
+    ];
+
     this.start = [
       { value: 1, time: '10:00' },
       { value: 2, time: '10:30' },
@@ -58,6 +88,7 @@ export class AppointmentComponent implements OnInit {
       { value: 27, time: '23:00' },
       { value: 28, time: '23:30' }
     ];
+
     this.end = [
       { value: 1, time: '10:00' },
       { value: 2, time: '10:30' },
@@ -88,6 +119,7 @@ export class AppointmentComponent implements OnInit {
       { value: 27, time: '23:00' },
       { value: 28, time: '23:30' }
     ];
+
     this.places = [
       { value: 1, place: 'Красный зал' },
       { value: 2, place: 'Оранжевый зал' },

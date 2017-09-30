@@ -27,10 +27,13 @@
 
   <form (submit)="submit($event)" (input)="input($event)">
 
-    <!-- <div class="form-group">
+    <div class="form-group">
       <label for="date">Дата</label>
-      <input type="date" class="form-control form-control-lg" id="date">
-    </div> -->
+      <select class="custom-select form-control-lg" id="date">
+        <option disabled selected>Дата</option>
+        <option *ngFor="let option of date" [value]="option.value" [selected]="option['selected']">{{ option.date }}</option>
+      </select>
+    </div>
 
     <div class="form-group">
       <label for="time">Время</label>
