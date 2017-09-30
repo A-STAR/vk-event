@@ -131,6 +131,10 @@ export class AppointmentComponent implements OnInit {
     ];
   }
 
+  submit(event) {
+    event.preventDefault();
+  }
+
   back(event) {
     event.preventDefault();
     this.location
