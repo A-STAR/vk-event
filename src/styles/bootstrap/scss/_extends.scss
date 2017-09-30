@@ -32,6 +32,8 @@
   width: 100%;
 }
 
+.toolbar {}
+
 .tabs {
   @extend .escape-container;
   @include pad-container(.5);

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { EventRoutingModule } from './event-routing.module';
 import { EventComponent } from './event.component';
-import { EventModalComponent } from './shared/event-modal.component';
+import { EventModalComponent } from './shared/event-modal/event-modal.component';
 
 @NgModule({
   imports: [
