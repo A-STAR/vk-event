@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
 // import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/operator/switchMap';
 
@@ -26,7 +25,7 @@ export class UserComponent implements OnInit {
   modal: boolean;
   type: string;
 
-  constructor(private location: Location, private route: ActivatedRoute, private router: Router) {
+  constructor(private route: ActivatedRoute, private router: Router) {
     this.button = {
       show: null
     };
@@ -95,12 +94,6 @@ export class UserComponent implements OnInit {
   dismiss(event) {
     console.log('dismiss', event);
     this.modal = false;
-  }
-
-  back(event) {
-    event.preventDefault();
-    this.location
-      .back();
   }
 
 }

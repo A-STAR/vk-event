@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'appointment',
@@ -37,7 +36,7 @@ export class AppointmentComponent implements OnInit {
     selected?: boolean;
   }[];
 
-  constructor(private location: Location) { }
+  constructor() { }
 
   ngOnInit() {
     this.content();
@@ -133,12 +132,6 @@ export class AppointmentComponent implements OnInit {
 
   submit(event) {
     event.preventDefault();
-  }
-
-  back(event) {
-    event.preventDefault();
-    this.location
-      .back();
   }
 
 }
