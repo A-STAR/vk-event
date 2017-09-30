@@ -4,10 +4,8 @@
   flex: 1;
   overflow-y: scroll;
 
-  main {
-    @extend .flex-column;
+  header {
     padding-top: $spacer;
-    padding-bottom: $spacer * .5;
 
     form {
       div.form-group {
@@ -91,18 +89,20 @@
       }
     }
 
+    hr {
+      @extend .hr;
+    }
+
+  }
+
+  main {
+    @extend .flex-column;
+    padding-bottom: $spacer * .5;
+
     & > span {
       align-self: center;
 
       margin-top: $spacer * .5;
-    }
-
-    div.user {
-      @extend .user-item;
-    }
-
-    hr {
-      @extend .hr;
     }
 
   }

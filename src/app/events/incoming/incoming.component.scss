@@ -9,9 +9,8 @@
     padding-bottom: $spacer;
     @extend .flex-row;
 
-    div.user {
+    user-item {
       @extend .flex-100;
-      @extend .user-item;
     }
 
     div.time-place {

@@ -2,48 +2,20 @@
 
   <h2>Новое</h2>
 
-  <div class="user" role="button" (click)="user($event)">
-    <img [src]="'../../../assets/images/arthur.jpg'" [alt]="'Колесников Артур'">
-    <div>
-      <h2>{{ 'Колесников Артур' }}</h2>
-      <span>{{ 'Отказался от встречи' }}:</span>
-      <time>{{ '25 ноя в 15:00 часов' }}</time><span>, {{ 'Красный зал' }}</span>
-    </div>
-  </div>
+  <user-item role="button" [image]="'../../../assets/images/arthur.jpg'" [name]="'Колесников Артур'" [status]="'Отказался от встречи'" [time]="'25 ноя в 15:00 часов'" [place]="'Красный зал'" (click)="user($event)"></user-item>
 
   <hr class="separator">
 
   <h2>Ранее</h2>
 
-  <div class="user" role="button" (click)="event($event, true)">
-    <img [src]="'../../../assets/images/vlad.jpg'" [alt]="'Резников Владислав'">
-    <div>
-      <h2>{{ 'Резников Владислав' }}</h2>
-      <span>{{ 'Принял встречу' }}:</span>
-      <time>{{ '23 ноя в 11:00 часов' }}</time><span>, {{ 'Красный зал' }}</span>
-    </div>
-  </div>
+  <user-item role="button" [image]="'../../../assets/images/vlad.jpg'" [name]="'Резников Владислав'" [status]="'Принял встречу'" [time]="'23 ноя в 11:00 часов'" [place]="'Красный зал'" (click)="event($event, true)"></user-item>
 
   <hr>
 
-  <div class="user" role="button" (click)="event($event, true)">
-    <img [src]="'../../../assets/images/alex.jpg'" [alt]="'Александров Александр'">
-    <div>
-      <h2>{{ 'Александров Александр' }}</h2>
-      <span>{{ 'Перенёс встречу' }}:</span>
-      <time>{{ '25 ноя в 16:00 часов' }}</time><span>, {{ 'Зелёный зал' }}</span>
-    </div>
-  </div>
+  <user-item role="button" [image]="'../../../assets/images/alex.jpg'" [name]="'Александров Александр'" [status]="'Перенёс встречу'" [time]="'25 ноя в 16:00 часов'" [place]="'Зелёный зал'" (click)="event($event, true)"></user-item>
 
   <hr>
 
-  <div class="user" role="button" (click)="event($event)">
-    <img [src]="'../../../assets/images/victor.jpg'" [alt]="'Буркин Виктор'">
-    <div>
-      <h2>{{ 'Буркин Виктор' }}</h2>
-      <span>{{ 'Вами назначена встреча' }}:</span>
-      <time>{{ '27 ноя в 12:00 часов' }}</time><span>, {{ 'Зелёный зал' }}</span>
-    </div>
-  </div>
+  <user-item role="button" [image]="'../../../assets/images/victor.jpg'" [name]="'Буркин Виктор'" [status]="'Вами назначена встреча'" [time]="'27 ноя в 12:00 часов'" [place]="'Зелёный зал'" (click)="event($event)"></user-item>
 
 </main>

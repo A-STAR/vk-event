@@ -1,0 +1,8 @@
+<img [src]="image" [alt]="name">
+<div>
+  <h2>{{ name }}</h2>
+  <span>{{ position || status }}</span>
+  <ng-template [ngIf]="status">
+    <time>{{ time }}</time><span>, {{ place }}</span>
+  </ng-template>
+</div>

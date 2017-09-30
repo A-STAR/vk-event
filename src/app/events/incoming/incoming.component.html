@@ -1,12 +1,6 @@
 <main class="container-fluid">
 
-  <div role="button" class="user" (click)="navigate($event)">
-    <img [src]="'../../../assets/images/dennis.jpg'" [alt]="'Бережков Денис'">
-    <div>
-      <h2>{{ 'Бережков Денис' }}</h2>
-      <span>{{ 'Владелец ресторанной сети Golden Cafe' }}</span>
-    </div>
-  </div>
+  <user-item role="button" [image]="'../../../assets/images/dennis.jpg'" [name]="'Бережков Денис'" [position]="'Владелец ресторанной сети Golden Cafe'" (click)="navigate($event)"></user-item>
 
   <div class="time-place">
     <h2>Время</h2>
@@ -37,13 +31,7 @@
 
   <hr>
 
-  <div role="button" class="user" (click)="navigate($event)">
-    <img [src]="'../../../assets/images/max.jpg'" [alt]="'Синицин Максим'">
-    <div>
-      <h2>{{ 'Синицин Максим' }}</h2>
-      <span>{{ 'Главный экономист МТС' }}</span>
-    </div>
-  </div>
+  <user-item role="button" [image]="'../../../assets/images/max.jpg'" [name]="'Синицин Максим'" [position]="'Главный экономист МТС'" (click)="navigate($event)"></user-item>
 
   <div class="time-place">
     <h2>Время</h2>
@@ -72,13 +60,7 @@
 
   <hr>
 
-  <div role="button" class="user" (click)="navigate($event)">
-    <img [src]="'../../../assets/images/roman.jpg'" [alt]="'Березуцкий Роман'">
-    <div>
-      <h2>{{ 'Березуцкий Роман' }}</h2>
-      <span>{{ 'Руководитель холдинга 5 Элемент' }}</span>
-    </div>
-  </div>
+  <user-item role="button" [image]="'../../../assets/images/roman.jpg'" [name]="'Березуцкий Роман'" [position]="'Руководитель холдинга 5 Элемент'" (click)="navigate($event)"></user-item>
 
   <div class="time-place">
     <h2>Время</h2>

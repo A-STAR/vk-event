@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
+import { SharedModule } from '../shared/shared.module';
 import { EventsRoutingModule } from './events-routing.module';
 import { EventsComponent } from './events.component';
 import { AcceptedComponent } from './accepted/accepted.component';
@@ -10,7 +10,7 @@ import { IncomingModalComponent } from './shared/incoming-modal/incoming-modal.c
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     EventsRoutingModule
   ],
   declarations: [EventsComponent, AcceptedComponent, IncomingComponent, OutgoingComponent, IncomingModalComponent]

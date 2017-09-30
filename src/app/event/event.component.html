@@ -4,13 +4,7 @@
 
 <main class="container-fluid">
 
-  <div role="button" class="user" role="button" (click)="user($event)">
-    <img [src]="'../../../assets/images/victor.jpg'" [alt]="'Буркин Виктор'">
-    <div>
-      <h2>{{ 'Буркин Виктор' }}</h2>
-      <span>{{ 'Менеджер в Газпром' }}</span>
-    </div>
-  </div>
+  <user-item role="button" [image]="'../../../assets/images/victor.jpg'" [name]="'Буркин Виктор'" [position]="'Менеджер в Газпром'" (click)="user($event)"></user-item>
 
   <hr>
 

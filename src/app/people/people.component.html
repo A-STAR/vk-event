@@ -1,4 +1,4 @@
-<main class="container-fluid">
+<header class="container-fluid">
 
   <form (reset)="focus($event)">
     <div class="form-group">
@@ -16,61 +16,27 @@
 
   <hr>
 
-  <div class="user" role="button" *ngIf="true; else notfound" (click)="user($event)">
-    <img [src]="'../../../assets/images/vlad.jpg'" [alt]="'Резников Владислав'">
-    <div>
-      <h2>{{ 'Резников Владислав' }}</h2>
-      <span>{{ 'Директор гипермаркета Ашан' }}</span>
-    </div>
-  </div>
+</header>
 
-  <div class="user" role="button" (click)="user($event)">
-    <img [src]="'../../../assets/images/max.jpg'" [alt]="'Синицин Максим'">
-    <div>
-      <h2>{{ 'Синицин Максим' }}</h2>
-      <span>{{ 'Главный экономист МТС' }}</span>
-    </div>
-  </div>
+<main class="container-fluid">
 
-  <div class="user" role="button" (click)="user($event)">
-    <img [src]="'../../../assets/images/alex.jpg'" [alt]="'Александров Александр'">
-    <div>
-      <h2>{{ 'Александров Александр' }}</h2>
-      <span>{{ 'Менеджер по продажам в Ауди Варшавка' }}</span>
-    </div>
-  </div>
+  <ng-template [ngIf]="true" [ngIfElse]="notfound">
 
-  <div class="user" role="button" (click)="user($event)">
-    <img [src]="'../../../assets/images/roman.jpg'" [alt]="'Березуцкий Роман'">
-    <div>
-      <h2>{{ 'Березуцкий Роман' }}</h2>
-      <span>{{ 'Руководитель холдинга 5 Элемент' }}</span>
-    </div>
-  </div>
+    <user-item role="button" [image]="'../../../assets/images/vlad.jpg'" [name]="'Резников Владислав'" [position]="'Директор гипермаркета Ашан'" (click)="user($event)"></user-item>
 
-  <div class="user" role="button" (click)="user($event)">
-    <img [src]="'../../../assets/images/arthur.jpg'" [alt]="'Колесников Артур'">
-    <div>
-      <h2>{{ 'Колесников Артур' }}</h2>
-      <span>{{ 'Международный представитель Альфа-Банка' }}</span>
-    </div>
-  </div>
+    <user-item role="button" [image]="'../../../assets/images/max.jpg'" [name]="'Синицин Максим'" [position]="'Главный экономист МТС'" (click)="user($event)"></user-item>
 
-  <div class="user" role="button" (click)="user($event)">
-    <img [src]="'../../../assets/images/victor.jpg'" [alt]="'Буркин Виктор'">
-    <div>
-      <h2>{{ 'Буркин Виктор' }}</h2>
-      <span>{{ 'Менеджер в Газпром' }}</span>
-    </div>
-  </div>
+    <user-item role="button" [image]="'../../../assets/images/alex.jpg'" [name]="'Александров Александр'" [position]="'Менеджер по продажам в Ауди Варшавка'" (click)="user($event)"></user-item>
 
-  <div class="user" role="button" (click)="user($event)">
-    <img [src]="'../../../assets/images/dennis.jpg'" [alt]="'Бережков Денис'">
-    <div>
-      <h2>{{ 'Бережков Денис' }}</h2>
-      <span>{{ 'Владелец ресторанной сети Golden Cafe' }}</span>
-    </div>
-  </div>
+    <user-item role="button" [image]="'../../../assets/images/roman.jpg'" [name]="'Березуцкий Роман'" [position]="'Руководитель холдинга 5 Элемент'" (click)="user($event)"></user-item>
+
+    <user-item role="button" [image]="'../../../assets/images/arthur.jpg'" [name]="'Колесников Артур'" [position]="'Международный представитель Альфа-Банка'" (click)="user($event)"></user-item>
+
+    <user-item role="button" [image]="'../../../assets/images/victor.jpg'" [name]="'Буркин Виктор'" [position]="'Менеджер в Газпром'" (click)="user($event)"></user-item>
+
+    <user-item role="button" [image]="'../../../assets/images/dennis.jpg'" [name]="'Бережков Денис'" [position]="'Владелец ресторанной сети Golden Cafe'" (click)="user($event)"></user-item>
+
+  </ng-template>
 
   <ng-template #notfound>
     <span>Не найдено</span>

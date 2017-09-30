@@ -9,9 +9,8 @@
     overflow-y: scroll;
     padding-bottom: $spacer;
 
-    div.user {
+    user-item {
       @extend .flex-100;
-      @extend .user-item;
       margin-bottom: 0;
     }
 

@@ -15,12 +15,11 @@
       @extend .light-heading;
     }
 
-    div.user {
+    user-item {
       margin-bottom: 0;
       padding-bottom: $spacer * .5;
-      @extend .user-item;
 
-      h2 + span {
+      ::ng-deep h2 + span {
         display: inline-block;
         width: 100%;
         color: $body-color;
