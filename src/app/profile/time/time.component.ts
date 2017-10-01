@@ -7,8 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimeComponent implements OnInit {
 
-  start: { value: number; time: string; selected?: boolean }[];
-  end: { value: number; time: string; selected?: boolean }[];
+  start: {
+    value: number;
+    time: string;
+    selected?: boolean
+  }[];
+  end: {
+    value: number;
+    time: string;
+    selected?: boolean
+  }[];
 
   button: {
     class: string;

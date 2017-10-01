@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'appointment',
@@ -36,7 +38,7 @@ export class AppointmentComponent implements OnInit {
     selected?: boolean;
   }[];
 
-  constructor() { }
+  constructor(private location: Location, private router: Router) { }
 
   ngOnInit() {
     this.content();
@@ -132,6 +134,23 @@ export class AppointmentComponent implements OnInit {
 
   submit(event) {
     event.preventDefault();
+  }
+
+  event(event) {
+    console.log('event', event);
+
+    this.location
+      .replaceState('/tabs/events/outgoing');
+
+    event = {
+      id: 9,
+      appointment: false
+    };
+
+    const { id, appointment } = event;
+
+    this.router
+      .navigate([ '/event', id ], { queryParams: { appointment } });
   }
 
 }

@@ -69,7 +69,7 @@ export class UserComponent implements OnInit {
   }
 
   appoint(event) {
-    console.log('appointment', event);
+    console.log('appoint', event);
 
     event = { id: 47 };
 

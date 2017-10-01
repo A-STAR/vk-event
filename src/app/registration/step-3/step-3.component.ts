@@ -8,8 +8,16 @@ import { Router } from '@angular/router';
 })
 export class Step3Component implements OnInit {
 
-  start: { value: number; time: string; selected?: boolean }[];
-  end: { value: number; time: string; selected?: boolean }[];
+  start: {
+    value: number;
+    time: string;
+    selected?: boolean
+  }[];
+  end: {
+    value: number;
+    time: string;
+    selected?: boolean
+  }[];
 
   constructor(private router: Router) {
     this.start = [

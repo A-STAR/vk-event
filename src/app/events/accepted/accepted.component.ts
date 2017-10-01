@@ -14,7 +14,7 @@ export class AcceptedComponent implements OnInit {
   }
 
   event(event) {
-    console.log('navigate', event);
+    console.log('event', event);
 
     event = {
       id: 77,
