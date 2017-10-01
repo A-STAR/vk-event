@@ -31,14 +31,14 @@
     </p>
   </div> -->
 
-  <button class="btn btn-secondary" *ngIf="appointment" (click)="reschedule($event)">Перенести</button>
+  <button class="btn btn-secondary" *ngIf="!pending" (click)="reschedule($event)">Перенести</button>
 
-  <button class="btn btn-secondary" *ngIf="appointment" (click)="cancel($event)">Отклонить</button>
+  <button class="btn btn-secondary" *ngIf="!pending" (click)="cancel($event)">Отклонить</button>
 
-  <div class="appointment" *ngIf="!appointment">
-      {{ status }}
+  <div class="appointment" *ngIf="pending">
+    {{ status }}
   </div>
 
-  <event-modal role="button" [hidden]="!modal" [type]="type" (dismiss)="dismiss($event)"></event-modal>
+  <event-modal role="button" [hidden]="!modal" (dismiss)="dismiss($event)"></event-modal>
 
 </main>

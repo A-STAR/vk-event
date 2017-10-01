@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UserComponent implements OnInit {
 
   appointment: boolean;
+  pending: boolean;
   status: string;
 
   image: string;
@@ -42,7 +43,12 @@ export class UserComponent implements OnInit {
       .queryParamMap
       .get('appointment');
 
-    console.log(id, this.appointment);
+    this.pending = 'true' === this.route
+      .snapshot
+      .queryParamMap
+      .get('pending');
+
+    console.log(id, this.appointment, this.pending);
 
     // this.event$ = this.service.getHero(id);
 
@@ -60,8 +66,9 @@ export class UserComponent implements OnInit {
   content() {
     this.image = '../../../assets/images/victor.jpg';
     this.name = 'Буркин Виктор';
-    this.status = 'Назначена встреча';
-    // this.status = 'Предложение уже отправлено';
+    this.status = this.pending ?
+      'Предложение уже отправлено' :
+      'Назначена встреча';
   }
 
   show() {
@@ -77,23 +84,6 @@ export class UserComponent implements OnInit {
 
     this.router
       .navigate([ '/appointment' ], { queryParams: { id } });
-  }
-
-  reschedule(event) {
-    console.log('reschedule');
-    this.type = 'reschedule';
-    this.modal = true;
-  }
-
-  cancel(event) {
-    console.log('cancel');
-    this.type = 'cancel';
-    this.modal = true;
-  }
-
-  dismiss(event) {
-    console.log('dismiss', event);
-    this.modal = false;
   }
 
 }

@@ -10,13 +10,12 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 })
 export class EventComponent implements OnInit {
 
-  appointment: boolean;
+  pending: boolean;
   status: string;
 
   // event$: Observable<any>;
 
   modal: boolean;
-  type: string;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
@@ -28,12 +27,12 @@ export class EventComponent implements OnInit {
       .paramMap
       .get('id');
 
-    this.appointment = 'true' === this.route
+    this.pending = 'true' === this.route
       .snapshot
       .queryParamMap
-      .get('appointment');
+      .get('pending');
 
-    console.log(id, this.appointment);
+    console.log(id, this.pending);
 
     // this.event$ = this.service.getHero(id);
 
@@ -51,29 +50,38 @@ export class EventComponent implements OnInit {
     this.status = 'Предложение о встрече на рассмотрении у пользователя';
   }
 
-  user(event) {
+  user(event, pending: boolean = false) {
     console.log('user', event);
 
     event = {
       id: 14,
-      appointment: true
+      appointment: true,
+      pending
     };
 
     const { id, appointment } = event;
+    // const { id, appointment, pending } = event;
 
     this.router
-      .navigate([ '/user', id ], { queryParams: { appointment } });
+      .navigate([ '/user', id ], { queryParams: { appointment, pending } });
   }
 
   reschedule(event) {
-    console.log('reschedule');
-    this.type = 'reschedule';
-    this.modal = true;
+    console.log('reschedule', event);
+
+    event = {
+      id: 18,
+      postponement: true
+    };
+
+    const { id, postponement } = event;
+
+    this.router
+      .navigate([ '/appointment' ], { queryParams: { id, postponement } });
   }
 
   cancel(event) {
     console.log('cancel');
-    this.type = 'cancel';
     this.modal = true;
   }
 

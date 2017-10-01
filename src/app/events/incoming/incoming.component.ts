@@ -17,10 +17,18 @@ export class IncomingComponent implements OnInit {
     this.modal = false;
   }
 
-  navigate(event) {
-    console.log('accept');
+  user(event) {
+    console.log('user', event);
+
+    event = {
+      id: 99,
+      appointment: true
+    };
+
+    const { id, appointment } = event;
+
     this.router
-      .navigate(['events/incoming']);
+      .navigate([ '/user', id ], { queryParams: { appointment } });
   }
 
   accept(event) {
@@ -30,6 +38,26 @@ export class IncomingComponent implements OnInit {
   more(event) {
     console.log('more');
     this.type = 'more';
+    this.modal = true;
+  }
+
+  reschedule(event) {
+    console.log('reschedule', event);
+
+    event = {
+      id: 55,
+      postponement: true
+    };
+
+    const { id, postponement } = event;
+
+    this.router
+      .navigate([ '/appointment' ], { queryParams: { id, postponement } });
+  }
+
+  cancel(event) {
+    console.log('cancel');
+    this.type = 'cancel';
     this.modal = true;
   }
 

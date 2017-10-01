@@ -18,13 +18,13 @@ export class AcceptedComponent implements OnInit {
 
     event = {
       id: 77,
-      appointment: true
+      pending: false
     };
 
-    const { id, appointment } = event;
+    const { id, pending } = event;
 
     this.router
-      .navigate([ '/event', id ], { queryParams: { appointment } });
+      .navigate([ '/event', id ], { queryParams: { pending } });
   }
 
 }

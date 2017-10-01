@@ -27,19 +27,19 @@ export class OutgoingComponent implements OnInit {
       .navigate([ '/user', id ], { queryParams: { appointment } });
   }
 
-  event(event, appointment: boolean = false) {
+  event(event, pending: boolean = false) {
     console.log('event', event);
 
     event = {
       id: 139,
-      appointment
+      pending
     };
 
     const { id } = event;
-    // const { id, appointment } = event;
+    // const { id, pending } = event;
 
     this.router
-      .navigate([ '/event', id ], { queryParams: { appointment } });
+      .navigate([ '/event', id ], { queryParams: { pending } });
   }
 
 }

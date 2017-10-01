@@ -13,8 +13,6 @@ export class EventModalComponent implements OnInit, OnChanges {
   @ViewChild('confirmation') confirmation: ElementRef;
   @ViewChild('cancellation') cancellation: ElementRef;
 
-  @Input() type: string;
-
   @Output() dismiss: EventEmitter<boolean> = new EventEmitter();
 
   @HostListener('click', ['$event']) close(event) {
@@ -31,17 +29,6 @@ export class EventModalComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    this.content();
-  }
-
-  content() {
-    if (this.type === 'cancel') {
-      this.heading = 'Отклонение';
-      this.confirm = 'Отклонить';
-    } else {
-      this.heading = 'Перенос';
-      this.confirm = 'Перенести';
-    }
   }
 
 }

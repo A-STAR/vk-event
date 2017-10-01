@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'appointment',
@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppointmentComponent implements OnInit {
 
+  postponement: boolean;
   heading: string;
 
   image: string;
@@ -38,14 +39,21 @@ export class AppointmentComponent implements OnInit {
     selected?: boolean;
   }[];
 
-  constructor(private location: Location, private router: Router) { }
+  constructor(private location: Location, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.postponement = 'true' === this.route
+      .snapshot
+      .queryParamMap
+      .get('postponement');
+
     this.content();
   }
 
   content() {
-    this.heading = 'Встреча';
+    this.heading = this.postponement ?
+      'Перенос встречи' :
+      'Встреча';
     this.image = '../../../assets/images/victor.jpg';
     this.name = 'Буркин Виктор';
 
@@ -144,13 +152,13 @@ export class AppointmentComponent implements OnInit {
 
     event = {
       id: 9,
-      appointment: false
+      pending: true
     };
 
-    const { id, appointment } = event;
+    const { id, pending } = event;
 
     this.router
-      .navigate([ '/event', id ], { queryParams: { appointment } });
+      .navigate([ '/event', id ], { queryParams: { pending } });
   }
 
 }
