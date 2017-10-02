@@ -10,8 +10,6 @@ export class IncomingModalComponent implements OnInit {
   @ViewChild('postponement') postponement: ElementRef;
   @ViewChild('confirmation') confirmation: ElementRef;
 
-  @Input() type: string;
-
   @Output() dismiss: EventEmitter<boolean> = new EventEmitter();
 
   @HostListener('click', ['$event']) close(event) {

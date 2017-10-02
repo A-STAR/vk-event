@@ -15,12 +15,12 @@ export class EventComponent implements OnInit {
 
   // event$: Observable<any>;
 
-  modal: boolean;
+  event: boolean;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.modal = false;
+    this.event = false;
 
     const id = this.route
       .snapshot
@@ -82,12 +82,12 @@ export class EventComponent implements OnInit {
 
   cancel(event) {
     console.log('cancel');
-    this.modal = true;
+    this.event = true;
   }
 
   dismiss(event) {
     console.log('dismiss', event);
-    this.modal = false;
+    this.event = false;
   }
 
 }

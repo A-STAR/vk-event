@@ -8,13 +8,14 @@ import { Router } from '@angular/router';
 })
 export class IncomingComponent implements OnInit {
 
-  modal: boolean;
-  type: string;
+  incoming: boolean;
+  event: boolean;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.modal = false;
+    this.incoming = false;
+    this.event = false;
   }
 
   user(event) {
@@ -37,8 +38,7 @@ export class IncomingComponent implements OnInit {
 
   more(event) {
     console.log('more');
-    this.type = 'more';
-    this.modal = true;
+    this.incoming = true;
   }
 
   reschedule(event) {
@@ -57,13 +57,17 @@ export class IncomingComponent implements OnInit {
 
   cancel(event) {
     console.log('cancel');
-    this.type = 'cancel';
-    this.modal = true;
+    this.event = true;
   }
 
-  dismiss(event) {
-    console.log('dismiss', event);
-    this.modal = false;
+  dismissIncoming(event) {
+    console.log('dismiss incoming', event);
+    this.incoming = false;
+  }
+
+  dismissEvent(event) {
+    console.log('dismiss event', event);
+    this.event = false;
   }
 
 }
