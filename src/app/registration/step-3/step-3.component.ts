@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,7 +20,7 @@ export class Step3Component implements OnInit {
     selected?: boolean
   }[];
 
-  constructor(private router: Router) {
+  constructor(private location: Location, private router: Router) {
     this.start = [
       { value: 1, time: '10:00' },
       { value: 2, time: '10:30' },
@@ -91,6 +92,9 @@ export class Step3Component implements OnInit {
   }
 
   next() {
+    this.location
+      .replaceState('tabs');
+
     this.router
       .navigate(['/tabs']);
   }

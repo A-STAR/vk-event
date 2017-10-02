@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class Step2Component implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private location: Location, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -19,6 +20,9 @@ export class Step2Component implements OnInit {
   }
 
   next() {
+    this.location
+      .replaceState('registration/step-3');
+
     this.router
       .navigate(['../step-3'], { relativeTo: this.route });
   }
