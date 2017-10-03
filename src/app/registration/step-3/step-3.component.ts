@@ -93,10 +93,10 @@ export class Step3Component implements OnInit {
 
   next() {
     this.location
-      .replaceState('tabs');
+      .replaceState('');
 
     this.router
-      .navigate(['/tabs']);
+      .navigate(['/']);
   }
 
 }

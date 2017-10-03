@@ -148,7 +148,7 @@ export class AppointmentComponent implements OnInit {
     console.log('event', event);
 
     this.location
-      .replaceState('/tabs/events/outgoing');
+      .replaceState('events/outgoing');
 
     event = {
       id: 9,
