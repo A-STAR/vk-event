@@ -14,19 +14,31 @@ export class RegistrationGuard implements CanActivate {
     return this.checkLogin(url);
   }
 
-  checkLogin(url: string): boolean {
-    if (!this.authService.isLoggedIn) {
-      return true;
-    }
+  checkLogin(url: string): Observable<boolean> {
+    return this.authService
+      .login()
+      .map(response => {
+        console.log(response);
+        if (!response) {
+          // Get the redirect URL
+          // If no redirect has been set, use the default
+          const redirect = url ?
+            url :
+            '/registration';
 
-    // Store the attempted URL for redirecting
-    this.authService.redirectUrl = url;
+          // Redirect the user
+          // this.router
+          //   .navigate([redirect]);
 
-    // Navigate to the registration page with extras
-    this.router
-      .navigate(['/']);
+          return true;
+        }
 
-    return false;
+        // Navigate to the registration page with extras
+        this.router
+          .navigate(['/']);
+
+        return false;
+      });
   }
 
 }
