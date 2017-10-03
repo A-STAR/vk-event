@@ -6,8 +6,8 @@
 
   main {
     @extend .flex-column;
+    @extend .scroll;
     flex: 1;
-    overflow-y: scroll;
     padding-top: $spacer * .5;
     padding-bottom: $spacer;
 

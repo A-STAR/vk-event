@@ -2,8 +2,8 @@
 @import "breakpoints";
 
 :host {
+  @extend .scroll;
   flex: 1;
-  overflow-y: scroll;
 
   main {
     @extend .flex-row;

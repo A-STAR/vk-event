@@ -1,8 +1,8 @@
 @import "custom-variables";
 
 :host {
+  @extend .scroll;
   flex: 1;
-  overflow-y: scroll;
 
   main {
     padding-top: $spacer;
