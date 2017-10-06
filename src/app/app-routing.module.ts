@@ -31,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: 'registration',
-    canActivate: [RegistrationGuard],
+    // canActivate: [RegistrationGuard],
     loadChildren: 'app/registration/registration.module#RegistrationModule'
   },
   { path: '**', component: PageNotFoundComponent }

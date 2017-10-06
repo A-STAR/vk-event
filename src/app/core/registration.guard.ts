@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Params, Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import { Observable } from 'rxjs/Observable';
 
@@ -9,14 +9,17 @@ export class RegistrationGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+    const params: Params = next
+      .queryParams;
+
     const url: string = state.url;
 
-    return this.checkLogin(url);
+    return this.checkLogin(params, url);
   }
 
-  checkLogin(url: string): Observable<boolean> {
+  checkLogin(params: Params, url: string): Observable<boolean> {
     return this.authService
-      .login()
+      .login(params)
       .map(response => {
         console.log(response);
         if (!response) {
