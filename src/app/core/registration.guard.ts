@@ -9,8 +9,7 @@ export class RegistrationGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    const params: Params = next
-      .queryParams;
+    const params: Params = next.queryParams;
 
     const url: string = state.url;
 

@@ -12,8 +12,7 @@ export class AuthGuard implements CanActivate {
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     console.log('AuthGuard#canActivate called');
 
-    const params: Params = next
-      .queryParams;
+    const params: Params = next.queryParams;
 
     const url: string = state.url;
 
