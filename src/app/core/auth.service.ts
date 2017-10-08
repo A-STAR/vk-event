@@ -35,14 +35,14 @@ const PARAMS = {
 @Injectable()
 export class AuthService {
 
-  isLoggedIn = false;
+  authorized = false;
 
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
   constructor(private http: HttpService, private token: TokenService) { }
 
-  login(params: Params): Observable<boolean> {
+  authorize(params: Params): Observable<boolean> {
 
     if (!environment.production) {
       params = PARAMS;
@@ -56,29 +56,21 @@ export class AuthService {
       // .take(3)
       .subscribe();
 
-    let fakeToken;
-    fakeToken = '';
-    fakeToken = 'FFFF70it7tzNsHddEiq0BZ0i-OU8S3xV';
-
-    const token = this.token.getToken() || fakeToken;
-
-    console.log('AuthService#login token', token);
-
-    if (token) {
+    if (this.token.token) {
       return Observable
         .of(true)
         .delay(1000)
-        .do(val => this.isLoggedIn = true);
+        .do(val => this.authorized = true);
     } else {
       return Observable
         .of(false)
         .delay(1000)
-        .do(val => this.isLoggedIn = false);
+        .do(val => this.authorized = false);
     }
   }
 
-  logout(): void {
-    this.isLoggedIn = false;
+  reauthorize(): void {
+    this.authorized = false;
   }
 
 }

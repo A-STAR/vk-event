@@ -13,14 +13,15 @@ export class RegistrationGuard implements CanActivate {
 
     const url: string = state.url;
 
-    return this.checkLogin(params, url);
+    return this.authorized(params, url);
   }
 
-  checkLogin(params: Params, url: string): Observable<boolean> {
+  authorized(params: Params, url: string): Observable<boolean> {
     return this.auth
-      .login(params)
+      .authorize(params)
       .map(response => {
-        console.log('RegistrationGuard#checkLogin response', response);
+        console.log('RegistrationGuard#authorized response', response);
+
         if (!response) {
           // Get the redirect URL
           // If no redirect has been set, use the default

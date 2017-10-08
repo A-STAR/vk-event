@@ -9,22 +9,16 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(private token: TokenService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // Get the token from the service.
-    const token = this.token.getToken() || 'FFFF70it7tzNsHddEiq0BZ0i-OU8S3xV';
+    if (this.token.token) {
+      // const request = req
+      //   .clone({ headers: req.headers.set('Authorization', `Bearer ${this.token.token}`) });
 
-    console.log('AuthInterceptor#intercept token', token);
+      const request = req
+        .clone({ setHeaders: { Authorization: `Bearer ${this.token.token}` } });
 
-    // Get the auth header from the service.
-    // const authHeader = this.auth.getAuthorizationHeader();
-    const header = `Bearer ${token}`;
-
-    // Clone the request to add the new header.
-    const request = req
-      .clone({ headers: req.headers.set('Authorization', header) });
-
-    // Pass on the cloned request instead of the original request.
-    return next
-      .handle(request);
+      return next
+        .handle(request);
+    }
   }
 
 }
