@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Params } from '@angular/router';
 import { environment } from '../../environments/environment';
-
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
+import 'rxjs/add/operator/share';
+import 'rxjs/add/operator/take';
+import { HttpService } from './http.service';
+import { TokenService } from './token.service';
 
 const PARAMS = {
   access_token: 'b25bab7b1aae21fb2bd033712363e0ac8fbdec9e8499fd4f959f0edb26a7d66f230702caeb96393298e7a',
@@ -37,7 +40,7 @@ export class AuthService {
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
-  constructor() { }
+  constructor(private http: HttpService, private token: TokenService) { }
 
   login(params: Params): Observable<boolean> {
 
@@ -47,7 +50,19 @@ export class AuthService {
 
     console.log('AuthService#login called', params);
 
-    const token = true;
+    this.http
+      .post('/init/', params)
+      // .share()
+      // .take(3)
+      .subscribe();
+
+    let fakeToken;
+    fakeToken = '';
+    fakeToken = 'FFFF70it7tzNsHddEiq0BZ0i-OU8S3xV';
+
+    const token = this.token.getToken() || fakeToken;
+
+    console.log('AuthService#login token', token);
 
     if (token) {
       return Observable

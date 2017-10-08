@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Params, Router } from '@angular/router';
-import { AuthService } from './auth.service';
 import { Observable } from 'rxjs/Observable';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class RegistrationGuard implements CanActivate {
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     const params: Params = next.queryParams;
@@ -17,10 +17,10 @@ export class RegistrationGuard implements CanActivate {
   }
 
   checkLogin(params: Params, url: string): Observable<boolean> {
-    return this.authService
+    return this.auth
       .login(params)
       .map(response => {
-        console.log(response);
+        console.log('RegistrationGuard#checkLogin response', response);
         if (!response) {
           // Get the redirect URL
           // If no redirect has been set, use the default

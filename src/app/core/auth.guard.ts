@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Params, Router } from '@angular/router';
-import { AuthService } from './auth.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     console.log('AuthGuard#canActivate called');
@@ -20,10 +20,10 @@ export class AuthGuard implements CanActivate {
   }
 
   checkLogin(params: Params, url: string): Observable<boolean> {
-    return this.authService
+    return this.auth
       .login(params)
       .map(response => {
-        console.log(response);
+        console.log('AuthGuard#checkLogin response', response);
         if (response) {
           // Get the redirect URL
           // If no redirect has been set, use the default
@@ -44,30 +44,15 @@ export class AuthGuard implements CanActivate {
 
         return false;
       });
-      // .subscribe(() => {
-      //   if (this.authService.isLoggedIn) {
-      //     // Redirect the user
-      //     this.router
-      //       .navigate([url]);
-
-      //     return true;
-      //   } else {
-      //     // Navigate to the registration page with extras
-      //     this.router
-      //       .navigate(['/registration']);
-
-      //     return false;
-      //   }
-      // });
   }
 
   // checkLogin(url: string): boolean {
-  //   if (this.authService.isLoggedIn) {
+  //   if (this.auth.isLoggedIn) {
   //     return true;
   //   }
 
   //   // Store the attempted URL for redirecting
-  //   this.authService.redirectUrl = url;
+  //   this.auth.redirectUrl = url;
 
   //   // Navigate to the registration page with extras
   //   this.router
