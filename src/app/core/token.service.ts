@@ -6,7 +6,9 @@ export class TokenService {
   constructor() { }
 
   get token() {
-    const fake = 'FFFF70it7tzNsHddEiq0BZ0i-OU8S3xV';
+    let fake;
+    fake = '';
+    // fake = 'FFFF70it7tzNsHddEiq0BZ0i-OU8S3xV';
 
     if (fake) {
       console.log('TokenService# token fake', fake);
