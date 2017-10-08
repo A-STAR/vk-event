@@ -7,7 +7,7 @@ export class TokenService {
 
   get token() {
     let fake;
-    // fake = '';
+    fake = '';
     fake = 'FFFF70it7tzNsHddEiq0BZ0i-OU8S3xV';
 
     if (fake) {
