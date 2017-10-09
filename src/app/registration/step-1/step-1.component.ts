@@ -19,7 +19,7 @@ export class Step1Component implements OnInit {
   }
 
   content() {
-    this.image = '../../../assets/images/vlad.jpg';
+    this.image = 'assets/images/vlad.jpg';
     this.name = 'Резников Владислав';
   }
 

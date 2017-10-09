@@ -32,7 +32,7 @@ export class InfoComponent implements OnInit {
   }
 
   content() {
-    this.image = '../../../assets/images/vlad.jpg';
+    this.image = 'assets/images/vlad.jpg';
     this.name = 'Резников Владислав';
   }
 

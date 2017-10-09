@@ -54,7 +54,7 @@ export class AppointmentComponent implements OnInit {
     this.heading = this.postponement ?
       'Перенос встречи' :
       'Встреча';
-    this.image = '../../../assets/images/victor.jpg';
+    this.image = 'assets/images/victor.jpg';
     this.name = 'Буркин Виктор';
 
     this.date = [

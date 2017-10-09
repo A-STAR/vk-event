@@ -64,7 +64,7 @@ export class UserComponent implements OnInit {
   }
 
   content() {
-    this.image = '../../../assets/images/victor.jpg';
+    this.image = 'assets/images/victor.jpg';
     this.name = 'Буркин Виктор';
     this.status = this.pending ?
       'Предложение уже отправлено' :

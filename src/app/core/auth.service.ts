@@ -24,11 +24,11 @@ export class AuthService {
 
     console.log('AuthService#login called', params);
 
-    this.http
-      .post('/init/', params)
-      // .share()
-      // .take(3)
-      .subscribe();
+    // this.http
+    //   .post('/init/', params)
+    //   .share()
+    //   .take(3)
+    //   .subscribe();
 
     if (this.token.token) {
       return Observable

@@ -7,6 +7,7 @@
   main {
     @extend .flex-row;
     @extend .scroll;
+    overflow-y: auto;
     padding-bottom: $spacer;
 
     user-item {
