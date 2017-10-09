@@ -69,6 +69,12 @@ export class AuthService {
     }
   }
 
+  update() {
+    return this.authorize()
+      .do(response => this.token.token(response))
+      .share();
+  }
+
   reauthorize(): void {
     this.authorized = false;
   }
