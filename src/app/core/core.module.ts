@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpService } from './http.service';
 import { TokenService } from './token.service';
+import { AuthService } from './auth.service';
 import { AuthInterceptor } from './auth.interceptor';
 import { PageNotFoundComponent } from './not-found/not-found.component';
 
@@ -17,6 +18,7 @@ import { PageNotFoundComponent } from './not-found/not-found.component';
   providers: [
     HttpService,
     TokenService,
+    AuthService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

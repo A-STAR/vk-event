@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Params } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
@@ -7,7 +8,6 @@ import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/share';
 import 'rxjs/add/operator/take';
 import { environment } from '../../environments/environment';
-import { HttpService } from './http.service';
 import { TokenService } from './token.service';
 
 const PARAMS = {
@@ -40,7 +40,7 @@ export class AuthService {
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
-  constructor(private http: HttpService, private token: TokenService) { }
+  constructor(private http: HttpClient, private token: TokenService) { }
 
   authorize(params?: Params): Observable<boolean> {
 
@@ -51,7 +51,7 @@ export class AuthService {
     console.log('AuthService#login called', params);
 
     this.http
-      .post('/init/', params)
+      .post(`${environment.api}/init/`, params)
       // .share()
       // .take(3)
       .subscribe();
