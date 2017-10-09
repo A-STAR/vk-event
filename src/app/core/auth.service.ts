@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Params } from '@angular/router';
-import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/share';
 import 'rxjs/add/operator/take';
+import { environment } from '../../environments/environment';
 import { HttpService } from './http.service';
 import { TokenService } from './token.service';
 
@@ -42,7 +42,7 @@ export class AuthService {
 
   constructor(private http: HttpService, private token: TokenService) { }
 
-  authorize(params: Params): Observable<boolean> {
+  authorize(params?: Params): Observable<boolean> {
 
     if (!environment.production) {
       params = PARAMS;
