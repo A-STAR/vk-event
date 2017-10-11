@@ -52,7 +52,7 @@ export class AuthService {
 
     this.http
       .post(`${environment.api}/init/`, params)
-      // .share()
+      .share()
       // .take(3)
       .subscribe();
 

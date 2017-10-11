@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: 'https://vkevent-backend.pomon.ru'
+  api: 'https://vkevent-an-backend.pomon.ru'
 };

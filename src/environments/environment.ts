@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  api: 'https://vkevent-backend.pomon.ru'
+  api: 'https://vkevent-an-backend.pomon.ru'
 };
