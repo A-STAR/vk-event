@@ -31,13 +31,14 @@ const routes: Routes = [
   },
   {
     path: 'registration',
-    canActivate: [RegistrationGuard],
-    loadChildren: 'app/registration/registration.module#RegistrationModule'
+    loadChildren: 'app/registration/registration.module#RegistrationModule',
+    canActivate: [RegistrationGuard]
   },
   // {
   //   path: 'admin',
-  //   canActivate: [AdminGuard],
-  //   loadChildren: 'app/admin/admin.module#AdminModule'
+  //   loadChildren: 'app/admin/admin.module#AdminModule',
+  //   canLoad: [AdminGuard],
+  //   canActivate: [AdminGuard]
   // },
   { path: '**', component: PageNotFoundComponent }
 ];
