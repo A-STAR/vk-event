@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, ExtraOptions, PreloadingStrategy, PreloadAllModules } from '@angular/router';
 import { AuthGuard } from './core/auth.guard';
 import { RegistrationGuard } from './core/registration.guard';
+import { AdminGuard } from './core/admin.guard';
 import { PageNotFoundComponent } from './core/not-found/not-found.component';
 
 const routes: Routes = [
@@ -47,7 +48,7 @@ const config: ExtraOptions = {
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, config)],
-  providers: [AuthGuard, RegistrationGuard],
+  providers: [AuthGuard, RegistrationGuard, AdminGuard],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
