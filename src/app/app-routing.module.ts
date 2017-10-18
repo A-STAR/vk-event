@@ -33,6 +33,11 @@ const routes: Routes = [
     canActivate: [RegistrationGuard],
     loadChildren: 'app/registration/registration.module#RegistrationModule'
   },
+  // {
+  //   path: 'admin',
+  //   canActivate: [AdminGuard],
+  //   loadChildren: 'app/admin/admin.module#AdminModule'
+  // },
   { path: '**', component: PageNotFoundComponent }
 ];
 
