@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { Params } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+// import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/observable/of';
+// import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/share';
@@ -34,12 +36,18 @@ const PARAMS = {
 @Injectable()
 export class AuthService {
 
+  // private trigger: BehaviorSubject<any>;
+
   authorized = false;
 
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
-  constructor(private http: HttpClient, private token: TokenService) { }
+  params: Object;
+
+  constructor(private http: HttpClient, private token: TokenService) {
+    // this.trigger = new BehaviorSubject(null);
+  }
 
   authorize(params?: Params): Observable<boolean> {
 
@@ -49,9 +57,14 @@ export class AuthService {
 
     console.log('AuthService#login called', params);
 
+    // this.trigger
+    //   .switchMap(() => this.http.post(`${environment.api}/init/`, params))
     this.http
       .post(`${environment.api}/init/`, params)
-      .do(response => this.token.token(response['token']))
+      .do(response => {
+        this.params = response;
+        this.token.token(response['token']);
+      })
       // .share();
       .share().subscribe();
 
@@ -67,6 +80,19 @@ export class AuthService {
         .do(val => this.authorized = false);
     }
   }
+
+  // update() {
+  //   return this.http
+  //     .post(`${environment.api}/init/`, this.params)
+  //     .do(response => this.token.token(response['token']))
+  //     .share();
+  // }
+
+  // update() {
+  //   this.trigger.next(null);
+
+  //   return this.authorize();
+  // }
 
   reauthorize(): void {
     this.authorized = false;
