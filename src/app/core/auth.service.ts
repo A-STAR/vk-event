@@ -6,7 +6,6 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/share';
-import 'rxjs/add/operator/take';
 import { environment } from '../../environments/environment';
 import { TokenService } from './token.service';
 
@@ -52,9 +51,8 @@ export class AuthService {
 
     this.http
       .post(`${environment.api}/init/`, params)
-      .share()
-      // .take(3)
-      .subscribe();
+      .do(response => this.token.token(response['token']))
+      .share();
 
     if (this.token.token) {
       return Observable
@@ -67,12 +65,6 @@ export class AuthService {
         .delay(1000)
         .do(val => this.authorized = false);
     }
-  }
-
-  update() {
-    return this.authorize()
-      .do(response => this.token.token(response))
-      .share();
   }
 
   reauthorize(): void {
