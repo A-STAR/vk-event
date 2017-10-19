@@ -52,8 +52,8 @@ export class AuthService {
     this.http
       .post(`${environment.api}/init/`, params)
       .do(response => this.token.token(response['token']))
-      .share()
-      .subscribe();
+      // .share();
+      .share().subscribe();
 
     if (this.token.token) {
       return Observable

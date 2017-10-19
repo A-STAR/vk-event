@@ -20,7 +20,7 @@ export class RegistrationGuard implements CanActivate {
   authorized(params: Params, url: string): Observable<boolean> {
     return this.auth
       .authorize(params)
-      .map(response => {
+      .do(response => {
         console.log('RegistrationGuard#authorized response', response);
 
         if (!response) {
