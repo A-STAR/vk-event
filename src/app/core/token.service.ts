@@ -6,17 +6,17 @@ export class TokenService {
   constructor() { }
 
   get token() {
-    let fake;
-    fake = '';
-    fake = 'FFFF70it7tzNsHddEiq0BZ0i-OU8S3xV';
+    // let fake;
+    // fake = '';
+    // fake = 'FFFF70it7tzNsHddEiq0BZ0i-OU8S3xV';
 
-    if (fake) {
-      console.log('TokenService# token fake', fake);
+    // if (fake) {
+    //   console.log('TokenService#token fake', fake);
 
-      return fake;
-    }
+    //   return fake;
+    // }
 
-    console.log('TokenService# token', localStorage.getItem('token'));
+    // console.log('TokenService#token', localStorage.getItem('token'));
 
     return localStorage.getItem('token');
   }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Params, Router } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Params, Router, NavigationExtras } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { AuthService } from './auth.service';
@@ -23,24 +23,26 @@ export class RegistrationGuard implements CanActivate {
       .map(response => {
         console.log('RegistrationGuard#authorized response', response);
 
-        if (!response) {
+        if (response['token'] && !response['profile']) {
           // Get the redirect URL
           // If no redirect has been set, use the default
-          const redirect = url ?
-            url :
-            '/registration';
+          // const redirect = url ?
+          //   url :
+          //   '/registration';
 
           // Redirect the user
           // this.router
           //   .navigate([redirect]);
 
+          console.log('RegistrationGuard#authorized true');
           return true;
         }
 
         // Navigate to the registration page with extras
         this.router
-          .navigate(['/']);
+          .navigate(['/'], { queryParamsHandling: 'merge' });
 
+        console.log('RegistrationGuard#authorized false');
         return false;
       });
   }

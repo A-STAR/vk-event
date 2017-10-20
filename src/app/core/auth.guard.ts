@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Params, Router } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Params, Router, NavigationExtras } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { AuthService } from './auth.service';
@@ -23,13 +23,13 @@ export class AuthGuard implements CanActivate {
     return this.auth
       .authorize(params)
       .map(response => {
-        console.log('AuthGuard#authorized response', response);
-        if (response) {
+        console.log('AuthGuard#authorized response', response['profile']);
+        if (response['profile']) {
           // Get the redirect URL
           // If no redirect has been set, use the default
-          const redirect = url ?
-            url :
-            '/';
+          // const redirect = url ?
+          //   url :
+          //   '/';
 
           // Redirect the user
           // this.router
@@ -40,8 +40,9 @@ export class AuthGuard implements CanActivate {
 
         // Navigate to the registration page with extras
         this.router
-          .navigate(['/registration']);
+          .navigate(['/registration'], { queryParamsHandling: 'preserve' });
 
+        console.log('AuthGuard#authorized response false');
         return false;
       });
   }
