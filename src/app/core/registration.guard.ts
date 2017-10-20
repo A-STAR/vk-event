@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Params, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/map';
 import { AuthService } from './auth.service';
 
 @Injectable()
@@ -20,7 +20,7 @@ export class RegistrationGuard implements CanActivate {
   authorized(params: Params, url: string): Observable<boolean> {
     return this.auth
       .authorize(params)
-      .do(response => {
+      .map(response => {
         console.log('RegistrationGuard#authorized response', response);
 
         if (!response) {

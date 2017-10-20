@@ -51,16 +51,18 @@ export class AuthService {
 
   authorize(params?: Params): Observable<boolean> {
 
-    if (!environment.production) {
-      params = PARAMS;
-    }
-
     console.log('AuthService#login called', params);
+
+    this.params = params || this.params;
+
+    if (!environment.production) {
+      this.params = PARAMS;
+    }
 
     // this.trigger
     //   .switchMap(() => this.http.post(`${environment.api}/init/`, params))
     this.http
-      .post(`${environment.api}/init/`, params)
+      .post(`${environment.api}/init/`, this.params)
       .do(response => {
         this.params = response;
         this.token.token(response['token']);
@@ -94,8 +96,8 @@ export class AuthService {
   //   return this.authorize();
   // }
 
-  reauthorize(): void {
-    this.authorized = false;
-  }
+  // reauthorize(): void {
+  //   this.authorized = false;
+  // }
 
 }
