@@ -6,7 +6,6 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 // import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/share';
 import { environment } from '../../environments/environment';
 import { TokenService } from './token.service';
@@ -16,12 +15,12 @@ export class AuthService {
 
   // private trigger: BehaviorSubject<any>;
 
-  authorized = false;
+  // authorized = false;
 
   // store the URL so we can redirect after logging in
-  redirectUrl: string;
+  // redirectUrl: string;
 
-  params: Object;
+  authorization$: Observable<Object>;
 
   constructor(private http: HttpClient, private token: TokenService) {
     // this.trigger = new BehaviorSubject(null);
@@ -29,46 +28,31 @@ export class AuthService {
 
   authorize(params?: Params): Observable<Object> {
 
-    this.params = params || this.params;
+    console.log('AuthService#authorize called', params);
+    // console.log('AuthService#authorize authorization$', this.authorization$);
 
-    console.log('AuthService#authorize called', this.params);
+    if (this.authorization$) {
+      // console.log('AuthService#authorize authorization$ exists', this.authorization$);
+      return this.authorization$;
+    }
 
-    // this.trigger
+    // console.log('AuthService#authorize authorization$ setting', this.authorization$);
+
+    // return this.authorization$ || this.trigger
     //   .switchMap(() => this.http.post(`${environment.api}/init/`, params))
-    return this.http
-      .post(`${environment.api}/init/`, this.params)
+    return this.authorization$ = this.http
+      .post(`${environment.api}/init/`, params)
       .do(response => {
         console.log('AuthService#authorize response', response);
         this.token.token = response['token'];
       })
       .share();
-
-    // const test = true;
-
-    // if (test) {
-    //   return Observable
-    //     .of(true)
-    //     .delay(1000)
-    //     .do(val => this.authorized = true);
-    // } else {
-    //   return Observable
-    //     .of(false)
-    //     .delay(1000)
-    //     .do(val => this.authorized = false);
-    // }
   }
-
-  // update() {
-  //   return this.http
-  //     .post(`${environment.api}/init/`, this.params)
-  //     .do(response => this.token.token(response['token']))
-  //     .share();
-  // }
 
   // update() {
   //   this.trigger.next(null);
 
-  //   return this.authorize();
+  //   return this.authorize$;
   // }
 
   // reauthorize(): void {
