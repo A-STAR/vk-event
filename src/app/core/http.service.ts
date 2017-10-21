@@ -18,8 +18,8 @@ export class HttpService {
 
     return this.http
       .request(request)
-      .do(data => console.log('HttpService#request do', data));
-      // .retryWhen(errors => errors.mergeMap(error => error === 401 ? this.auth.authorization$ : Observable.throw(error)));
+      .do(data => console.log('HttpService#request do', data))
+      .retryWhen(errors => errors.mergeMap(error => error === 401 ? this.auth.authorization$ : Observable.throw(error)));
   }
 
   get(url: string, options?: Object) {
