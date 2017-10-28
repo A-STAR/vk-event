@@ -22,6 +22,8 @@ export class AuthService {
 
   authorization$: Observable<Object>;
 
+  settings: Object;
+
   constructor(private http: HttpClient, private token: TokenService) {
     // this.trigger = new BehaviorSubject(null);
   }
@@ -45,6 +47,9 @@ export class AuthService {
       .do(response => {
         console.log('AuthService#authorize response', response);
         this.token.token = response['token'];
+        if (!this.settings) {
+          this.settings = response['api_settings'];
+        }
       })
       .share();
   }
