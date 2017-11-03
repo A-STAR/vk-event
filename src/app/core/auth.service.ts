@@ -47,10 +47,15 @@ export class AuthService {
       .post(`${environment.api}/init/`, params)
       .do(response => {
         console.log('AuthService#authorize response', response);
-        this.token.token = response['token'];
-        if (!this.settings) {
+
+        if (response['token']) {
+          this.token.token = response['token'];
+        }
+
+        if (response['api_settings'] && !this.settings) {
           this.settings = response['api_settings'];
         }
+
         if (response['event'] && !this.event) {
           this.event = response['event'];
         }
