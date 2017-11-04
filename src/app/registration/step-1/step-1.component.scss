@@ -44,17 +44,6 @@
       div.form-group {
         &:first-child {
           text-align: center;
-
-          label[for="photo"] {
-            color: $blue;
-            font-size: $font-size-base;
-            font-weight: $font-weight-bold;
-          }
-
-          input[type="file"] {
-            display: none;
-          }
-
         }
       }
 

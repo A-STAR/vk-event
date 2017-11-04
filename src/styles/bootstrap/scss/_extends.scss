@@ -157,8 +157,27 @@
 
   div.form-group {
 
+    // input[type="file"]#photo {
+    input[type="file"] {
+      width: 0;
+      height: 0;
+      overflow: hidden;
+
+      &:focus + label[for="photo"] {
+        text-shadow: 0 0 $input-btn-focus-width rgba($blue, .25);
+      }
+
+    }
+
     label {
       color: #909499;
+
+      &[for="photo"] {
+        color: $blue;
+        font-size: $font-size-base;
+        font-weight: $font-weight-bold;
+      }
+
     }
 
     label,
