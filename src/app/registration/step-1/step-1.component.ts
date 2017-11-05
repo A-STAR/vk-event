@@ -16,13 +16,13 @@ export class Step1Component implements OnInit {
 
   constructor(private location: Location, private renderer: Renderer2, private elementRef: ElementRef, private router: Router, private route: ActivatedRoute) { }
 
-  ngOnInit() {
-    this.content();
-  }
-
   content() {
     this.src = 'assets/images/vlad.jpg';
     this.name = 'Резников Владислав';
+  }
+
+  ngOnInit() {
+    this.content();
   }
 
   // image(file: File) {
@@ -45,14 +45,14 @@ export class Step1Component implements OnInit {
   base64(file: File) {
     const fileReader = new FileReader();
 
-    this.renderer.listen(fileReader, 'load', event => this.src = event.target['result']);
-    // this.renderer.listen(fileReader, 'load', event => event => this.image.nativeElement.src = event.target['result']);
+    this.renderer.listen(fileReader, 'load', event => this.src = event.target.result);
+    // this.renderer.listen(fileReader, 'load', event => event => this.image.nativeElement.src = event.target.result);
 
     fileReader.readAsDataURL(file);
   }
 
   photo(event) {
-    const fileList: { [key: string]: File | any } = event.target.files;
+    const fileList: FileList = event.target.files;
 
     if (!fileList.length) {
       return;
