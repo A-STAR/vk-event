@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanLoad, Route, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Params, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/map';
+import { tap, map } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 
 @Injectable()
@@ -29,25 +28,27 @@ export class AdminGuard implements CanLoad, CanActivate {
   authorized(params: Params, url: string): Observable<boolean> {
     return this.auth
       .authorize(params)
-      .do(response => {
-        if (response['token'] && !response['flags']['is_admin']) {
-          // Navigate to the root page with extras
-          this.router
-            .navigate(['/'], { queryParams: params })
-            .then(() => console.log('AdminGuard#authorized navigate /'));
-        }
-      })
-      .map(response => {
-        console.log('AdminGuard#authorized response', response);
+      .pipe(
+        tap(response => {
+          if (response['token'] && !response['flags']['is_admin']) {
+            // Navigate to the root page with extras
+            this.router
+              .navigate(['/'], { queryParams: params })
+              .then(() => console.log('AdminGuard#authorized navigate /'));
+          }
+        }),
+        map(response => {
+          console.log('AdminGuard#authorized response', response);
 
-        if (response['token'] && response['flags']['is_admin']) {
-          console.log('AdminGuard#authorized true');
-          return true;
-        }
+          if (response['token'] && response['flags']['is_admin']) {
+            console.log('AdminGuard#authorized true');
+            return true;
+          }
 
-        console.log('AdminGuard#authorized false');
-        return false;
-      });
+          console.log('AdminGuard#authorized false');
+          return false;
+        })
+      );
   }
 
 }

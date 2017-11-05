@@ -4,9 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 // import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/observable/of';
-// import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/share';
+// import { switchMap, tap, share } from 'rxjs/operators';
+import { tap, share } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { TokenService } from './token.service';
 
@@ -42,25 +41,29 @@ export class AuthService {
     // console.log('AuthService#authorize authorization$ setting', this.authorization$);
 
     // return this.authorization$ || this.trigger
-    //   .switchMap(() => this.http.post(`${environment.api}/init/`, params))
+    //   .pipe(
+    //     switchMap(() => this.http.post(`${environment.api}/init/`, params))
+    //   )
     return this.authorization$ = this.http
       .post(`${environment.api}/init/`, params)
-      .do(response => {
-        console.log('AuthService#authorize response', response);
+      .pipe(
+        tap(response => {
+          console.log('AuthService#authorize response', response);
 
-        if (response['token']) {
-          this.token.token = response['token'];
-        }
+          if (response['token']) {
+            this.token.token = response['token'];
+          }
 
-        if (response['api_settings'] && !this.settings) {
-          this.settings = response['api_settings'];
-        }
+          if (response['api_settings'] && !this.settings) {
+            this.settings = response['api_settings'];
+          }
 
-        if (response['event'] && !this.event) {
-          this.event = response['event'];
-        }
-      })
-      .share();
+          if (response['event'] && !this.event) {
+            this.event = response['event'];
+          }
+        }),
+        share()
+      );
   }
 
   // update() {

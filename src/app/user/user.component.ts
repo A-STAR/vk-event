@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 // import { Observable } from 'rxjs/Observable';
-// import 'rxjs/add/operator/switchMap';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'user',
@@ -54,10 +54,7 @@ export class UserComponent implements OnInit {
 
     // this.event$ = this.route
     //   .paramMap
-    //     .switchMap((params: ParamMap) =>
-    //       this.service
-    //         .getEvent(params.get('id'))
-    //     );
+    //   .pipe(switchMap((params: ParamMap) => this.service.getEvent(params.get('id'))));
 
     this.content();
     this.show();

@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/retryWhen';
-import 'rxjs/add/operator/mergeMap';
+import { tap, retryWhen, mergeMap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { AuthService } from './auth.service';
 
@@ -18,8 +16,10 @@ export class HttpService {
 
     return this.http
       .request(request)
-      .do(data => console.log('HttpService#request do', data))
-      .retryWhen(errors => errors.mergeMap(error => error === 401 ? this.auth.authorization$ : Observable.throw(error)));
+      .pipe(
+        tap(data => console.log('HttpService#request do', data)),
+        retryWhen(errors => errors.pipe(mergeMap(error => error === 401 ? this.auth.authorization$ : Observable.throw(error))))
+      );
   }
 
   get(url: string, options?: Object) {

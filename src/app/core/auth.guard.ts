@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Params, Router, NavigationExtras } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/map';
+import { tap, map } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 
 @Injectable()
@@ -23,60 +22,62 @@ export class AuthGuard implements CanActivate {
   authorized(params: Params, url: string): Observable<boolean> {
     return this.auth
       .authorize(params)
-      .do(response => {
-        if (response['token']) {
+      .pipe(
+        tap(response => {
+          if (response['token']) {
 
-          if (response['flags']['is_admin']) {
-            if (response['flags']['need_group_token']) {
-              // Request for access for community messages
-            }
-          }
-
-          if (!response['flags']['has_event']) {
             if (response['flags']['is_admin']) {
-              // Navigate to the admin page with extras
-              this.router
-                .navigate(['/admin'], { queryParams: params })
-                .then(() => console.log('AuthGuard#authorized navigate /admin'));
-              } else {
-                // Navigate to the fallback page with extras
-                // this.router
-                //   .navigate(['/fallback'], { queryParams: params })
-                //   .then(() => console.log('AuthGuard#authorized navigate /fallback'));
+              if (response['flags']['need_group_token']) {
+                // Request for access for community messages
+              }
             }
-            return;
+
+            if (!response['flags']['has_event']) {
+              if (response['flags']['is_admin']) {
+                // Navigate to the admin page with extras
+                this.router
+                  .navigate(['/admin'], { queryParams: params })
+                  .then(() => console.log('AuthGuard#authorized navigate /admin'));
+                } else {
+                  // Navigate to the fallback page with extras
+                  // this.router
+                  //   .navigate(['/fallback'], { queryParams: params })
+                  //   .then(() => console.log('AuthGuard#authorized navigate /fallback'));
+              }
+              return;
+            }
+
+            if (!response['profile']) {
+              // Navigate to the registration page with extras
+              this.router
+                .navigate(['/registration'], { queryParams: params })
+                .then(() => console.log('AuthGuard#authorized navigate /registration'));
+            }
+
+          }
+        }),
+        map(response => {
+          console.log('AuthGuard#authorized response', response);
+
+          if (response['token'] && response['profile'] && response['flags']['has_event']) {
+            // Get the redirect URL
+            // If no redirect has been set, use the default
+            // const redirect = url ?
+            //   url :
+            //   '/';
+
+            // Redirect the user
+            // this.router
+            //   .navigate([redirect]);
+
+            console.log('AuthGuard#authorized response true');
+            return true;
           }
 
-          if (!response['profile']) {
-            // Navigate to the registration page with extras
-            this.router
-              .navigate(['/registration'], { queryParams: params })
-              .then(() => console.log('AuthGuard#authorized navigate /registration'));
-          }
-
-        }
-      })
-      .map(response => {
-        console.log('AuthGuard#authorized response', response);
-
-        if (response['token'] && response['profile'] && response['flags']['has_event']) {
-          // Get the redirect URL
-          // If no redirect has been set, use the default
-          // const redirect = url ?
-          //   url :
-          //   '/';
-
-          // Redirect the user
-          // this.router
-          //   .navigate([redirect]);
-
-          console.log('AuthGuard#authorized response true');
-          return true;
-        }
-
-        console.log('AuthGuard#authorized response false');
-        return false;
-      });
+          console.log('AuthGuard#authorized response false');
+          return false;
+        })
+      );
   }
 
   // authorized(url: string): boolean {
