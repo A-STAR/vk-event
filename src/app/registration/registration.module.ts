@@ -6,12 +6,14 @@ import { RegistrationComponent } from './registration.component';
 import { Step1Component } from './step-1/step-1.component';
 import { Step2Component } from './step-2/step-2.component';
 import { Step3Component } from './step-3/step-3.component';
+import { RegistrationService } from './shared/registration.service';
 
 @NgModule({
   imports: [
     CommonModule,
     RegistrationRoutingModule
   ],
-  declarations: [RegistrationComponent, Step1Component, Step2Component, Step3Component]
+  declarations: [RegistrationComponent, Step1Component, Step2Component, Step3Component],
+  providers: [RegistrationService]
 })
 export class RegistrationModule { }

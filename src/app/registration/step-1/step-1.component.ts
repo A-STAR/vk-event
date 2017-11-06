@@ -73,7 +73,7 @@ export class Step1Component implements OnInit {
       return;
     }
 
-    // this.registration.form.avatar = file;
+    // this.registration.step-1.avatar = file;
 
     // this.image(file);
 
