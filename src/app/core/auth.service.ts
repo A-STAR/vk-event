@@ -21,11 +21,26 @@ export class AuthService {
 
   authorization$: Observable<Object>;
 
-  settings: Object;
+  private settings: Object;
   event: Object;
 
   constructor(private http: HttpClient, private token: TokenService) {
     // this.trigger = new BehaviorSubject(null);
+  }
+
+  get profile() {
+    return this.settings;
+  }
+
+  set profile(settings: any) {
+    const {
+      photo_200: src,
+      first_name: name,
+      last_name: surname,
+      uid: id
+    } = settings;
+
+    this.settings = { src, name, surname, id };
   }
 
   authorize(params?: Params): Observable<Object> {
@@ -47,23 +62,25 @@ export class AuthService {
     return this.authorization$ = this.http
       .post(`${environment.api}/init/`, params)
       .pipe(
-        tap(response => {
-          console.log('AuthService#authorize response', response);
-
-          if (response['token']) {
-            this.token.token = response['token'];
-          }
-
-          if (response['api_settings'] && !this.settings) {
-            this.settings = response['api_settings'];
-          }
-
-          if (response['event'] && !this.event) {
-            this.event = response['event'];
-          }
-        }),
+        tap(this.save.bind(this)),
         share()
       );
+  }
+
+  private save(response) {
+    console.log('AuthService#authorize response', response);
+
+    if (response['token']) {
+      this.token.token = response['token'];
+    }
+
+    if (response['api_settings'] && !this.settings) {
+      this.profile = response['api_settings'];
+    }
+
+    if (response['event'] && !this.event) {
+      this.event = response['event'];
+    }
   }
 
   // update() {

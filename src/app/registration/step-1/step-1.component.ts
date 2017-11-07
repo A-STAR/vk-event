@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../core/auth.service';
 import { RegistrationService } from '../shared/registration.service';
 
 @Component({
@@ -13,17 +14,23 @@ export class Step1Component implements OnInit {
   // @ViewChild('image', { read: ElementRef }) image: ElementRef;
 
   src: string;
+  alt: string;
   name: string;
+  surname: string;
 
   file: File;
 
-  constructor(private registration: RegistrationService, private location: Location, private renderer: Renderer2, private elementRef: ElementRef, private router: Router, private route: ActivatedRoute) {
-    this.file = null;
+  constructor(private auth: AuthService, private registration: RegistrationService, private location: Location, private renderer: Renderer2, private elementRef: ElementRef, private router: Router, private route: ActivatedRoute) {
+    this.alt = 'Фото';
   }
 
   content() {
-    this.src = 'assets/images/vlad.jpg';
-    this.name = 'Резников Владислав';
+    const { src, name, surname, id } = this.auth.profile;
+
+    this.src = src;
+    this.name = name;
+    this.surname = surname;
+    this.alt = `${name} ${surname}`;
   }
 
   ngOnInit() {

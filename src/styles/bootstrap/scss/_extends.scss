@@ -102,7 +102,9 @@
   min-height: $spacer * 6.25;
   margin-bottom: $spacer;
   border-radius: 50%;
+  line-height: $spacer * 6.25;
   object-fit: cover;
+  text-align: center;
 }
 
 .appointment-pane {

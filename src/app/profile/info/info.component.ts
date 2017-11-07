@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  image: string;
+  src: string;
+  alt: string;
   name: string;
+  surname: string;
 
   button: {
     class: string;
@@ -17,7 +19,10 @@ export class InfoComponent implements OnInit {
     timeout: any;
   };
 
+  file: File;
+
   constructor() {
+    this.alt = 'Фото';
     this.button = {
       class: null,
       disabled: null,
@@ -32,8 +37,8 @@ export class InfoComponent implements OnInit {
   }
 
   content() {
-    this.image = 'assets/images/vlad.jpg';
-    this.name = 'Резников Владислав';
+    this.src = 'assets/images/vlad.jpg';
+    this.alt = 'Резников Владислав';
   }
 
   show() {

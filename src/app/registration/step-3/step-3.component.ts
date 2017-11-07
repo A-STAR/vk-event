@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { RegistrationService } from '../shared/registration.service';
 
 @Component({
   selector: 'step-3',
@@ -20,7 +21,7 @@ export class Step3Component implements OnInit {
     selected?: boolean
   }[];
 
-  constructor(private location: Location, private router: Router) {
+  constructor(private registration: RegistrationService, private location: Location, private router: Router) {
     this.start = [
       { value: 1, time: '10:00' },
       { value: 2, time: '10:30' },
@@ -88,7 +89,13 @@ export class Step3Component implements OnInit {
 
   submit(event) {
     event.preventDefault();
-    this.next();
+
+    this.registration
+      .post()
+      .subscribe(response => {
+        console.log(response);
+        // this.next();
+      });
   }
 
   next() {

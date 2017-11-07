@@ -10,13 +10,9 @@ export class RegistrationService {
   step2: Object;
   step3: Object;
 
-  constructor(private http: HttpService) {
-    this.step1 = null;
-    this.step2 = null;
-    this.step3 = null;
-  }
+  constructor(private http: HttpService) { }
 
-  form(): FormData {
+  get form(): FormData {
     const form: Profile = null;
 
     if (this.step1['file'] !== null) {
@@ -37,25 +33,25 @@ export class RegistrationService {
 
     console.log('form', form);
 
+
     const fd = new FormData();
 
-    console.log('fd', fd);
+    console.log('fd before', fd);
 
     for (const prop in form) {
-      if (form['prop']) {
-        fd.append(prop, form['prop']);
+      if (form.hasOwnProperty(prop)) {
+        fd.append(prop, form[prop]);
       }
     }
 
-    console.log('fd', fd);
+    console.log('fd after', fd);
+
 
     return fd;
   }
 
   post(): Observable<Object> {
-    const body = this.form();
-
-    return this.http.post('/profile/', body);
+    return this.http.post('/profile/', this.form);
   }
 
 }
