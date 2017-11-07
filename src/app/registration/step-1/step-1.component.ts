@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/co
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RegistrationService } from '../shared/registration.service';
-import { Step1 } from '../shared';
 
 @Component({
   selector: 'step-1',
@@ -89,25 +88,15 @@ export class Step1Component implements OnInit {
   submit({ value }) {
     event.preventDefault();
 
-    const form = { };
-
     if (this.file !== null) {
-      form['avatar'] = this.file;
+      value['file'] = this.file;
     }
 
-    form['name'] = value.name;
-    form['second_name'] = value.surname;
-    form['work_place'] = value.job;
-    form['work_position'] = value.position;
-    form['url'] = value.link;
-    form['email'] = value.email;
+    console.log('value', value);
 
-    console.log('form', form);
+    this.registration.step1 = Object.assign({ }, value);
 
-    const step = Object.assign({ }, form);
-
-    console.log('step', step);
-    console.log('step1', this.registration.step1);
+    console.log('step', this.registration.step1);
 
     this.next();
   }
