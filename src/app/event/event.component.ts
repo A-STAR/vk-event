@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 // import { Observable } from 'rxjs/Observable';
-import { switchMap } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators/switchMap';
 
 @Component({
   selector: 'event',
