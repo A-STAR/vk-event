@@ -10,7 +10,6 @@ export class AuthGuard implements CanActivate {
   constructor(private auth: AuthService, private router: Router) {}
 
   private redirect(params, response) {
-    console.log('RESPONSE', response);
     if (response['token']) {
 
       if (!response['flags']['has_event']) {
