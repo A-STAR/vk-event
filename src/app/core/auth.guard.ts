@@ -9,7 +9,7 @@ export class AuthGuard implements CanActivate {
 
   constructor(private auth: AuthService, private router: Router) {}
 
-  private redirect(response, params) {
+  private redirect(params, response) {
     console.log('RESPONSE', response);
     if (response['token']) {
 
@@ -64,7 +64,7 @@ export class AuthGuard implements CanActivate {
     return this.auth
       .authorize(params)
       .pipe(
-        tap(response => this.redirect(response, params)),
+        tap(this.redirect.bind(this, params)), // this.redirect(params, response)
         map(this.authorized)
       );
   }

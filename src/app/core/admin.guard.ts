@@ -9,7 +9,7 @@ export class AdminGuard implements CanLoad, CanActivate {
 
   constructor(private auth: AuthService, private router: Router) {}
 
-  private redirect(response, params) {
+  private redirect(params, response) {
     if (response['token'] && !response['flags']['is_admin']) {
       // Navigate to the root page with extras
       this.router
@@ -34,7 +34,7 @@ export class AdminGuard implements CanLoad, CanActivate {
     return this.auth
       .authorize(params)
       .pipe(
-        tap(response => this.redirect(response, params)),
+        tap(this.redirect.bind(this, params)),
         map(this.authorized)
       );
   }
