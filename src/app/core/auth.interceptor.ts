@@ -12,11 +12,9 @@ export class AuthInterceptor implements HttpInterceptor {
 
   private request(request) {
     if (this.token.token) {
-      // return request
-      //   .clone({ headers: request.headers.set('Authorization', `Bearer ${this.token.token}`) });
+      // return request.clone({ headers: request.headers.set('Authorization', `Bearer ${this.token.token}`) });
 
-      return request
-        .clone({ setHeaders: { Authorization: `Bearer ${this.token.token}` } });
+      return request.clone({ setHeaders: { Authorization: `Bearer ${this.token.token}` } });
     }
 
     // console.log('AuthInterceptor#intercept request', request);
@@ -26,11 +24,9 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // if (this.token.token) {
-    //   // request = request
-    //   //   .clone({ headers: request.headers.set('Authorization', `Bearer ${this.token.token}`) });
+    //   // request = request.clone({ headers: request.headers.set('Authorization', `Bearer ${this.token.token}`) });
 
-    //   request = request
-    //     .clone({ setHeaders: { Authorization: `Bearer ${this.token.token}` } });
+    //   request = request.clone({ setHeaders: { Authorization: `Bearer ${this.token.token}` } });
     // }
 
     // // console.log('AuthInterceptor#intercept request', request);
