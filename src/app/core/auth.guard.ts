@@ -9,17 +9,7 @@ export class AuthGuard implements CanActivate {
 
   constructor(private auth: AuthService, private router: Router) {}
 
-  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    console.log('AuthGuard#canActivate called');
-
-    const params: Params = next.queryParams;
-
-    const url: string = state.url;
-
-    return this.authorize(params, url);
-  }
-
-  redirect(response, params) {
+  private redirect(response, params) {
     console.log('RESPONSE', response);
     if (response['token']) {
 
@@ -48,7 +38,7 @@ export class AuthGuard implements CanActivate {
     }
   }
 
-  authorized(response) {
+  private authorized(response) {
     console.log('AuthGuard#authorized response', response);
 
     if (response['token'] && response['profile'] && response['flags']['has_event']) {
@@ -77,6 +67,16 @@ export class AuthGuard implements CanActivate {
         tap(response => this.redirect(response, params)),
         map(this.authorized)
       );
+  }
+
+  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+    console.log('AuthGuard#canActivate called');
+
+    const params: Params = next.queryParams;
+
+    const url: string = state.url;
+
+    return this.authorize(params, url);
   }
 
   // authorize(url: string): boolean {

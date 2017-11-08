@@ -9,15 +9,7 @@ export class RegistrationGuard implements CanActivate {
 
   constructor(private auth: AuthService, private router: Router) {}
 
-  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    const params: Params = next.queryParams;
-
-    const url: string = state.url;
-
-    return this.authorize(params, url);
-  }
-
-  redirect(response, params) {
+  private redirect(response, params) {
     if (response['token'] && response['profile']) {
       // Navigate to the root page with extras
       this.router
@@ -26,7 +18,7 @@ export class RegistrationGuard implements CanActivate {
     }
   }
 
-  authorized(response) {
+  private authorized(response) {
     console.log('RegistrationGuard#authorized response', response);
 
     if (response['token'] && !response['profile']) {
@@ -45,6 +37,14 @@ export class RegistrationGuard implements CanActivate {
         tap(response => this.redirect(response, params)),
         map(this.authorized)
       );
+  }
+
+  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+    const params: Params = next.queryParams;
+
+    const url: string = state.url;
+
+    return this.authorize(params, url);
   }
 
 }

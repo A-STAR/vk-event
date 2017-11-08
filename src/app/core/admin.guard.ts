@@ -9,23 +9,7 @@ export class AdminGuard implements CanLoad, CanActivate {
 
   constructor(private auth: AuthService, private router: Router) {}
 
-  canLoad(route: Route, next?: ActivatedRouteSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    const params: Params = next.queryParams;
-
-    const url: string = route.path;
-
-    return this.authorize(params, url);
-  }
-
-  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    const params: Params = next.queryParams;
-
-    const url: string = state.url;
-
-    return this.authorize(params, url);
-  }
-
-  redirect(response, params) {
+  private redirect(response, params) {
     if (response['token'] && !response['flags']['is_admin']) {
       // Navigate to the root page with extras
       this.router
@@ -34,7 +18,7 @@ export class AdminGuard implements CanLoad, CanActivate {
     }
   }
 
-  authorized(response) {
+  private authorized(response) {
     console.log('AdminGuard#authorized response', response);
 
     if (response['token'] && response['flags']['is_admin']) {
@@ -53,6 +37,22 @@ export class AdminGuard implements CanLoad, CanActivate {
         tap(response => this.redirect(response, params)),
         map(this.authorized)
       );
+  }
+
+  canLoad(route: Route, next?: ActivatedRouteSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+    const params: Params = next.queryParams;
+
+    const url: string = route.path;
+
+    return this.authorize(params, url);
+  }
+
+  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+    const params: Params = next.queryParams;
+
+    const url: string = state.url;
+
+    return this.authorize(params, url);
   }
 
 }
