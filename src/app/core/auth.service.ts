@@ -43,6 +43,22 @@ export class AuthService {
     this.settings = { src, name, surname, id };
   }
 
+  private save(response) {
+    console.log('AuthService#authorize response', response);
+
+    if (response['token']) {
+      this.token.token = response['token'];
+    }
+
+    if (response['api_settings'] && !this.settings) {
+      this.profile = response['api_settings'];
+    }
+
+    if (response['event'] && !this.event) {
+      this.event = response['event'];
+    }
+  }
+
   authorize(params?: Params): Observable<Object> {
 
     console.log('AuthService#authorize called', params);
@@ -65,22 +81,6 @@ export class AuthService {
         tap(this.save.bind(this)),
         share()
       );
-  }
-
-  private save(response) {
-    console.log('AuthService#authorize response', response);
-
-    if (response['token']) {
-      this.token.token = response['token'];
-    }
-
-    if (response['api_settings'] && !this.settings) {
-      this.profile = response['api_settings'];
-    }
-
-    if (response['event'] && !this.event) {
-      this.event = response['event'];
-    }
   }
 
   // update() {

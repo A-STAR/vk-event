@@ -14,7 +14,7 @@ export class AdminGuard implements CanLoad, CanActivate {
 
     const url: string = route.path;
 
-    return this.authorized(params, url);
+    return this.authorize(params, url);
   }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
@@ -22,32 +22,36 @@ export class AdminGuard implements CanLoad, CanActivate {
 
     const url: string = state.url;
 
-    return this.authorized(params, url);
+    return this.authorize(params, url);
   }
 
-  authorized(params: Params, url: string): Observable<boolean> {
+  redirect(response, params) {
+    if (response['token'] && !response['flags']['is_admin']) {
+      // Navigate to the root page with extras
+      this.router
+        .navigate(['/'], { queryParams: params })
+        .then(() => console.log('AdminGuard#authorized navigate /'));
+    }
+  }
+
+  authorized(response) {
+    console.log('AdminGuard#authorized response', response);
+
+    if (response['token'] && response['flags']['is_admin']) {
+      console.log('AdminGuard#authorized true');
+      return true;
+    }
+
+    console.log('AdminGuard#authorized false');
+    return false;
+  }
+
+  authorize(params: Params, url: string): Observable<boolean> {
     return this.auth
       .authorize(params)
       .pipe(
-        tap(response => {
-          if (response['token'] && !response['flags']['is_admin']) {
-            // Navigate to the root page with extras
-            this.router
-              .navigate(['/'], { queryParams: params })
-              .then(() => console.log('AdminGuard#authorized navigate /'));
-          }
-        }),
-        map(response => {
-          console.log('AdminGuard#authorized response', response);
-
-          if (response['token'] && response['flags']['is_admin']) {
-            console.log('AdminGuard#authorized true');
-            return true;
-          }
-
-          console.log('AdminGuard#authorized false');
-          return false;
-        })
+        tap(response => this.redirect(response, params)),
+        map(this.authorized)
       );
   }
 

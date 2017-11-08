@@ -14,32 +14,36 @@ export class RegistrationGuard implements CanActivate {
 
     const url: string = state.url;
 
-    return this.authorized(params, url);
+    return this.authorize(params, url);
   }
 
-  authorized(params: Params, url: string): Observable<boolean> {
+  redirect(response, params) {
+    if (response['token'] && response['profile']) {
+      // Navigate to the root page with extras
+      this.router
+        .navigate(['/'], { queryParams: params })
+        .then(() => console.log('RegistrationGuard#authorized navigate /'));
+    }
+  }
+
+  authorized(response) {
+    console.log('RegistrationGuard#authorized response', response);
+
+    if (response['token'] && !response['profile']) {
+      console.log('RegistrationGuard#authorized true');
+      return true;
+    }
+
+    console.log('RegistrationGuard#authorized false');
+    return false;
+  }
+
+  authorize(params: Params, url: string): Observable<boolean> {
     return this.auth
       .authorize(params)
       .pipe(
-        tap(response => {
-          if (response['token'] && response['profile']) {
-            // Navigate to the root page with extras
-            this.router
-              .navigate(['/'], { queryParams: params })
-              .then(() => console.log('RegistrationGuard#authorized navigate /'));
-          }
-        }),
-        map(response => {
-          console.log('RegistrationGuard#authorized response', response);
-
-          if (response['token'] && !response['profile']) {
-            console.log('RegistrationGuard#authorized true');
-            return true;
-          }
-
-          console.log('RegistrationGuard#authorized false');
-          return false;
-        })
+        tap(response => this.redirect(response, params)),
+        map(this.authorized)
       );
   }
 
