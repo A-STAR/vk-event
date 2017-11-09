@@ -1,6 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { ErrorObservable } from 'rxjs/observable/errorObservable';
 import { retryWhen, mergeMap } from 'rxjs/operators';
 import { TokenService } from './token.service';
 import { AuthService } from './auth.service';
@@ -36,7 +37,7 @@ export class AuthInterceptor implements HttpInterceptor {
     return next
       // .handle(request)
       .handle(this.request(request))
-      .pipe(retryWhen(errors => errors.pipe(mergeMap(error => error === 401 ? auth.authorization$ : Observable.throw(error)))));
+      .pipe(retryWhen(errors => errors.pipe(mergeMap(error => error === 401 ? auth.authorization$ : ErrorObservable.throw(error)))));
   }
 
 }

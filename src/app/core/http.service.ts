@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/throw';
+// import { ErrorObservable } from 'rxjs/observable/errorObservable';
 import { tap } from 'rxjs/operators/tap';
 // import { tap, retryWhen, mergeMap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
@@ -20,7 +20,7 @@ export class HttpService {
       .pipe(tap(data => console.log('HttpService#request do', data)));
       // .pipe(
       //   tap(data => console.log('HttpService#request do', data)),
-      //   retryWhen(errors => errors.pipe(mergeMap(error => error === 401 ? this.auth.authorization$ : Observable.throw(error))))
+      //   retryWhen(errors => errors.pipe(mergeMap(error => error === 401 ? this.auth.authorization$ : ErrorObservable.throw(error))))
       // );
   }
 
