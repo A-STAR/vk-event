@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, ViewChild, ElementRef, Input, HostBinding, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, OnChanges, OnInit, ViewChild, ElementRef, HostBinding, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Component({
   selector: 'event-modal',
@@ -12,8 +12,7 @@ export class EventModalComponent implements OnChanges, OnInit {
 
   constructor(private elementRef: ElementRef) { }
 
-  @Input() @HostBinding() private hidden;
-
+  @HostBinding() private hidden;
   @HostBinding('class.show') private show;
 
   @ViewChild('confirmation') private confirmation: ElementRef;
@@ -21,10 +20,9 @@ export class EventModalComponent implements OnChanges, OnInit {
 
   @Output() private dismiss: EventEmitter<boolean> = new EventEmitter();
 
-  private open() {
-    if (!this.hidden) {
-      setTimeout(() => this.show = true, 0);
-    }
+  open() {
+    this.hidden = false;
+    setTimeout(() => this.show = true, 0);
   }
 
   ngOnChanges() {
@@ -32,12 +30,16 @@ export class EventModalComponent implements OnChanges, OnInit {
   }
 
   ngOnInit() {
+    this.hidden = true;
     this.show = false;
   }
 
   private close(value) {
     this.show = false;
-    setTimeout(() => this.dismiss.emit(value), 300);
+    setTimeout(() => {
+      this.dismiss.emit(value);
+      this.hidden = true;
+    }, 300);
   }
 
   @HostListener('click', ['$event'])

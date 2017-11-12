@@ -87,8 +87,8 @@
 
   <button class="btn btn-secondary" (click)="more($event)">Ещё</button>
 
-  <incoming-modal role="button" [hidden]="!incoming" (dismiss)="dismissIncoming($event)"></incoming-modal>
+  <incoming-modal role="button" (dismiss)="dismissIncoming($event)"></incoming-modal>
 
-  <event-modal role="button" [hidden]="!event" (dismiss)="dismissEvent($event)"></event-modal>
+  <event-modal role="button" (dismiss)="dismissEvent($event)"></event-modal>
 
 </main>

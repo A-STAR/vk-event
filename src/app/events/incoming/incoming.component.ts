@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { IncomingModalComponent } from '../shared/incoming-modal/incoming-modal.component';
+import { EventModalComponent } from '../../shared/event-modal/event-modal.component';
 
 @Component({
   selector: 'incoming',
@@ -8,14 +10,12 @@ import { Router } from '@angular/router';
 })
 export class IncomingComponent implements OnInit {
 
-  incoming: boolean;
-  event: boolean;
-
   constructor(private router: Router) { }
 
+  @ViewChild(IncomingModalComponent) readonly incoming: IncomingModalComponent;
+  @ViewChild(EventModalComponent) readonly event: EventModalComponent;
+
   ngOnInit() {
-    this.incoming = false;
-    this.event = false;
   }
 
   user(event) {
@@ -38,7 +38,7 @@ export class IncomingComponent implements OnInit {
 
   more(event) {
     console.log('more');
-    this.incoming = true;
+    this.incoming.open();
   }
 
   reschedule(event) {
@@ -57,17 +57,15 @@ export class IncomingComponent implements OnInit {
 
   cancel(event) {
     console.log('cancel');
-    this.event = true;
+    this.event.open();
   }
 
   dismissIncoming(event) {
     console.log('dismiss incoming', event);
-    this.incoming = false;
   }
 
   dismissEvent(event) {
     console.log('dismiss event', event);
-    this.event = false;
   }
 
 }

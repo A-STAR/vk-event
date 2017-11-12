@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 // import { Observable } from 'rxjs/Observable';
 import { switchMap } from 'rxjs/operators/switchMap';
+import { EventModalComponent } from '../shared/event-modal/event-modal.component';
 
 @Component({
   selector: 'event',
@@ -15,13 +16,11 @@ export class EventComponent implements OnInit {
 
   // event$: Observable<any>;
 
-  event: boolean;
-
   constructor(private route: ActivatedRoute, private router: Router) { }
 
-  ngOnInit() {
-    this.event = false;
+  @ViewChild(EventModalComponent) readonly modal: EventModalComponent;
 
+  ngOnInit() {
     const id = this.route
       .snapshot
       .paramMap
@@ -79,12 +78,11 @@ export class EventComponent implements OnInit {
 
   cancel(event) {
     console.log('cancel');
-    this.event = true;
+    this.modal.open();
   }
 
   dismiss(event) {
     console.log('dismiss', event);
-    this.event = false;
   }
 
 }
