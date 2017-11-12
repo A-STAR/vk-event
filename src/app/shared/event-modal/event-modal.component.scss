@@ -2,25 +2,38 @@
 
 :host {
   @extend .flex-row;
+  @include transition($transition-fade);
   justify-content: center;
   align-items: center;
+  z-index: $zindex-modal-backdrop;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba($black, .2);
-  z-index: $zindex-modal-backdrop;
+  background-color: rgba($black, $modal-backdrop-opacity);
+  opacity: 0;
+
+  &.show {
+    opacity: 1;
+
+    div {
+      transform: translate(0, 0);
+    }
+
+  }
 
   div {
     @extend .flex-row;
+    @include transition($modal-transition);
+    z-index: $zindex-modal;
+    transform: translate(0, -25%);
     justify-content: center;
     margin-left: $spacer * .5;
     margin-right: $spacer * .5;
     padding-top: $spacer * 1.5;
     background-color: $white;
     border-radius: $border-radius;
-    z-index: $zindex-modal;
 
     h1 {
       @extend .flex-100;

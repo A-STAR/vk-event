@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, ViewChild, ElementRef, Input, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, OnInit, OnChanges, ViewChild, ElementRef, Input, HostBinding, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Component({
   selector: 'event-modal',
@@ -9,26 +9,43 @@ export class EventModalComponent implements OnInit, OnChanges {
 
   heading: string;
   confirm: string;
+  
+  @Input() @HostBinding() private hidden;
+  
+  @HostBinding('class.show') private show;
 
-  @ViewChild('confirmation') confirmation: ElementRef;
-  @ViewChild('cancellation') cancellation: ElementRef;
+  @ViewChild('confirmation') private confirmation: ElementRef;
+  @ViewChild('cancellation') private cancellation: ElementRef;
 
-  @Output() dismiss: EventEmitter<boolean> = new EventEmitter();
+  @Output() private dismiss: EventEmitter<boolean> = new EventEmitter();
 
-  @HostListener('click', ['$event']) close(event) {
+  private close(value) {
+    this.show = false;
+    setTimeout(() => this.dismiss.emit(value), 300);
+  }
+
+  @HostListener('click', ['$event']) private hide(event) {
     if (event.target === this.confirmation.nativeElement) {
-      this.dismiss.emit(true);
+      this.close(true);
     } else if (event.target === this.cancellation.nativeElement || event.target === this.elementRef.nativeElement) {
-      this.dismiss.emit(null);
+      this.close(null);
     }
   }
 
   constructor(private elementRef: ElementRef) { }
 
   ngOnInit() {
+    this.show = false;
+  }
+
+  private open() {
+    if (!this.hidden) {
+      setTimeout(() => this.show = true, 0);
+    }
   }
 
   ngOnChanges() {
+    this.open();
   }
 
 }

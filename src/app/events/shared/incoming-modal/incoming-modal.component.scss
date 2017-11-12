@@ -2,17 +2,31 @@
 
 :host {
   @extend .flex-column;
+  @include transition($transition-fade);
   justify-content: flex-end;
+  z-index: $zindex-modal-backdrop;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   padding-bottom: $spacer * .5;
-  background-color: rgba($black, .2);
-  z-index: $zindex-modal-backdrop;
+  background-color: rgba($black, $modal-backdrop-opacity);
+  opacity: 0;
+
+  &.show {
+    opacity: 1;
+
+    button {
+      transform: translate(0, 0);
+    }
+
+  }
 
   button {
+    @include transition($modal-transition);
+    z-index: $zindex-modal;
+    transform: translate(0, -25%);
     margin-left: $spacer * .5;
     margin-right: $spacer * .5;
     padding-top: $spacer * .75;
@@ -23,7 +37,6 @@
     border: none;
     border-radius: $border-radius;
     font-weight: $display2-weight;
-    z-index: $zindex-modal;
 
     &:first-child {
       padding-bottom: $spacer * .75 + $border-width * .5;
