@@ -9,9 +9,11 @@
   }
 }
 
-.btn-secondary, {
+.btn-secondary {
   &,
-  &:hover {
+  &:hover,
+  &:not([disabled]):not(.disabled):active,
+  &:not([disabled]):not(.disabled).active {
     color: $white;
   }
 }
